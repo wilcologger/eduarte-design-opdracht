@@ -1,0 +1,453 @@
+.menu-open #scrollBox {
+	border-radius: 0 0 10px 10px;
+	-moz-border-radius: 0 0 10px 10px;
+}
+
+.menu-open .layTitlebarTitle {
+	display: none;
+}
+
+.menu-open .layFooter .widget-button {
+	display: none;
+}
+
+.menu-open .widget-menu {
+	display: none;
+}
+
+.menuBox {
+	background-color: #E2E6EC;
+}
+
+.new-style-menu {
+	position: relative;
+}
+
+.menu-slider {
+	position: absolute;
+	width: 100%;
+	top: 35px;
+}
+
+.new-style-menu .menu-fields-container {
+	background-color: #B6BFD0;
+	height: 0px;
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	padding: 0;
+	border-radius: 10px 0 0 0;
+	-moz-border-radius: 10px 0 0 0;
+}
+
+.menu-vinden {
+	position: absolute;
+	right: 0;
+	top: -23px;
+	line-height: 15px;
+	width: 61px; background-image : url('menu_zoektabje.png');
+	padding: 6px 10px 2px 35px;
+	font-weight: bold;
+	color: white;
+	cursor: pointer;
+	background-image: url('menu_zoektabje.png');
+}
+
+.menu-quick-links {
+	height: 45px;
+	padding-top: 5px;
+	padding-left: 265px;
+	margin: 0 15px;
+	border-bottom: 2px groove white;
+}
+
+.menu-quick-link {
+	width: 35px;
+	height: 35px;
+	margin: 5px 0 5px 5px;
+	float: left;
+	background-image: url('categories_modules.png');
+	background-position: 0px 0px;
+	opacity: 0.25;
+}
+
+.small .menu-quick-link {
+	margin: 5px 0 5px 1px;
+}
+
+.smaller .menu-quick-link {
+	margin: 5px 0 5px 0px;
+	width: 34px;
+}
+
+.alphabet.smallest .menu-quick-link {
+	width: 26px;
+	height: 26px;
+}
+
+.alphabet .menu-quick-link {
+	width: 28px;
+	height: 28px;
+	margin: 8px 0 7px;
+	background-image: url('alfabet.png');
+}
+
+.menu-quick-link.active {
+	cursor: pointer;
+	opacity: 1;
+}
+
+.menu-sub-box {
+	margin: 10px;
+}
+
+.menu-sub-box-header {
+	position: relative;
+	height: 35px;
+}
+
+.alphabet .menu-sub-box-header {
+	height: 30px;
+}
+
+.menu-header-text {
+	position: absolute;
+	bottom: 2px;
+	left: 40px;
+	font-weight: bold;
+	color: #3A4C68;
+}
+
+.alphabet .menu-header-text {
+	display: none;
+}
+
+.menu-header-icon {
+	float: left;
+	background-image: url('categories_modules.png');
+	background-position: 0px -210px;
+	height: 35px;
+	width: 35px;
+}
+
+.alphabet .menu-header-icon {
+	background-image: url('alfabet.png');
+	height: 30px;
+	width: 30px;
+}
+
+.menu-column {
+	float: left;
+	width: 235px;
+}
+
+.menu-favorites {
+	color: #3A4C68; border-radius : 10px;
+	-moz-border-radius: 10px;
+	margin: 10px 30px 10px 10px;
+	background-color: #F1F3F5;
+	border-radius: 10px;
+}
+
+.menu-favorites-title {
+	background-color: #B6BFD0;
+	border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+	color: white;
+	font-weight: bold; text-align : center;
+	padding: 5px 0;
+	text-align: center;
+}
+
+.menu-favorites-items {
+	padding: 10px 5px 20px;
+}
+
+.menu-item {
+	display: block;
+	padding: 2px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	color: #4E607C;
+}
+
+a[href].menu-item:focus, a[href].menu-item:hover {
+	text-decoration: none;
+}
+
+.menu-item:focus,.menu-item:hover {
+	background-color: #909EB7;
+	outline: none;
+	border: 1px solid #909EB7;
+	color: white;
+}
+
+.menu-fields {
+	float: right;
+}
+
+.menu-zoekterm {
+	margin: 0 25px;
+	padding: 4px 10px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	width: 250px;
+}
+
+.menu-zoekterm.init {
+	color: #777;
+}
+
+label.menu-sort-order {
+	color: white;
+}
+
+select.menu-sort-order {
+	margin-left: 10px;
+	padding: 4px 5px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	width: 150px;
+	height: 24px;
+}
+
+.category-beheer {
+	background-position: 0px 0px;
+}
+
+.category-systeem {
+	background-position: -35px 0px;
+}
+
+.category-organisatie {
+	background-position: -70px 0px;
+}
+
+.category-onderwijs {
+	background-position: -105px 0px;
+}
+
+.category-deelnemer {
+	background-position: -140px 0px;
+}
+
+.category-resultaten {
+	background-position: 0px -35px;
+}
+
+.category-aanwezigheid {
+	background-position: -35px -35px;
+}
+
+.category-agenda {
+	background-position: -70px -35px;
+}
+
+.category-begeleiding {
+	background-position: -105px -35px;
+}
+
+.category-medewerker {
+	background-position: -140px -35px;
+}
+
+.category-accounts {
+	background-position: 0px -70px;
+}
+
+.category-financieel {
+	background-position: -35px -70px;
+}
+
+.category-tabellen {
+	background-position: -70px -70px;
+}
+
+.category-bron {
+	background-position: -105px -70px;
+}
+
+.category-rapportage {
+	background-position: -140px -70px;
+}
+
+.category-inschrijving {
+	background-position: 0px -105px;
+}
+
+.module-aanwezigheid {
+	background-position: -35px -35px;
+}
+
+.module-basisfunctionaliteit {
+	background-position: 0px 0px;
+}
+
+.module-bpvstage {
+	background-position: -70px -105px;
+}
+
+.module-bronuitwisseling {
+	background-position: -105px -70px;
+}
+
+.module-competentiemeter {
+	background-position: -105px -105px;
+}
+
+.module-deelnemerbegeleiding {
+	background-position: -105px -35px;
+}
+
+.module-financieel {
+	background-position: -35px -70px;
+}
+
+.module-kernregistratiedeelnemers {
+	background-position: 0px -140px;
+}
+
+.module-onderwijslogistieksysteemols {
+	background-position: -70px -140px;
+}
+
+.module-onderwijscatalogus {
+	background-position: -105px -140px;
+}
+
+.module-resultaten {
+	background-position: 0px -35px;
+}
+
+.module-alluris {
+	background-position: 0px -175px;
+}
+
+.module-businessobjectsrapportages {
+	background-position: -140px -70px;
+}
+
+.module-digitaalaanmelden {
+	background-position: -140px -105px;
+}
+
+.module-selfservice {
+	background-position: -175px -0px;
+}
+
+.module-synchronisatiemettrajectplanner {
+
+}
+
+.module-toelatingstrajecten {
+
+}
+
+.module-webservicesvoorrocleiden {
+
+}
+
+.alphabet-a {
+	background-position: 0px 0px;
+}
+
+.alphabet-b {
+	background-position: -30px 0px;
+}
+
+.alphabet-c {
+	background-position: -60px 0px;
+}
+
+.alphabet-d {
+	background-position: -90px 0px;
+}
+
+.alphabet-e {
+	background-position: -120px 0px;
+}
+
+.alphabet-f {
+	background-position: 0px -30px;
+}
+
+.alphabet-g {
+	background-position: -30px -30px;
+}
+
+.alphabet-h {
+	background-position: -60px -30px;
+}
+
+.alphabet-i {
+	background-position: -90px -30px;
+}
+
+.alphabet-j {
+	background-position: -120px -30px;
+}
+
+.alphabet-k {
+	background-position: 0px -60px;
+}
+
+.alphabet-l {
+	background-position: -30px -60px;
+}
+
+.alphabet-m {
+	background-position: -60px -60px;
+}
+
+.alphabet-n {
+	background-position: -90px -60px;
+}
+
+.alphabet-o {
+	background-position: -120px -60px;
+}
+
+.alphabet-p {
+	background-position: 0px -90px;
+}
+
+.alphabet-q {
+	background-position: -30px -90px;
+}
+
+.alphabet-r {
+	background-position: -60px -90px;
+}
+
+.alphabet-s {
+	background-position: -90px -90px;
+}
+
+.alphabet-t {
+	background-position: -120px -90px;
+}
+
+.alphabet-u {
+	background-position: 0px -120px;
+}
+
+.alphabet-v {
+	background-position: -30px -120px;
+}
+
+.alphabet-w {
+	background-position: -60px -120px;
+}
+
+.alphabet-x {
+	background-position: -90px -120px;
+}
+
+.alphabet-y {
+	background-position: -120px -120px;
+}
+
+.alphabet-z {
+	background-position: 0px -150px;
+}

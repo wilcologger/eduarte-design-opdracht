@@ -312,11 +312,11 @@ pre,code,kbd,samp,tt {
 	border-radius: 10px
 }
 .btn_active a {
-	background: url("../../../../assets/img/widgets/std_button0.gif") no-repeat 0 -84px !important
+	background: url("EduarteHome_files/assets/img/widgets/std_button0.gif") no-repeat 0 -84px !important
 }
 .btn_active a span {
 	color: #454545;
-	background: url("../../../../assets/img/widgets/std_button1.gif") no-repeat right -84px !important
+	background: url("EduarteHome_files/assets/img/widgets/std_button1.gif") no-repeat right -84px !important
 }
 .widget-button img {
 	border: none;
@@ -413,7 +413,7 @@ pre,code,kbd,samp,tt {
 	float: left
 }
 .widget-menu .widget-menu-dropdown>.menuLink {
-	background-image: url("../../../../assets/img/icons/dropdown.gif");
+	background-image: url("EduarteHome_files/assets/img/icons/dropdown.gif");
 	background-position: 95% 7px;
 	background-repeat: no-repeat
 }
@@ -457,10 +457,10 @@ pre,code,kbd,samp,tt {
 	border-top: 1px solid #858585;
 	border-bottom: 1px solid #565656;
 	height: 31px;
-	background: #e7e7e7 url("../../../../assets/img/widgets/widget-slidemenu_bg.gif") no-repeat right top
+	background: #e7e7e7 url("EduarteHome_files/assets/img/widgets/widget-slidemenu_bg.gif") no-repeat right top
 }
 .widget-slidemenu a {
-	background: #e7e7e7 url("../../../../assets/img/widgets/widget-slidemenu.gif") repeat-x;
+	background: #e7e7e7 url("EduarteHome_files/assets/img/widgets/widget-slidemenu.gif") repeat-x;
 	display: block;
 	font-size: 14px;
 	font-weight: bold;
@@ -508,15 +508,15 @@ pre,code,kbd,samp,tt {
 .widget-feedback li.feedbackPanelERROR {
 	color: #ff4b00;
 	margin-left: 25px;
-	list-style-image: url("../../../../assets/img/widgets/feedbackpanelERROR.gif")
+	list-style-image: url("EduarteHome_files/assets/img/widgets/feedbackpanelERROR.gif")
 }
 .widget-feedback li.feedbackPanelINFO {
 	color: #22d522;
 	margin-left: 25px;
-	list-style-image: url("../../../../assets/img/widgets/feedbackpanelINFO.gif")
+	list-style-image: url("EduarteHome_files/assets/img/widgets/feedbackpanelINFO.gif")
 }
 .widget-feedback-modal {
-	background: #fef78f url("../../../../assets/img/widgets/feedbackpanel.png") no-repeat bottom right;
+	background: #fef78f url("EduarteHome_files/assets/img/widgets/feedbackpanel.png") no-repeat bottom right;
 	overflow: hidden;
 	clear: left;
 	width: 100%;
@@ -534,7 +534,7 @@ pre,code,kbd,samp,tt {
 .widget-feedback-modal li.feedbackPanelERROR {
 	color: #be0000;
 	margin-left: 10px;
-	list-style-image: url("../../../../assets/img/widgets/feedbackpanelERROR.gif")
+	list-style-image: url("EduarteHome_files/assets/img/widgets/feedbackpanelERROR.gif")
 }
 .widget-tabs {
 	background: #fff;
@@ -607,7 +607,7 @@ pre,code,kbd,samp,tt {
 }
 .widget-stretchToggle {
 	height: 16px;
-	background: #eee url("../../../../assets/img/widgets/slideBar.png") no-repeat left top;
+	background: #eee url("EduarteHome_files/assets/img/widgets/slideBar.png") no-repeat left top;
 	border-right: 1px solid #a6a6a6;
 	margin: 1px 5px 1px 20px;
 	color: #3a3a3a;
@@ -645,7 +645,7 @@ pre,code,kbd,samp,tt {
 }
 .wicket-mfu-container input {
 	margin-left: 5px;
-	background: url("../../../../assets/img/icons/delete.gif") no-repeat scroll 0 0 transparent;
+	background: url("EduarteHome_files/assets/img/icons/delete.gif") no-repeat scroll 0 0 transparent;
 	border: none;
 	cursor: pointer;
 	float: right;
@@ -1099,10 +1099,10 @@ div.wicket-modal div.w_caption a.w_close {
 	z-index: 20
 }
 div.wicket-modal div.w_blue div.w_top,div.wicket-modal div.w_blue div.w_bottom,div.wicket-modal div.w_blue div.w_topLeft,div.wicket-modal div.w_blue div.w_topRight,div.wicket-modal div.w_blue div.w_bottomRight,div.wicket-modal div.w_blue div.w_bottomLeft,div.wicket-modal div.w_blue a.w_close {
-	background-image: url("../../../../assets/img/modal/frame-grey-1-alpha.png") !important
+	background-image: url("EduarteHome_files/assets/img/modal/frame-grey-1-alpha.png") !important
 }
 div.wicket-modal div.w_blue div.w_left,div.wicket-modal div.w_blue div.w_right {
-	background-image: url("../../../../assets/img/modal/frame-grey-2-alpha.png") !important
+	background-image: url("EduarteHome_files/assets/img/modal/frame-grey-2-alpha.png") !important
 }
 div.modalLayLeft h3.caption {
 	margin-left: 10px
@@ -1165,7 +1165,7 @@ div.addresEditPaddingFix {
 	z-index: 13
 }
 .layTopbar {
-	background: transparent url("../../../../assets/img/layout/layTopbar.png") repeat-x;
+	background: transparent url("EduarteHome_files/assets/img/layout/layTopbar.png") repeat-x;
 	background-position: 0 15px;
 	height: 70px;
 	margin-top: 5px;
@@ -1174,7 +1174,7 @@ div.addresEditPaddingFix {
 	padding-top: 15px
 }
 .layTopbarLeft {
-	background: url("../../../../assets/img/layout/layTopbarLeft.png") no-repeat;
+	background: url("EduarteHome_files/assets/img/layout/layTopbarLeft.png") no-repeat;
 	height: 61px;
 	width: 95%;
 	float: left;
@@ -1220,46 +1220,46 @@ div.addresEditPaddingFix {
 	color: #9c2ac8
 }
 .top_button.icon_home.top_button_active a,.top_button.icon_home.top_button_active span {
-	background: url("../../../../assets/img/layout/menu_home.png") repeat-x
+	background: url("EduarteHome_files/assets/img/layout/menu_home.png") repeat-x
 }
 .top_button.icon_deelnemer a[href].mainMenuItem {
 	color: #00b0ff
 }
 .top_button.icon_deelnemer.top_button_active a,.top_button.icon_deelnemer.top_button_active span {
-	background: url("../../../../assets/img/layout/menu_deelnemer.png") repeat-x
+	background: url("EduarteHome_files/assets/img/layout/menu_deelnemer.png") repeat-x
 }
 .top_button.icon_groep a[href].mainMenuItem {
 	color: #e7972a
 }
 .top_button.icon_groep.top_button_active a,.top_button.icon_groep.top_button_active span {
-	background: url("../../../../assets/img/layout/menu_groep.png") repeat-x;
+	background: url("EduarteHome_files/assets/img/layout/menu_groep.png") repeat-x;
 	text-decoration: none
 }
 .top_button.icon_medewerker a[href].mainMenuItem {
 	color: #e440e6
 }
 .top_button.icon_medewerker.top_button_active a,.top_button.icon_medewerker.top_button_active span {
-	background: url("../../../../assets/img/layout/menu_medewerker.png") repeat-x;
+	background: url("EduarteHome_files/assets/img/layout/menu_medewerker.png") repeat-x;
 	text-decoration: none
 }
 .top_button.icon_onderwijs a[href].mainMenuItem {
 	color: #719c37
 }
 .top_button.icon_onderwijs.top_button_active a,.top_button.icon_onderwijs.top_button_active span {
-	background: url("../../../../assets/img/layout/menu_onderwijs.png") repeat-x;
+	background: url("EduarteHome_files/assets/img/layout/menu_onderwijs.png") repeat-x;
 	text-decoration: none
 }
 .top_button.icon_contacts a[href].mainMenuItem {
 	color: #388def
 }
 .top_button.icon_contacts.top_button_active a,.top_button.icon_contacts.top_button_active span {
-	background: url("../../../../assets/img/layout/menu_relatie.png") repeat-x
+	background: url("EduarteHome_files/assets/img/layout/menu_relatie.png") repeat-x
 }
 .top_button.icon_financieel a[href].mainMenuItem {
 	color: #e7622a
 }
 .top_button.icon_financieel.top_button_active a,.top_button.icon_financieel.top_button_active span {
-	background: url("../../../../assets/img/layout/menu_financieel.png") repeat-x
+	background: url("EduarteHome_files/assets/img/layout/menu_financieel.png") repeat-x
 }
 .top_button.icon_beheer a[href].mainMenuItem {
 	color: #827aff
@@ -1268,10 +1268,10 @@ div.addresEditPaddingFix {
 	border-right: 1px solid #e6e6e6
 }
 .top_button.icon_beheer.top_button_active a,.top_button.icon_beheer.top_button_active span {
-	background: url("../../../../assets/img/layout/menu_beheer.png") repeat-x
+	background: url("EduarteHome_files/assets/img/layout/menu_beheer.png") repeat-x
 }
 .top_button.icon_help a.mainMenuItem,.top_button.icon_help a.mainMenuItem:hover,.top_button_active.icon_help a.mainMenuItem,.top_button_active.icon_help span.mainMenuItem,.top_button.icon_help span.mainMenuItem {
-	background: url("../../../../assets/img/icons/help.png") no-repeat;
+	background: url("EduarteHome_files/assets/img/icons/help.png") no-repeat;
 	text-indent: -1999px;
 	overflow: hidden;
 	position: relative;
@@ -1310,7 +1310,7 @@ div.addresEditPaddingFix {
 .layTopbarRight {
 	width: 5%;
 	float: right;
-	background: url("../../../../assets/img/layout/layTopbarRight.png") no-repeat top right;
+	background: url("EduarteHome_files/assets/img/layout/layTopbarRight.png") no-repeat top right;
 	height: 60px
 }
 .search.right input.unit_80 {
@@ -1347,14 +1347,14 @@ div.addresEditPaddingFix {
 	margin: -5px -10px;
 	height: 50px;
 	width: 50px;
-	background: url("../../../../assets/img/icons/logoff-right.png") no-repeat;
+	background: url("EduarteHome_files/assets/img/icons/logoff-right.png") no-repeat;
 	outline: none;
 	position: fixed;
 	right: 12px;
 	top: 6px
 }
 .layUserBox div a.logoff:hover {
-	background: url("../../../../assets/img/icons/logoff-right.png") no-repeat
+	background: url("EduarteHome_files/assets/img/icons/logoff-right.png") no-repeat
 }
 .layUserBox div a:not([href]).logoff {
 	display: none
@@ -1470,7 +1470,7 @@ div.addresEditPaddingFix {
 	margin: 2px
 }
 .zoekresultaten_dropdown {
-	background: #f6f6f6 url("../../../../assets/img/widgets/widget-menu-bg.png") no-repeat scroll 0 0;
+	background: #f6f6f6 url("EduarteHome_files/assets/img/widgets/widget-menu-bg.png") no-repeat scroll 0 0;
 	border: 1px solid #b5b5b5;
 	position: absolute;
 	left: 620px;
@@ -1480,12 +1480,12 @@ div.addresEditPaddingFix {
 	z-index: 99999
 }
 .zoekresultaten_menu_item {
-	background: transparent url("../../../../assets/img/icons/dropdown.gif") no-repeat scroll 2px 6px !important;
+	background: transparent url("EduarteHome_files/assets/img/icons/dropdown.gif") no-repeat scroll 2px 6px !important;
 	border-left: 0 none !important;
 	padding: 0 5px !important
 }
 .zoekresultaten_dropdown_menu_item:hover {
-	background: #e7e7e7 url("../../../../assets/img/icons/dropdown.gif") no-repeat scroll 50% 5px !important;
+	background: #e7e7e7 url("EduarteHome_files/assets/img/icons/dropdown.gif") no-repeat scroll 50% 5px !important;
 	border-left: 0 none !important;
 	padding: 0 5px !important
 }
@@ -1499,7 +1499,7 @@ div.addresEditPaddingFix {
 	clear: both
 }
 .instellingsLogo {
-	background: transparent url("../../../../assets/img/layout/bg_schoollogo.png") no-repeat;
+	background: transparent url("EduarteHome_files/assets/img/layout/bg_schoollogo.png") no-repeat;
 	float: right;
 	width: 131px;
 	height: 44px;
@@ -1568,7 +1568,7 @@ height: 32px
 display: none;
 width: 32px;
 height: 32px;
-background-image: url("../../../../assets/img/widgets/ajax-loader.gif");
+background-image: url("EduarteHome_files/assets/img/widgets/ajax-loader.gif");
 margin-top: -68px;
 margin-left: -200px
 }
@@ -1685,7 +1685,7 @@ padding: 0 10px 0 0
 .contDetail {
 margin-top: 20px;
 padding-left: 20px;
-background: url("../../../../assets/img/layout/cbdetail2.png") repeat-y -15px 0;
+background: url("EduarteHome_files/assets/img/layout/cbdetail2.png") repeat-y -15px 0;
 overflow: auto;
 border: 1px solid #b6bfd0
 }
@@ -1742,7 +1742,7 @@ right: 0;
 bottom: 0
 }
 #infoButton {
-background: url("../../../../assets/img/icons/infotab.png") no-repeat;
+background: url("EduarteHome_files/assets/img/icons/infotab.png") no-repeat;
 position: absolute;
 bottom: 0;
 height: 15px;
@@ -1750,10 +1750,10 @@ width: 40px;
 margin-left: 10px
 }
 #infoButton:hover {
-background: url("../../../../assets/img/icons/infotab_ovr.png") no-repeat
+background: url("EduarteHome_files/assets/img/icons/infotab_ovr.png") no-repeat
 }
 #mobileButton {
-background: url("../../../../assets/img/icons/mobile-icon.png") no-repeat;
+background: url("EduarteHome_files/assets/img/icons/mobile-icon.png") no-repeat;
 position: absolute;
 bottom: 0;
 height: 15px;
@@ -1761,7 +1761,7 @@ width: 40px;
 margin-left: 50px
 }
 #mobileButton:hover {
-background: url("../../../../assets/img/icons/mobile-icon_ovr.png") no-repeat
+background: url("EduarteHome_files/assets/img/icons/mobile-icon_ovr.png") no-repeat
 }
 .beheer .ui-tabs .ui-tabs-nav {
 padding-left: 0
@@ -1825,22 +1825,22 @@ font-size: 1em !important
 .placed {
 height: 14px;
 width: 18px;
-background: url("../../../../assets/img/agenda/icon_invite_required.gif") no-repeat;
+background: url("EduarteHome_files/assets/img/agenda/icon_invite_required.gif") no-repeat;
 margin-left: 2px
 }
 .invited {
 height: 14px;
 width: 18px;
-background: url("../../../../assets/img/agenda/icon_invite.gif") no-repeat;
+background: url("EduarteHome_files/assets/img/agenda/icon_invite.gif") no-repeat;
 margin-left: 2px
 }
 .header_clickable:hover {
 cursor: pointer !important;
-background: #dededb url("../../../../assets/img/icons/dropin.gif") 95% 5px no-repeat !important
+background: #dededb url("EduarteHome_files/assets/img/icons/dropin.gif") 95% 5px no-repeat !important
 }
 .header_clickable.closed:hover {
 cursor: pointer !important;
-background: #dededb url("../../../../assets/img/icons/dropdown.gif") 95% 5px no-repeat !important
+background: #dededb url("EduarteHome_files/assets/img/icons/dropdown.gif") 95% 5px no-repeat !important
 }
 .layDetailIcon {
 margin-left: 50%;
@@ -1871,163 +1871,163 @@ height: 20px;
 margin-right: 4px
 }
 .newItem {
-background: transparent url("../../../../assets/img/icons/newitem.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/newitem.png") no-repeat
 }
 .newItem_grey {
-background: transparent url("../../../../assets/img/icons/newitem_grey.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/newitem_grey.png") no-repeat
 }
 .deleteItem {
-background: transparent url("../../../../assets/img/icons/delete.gif") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/delete.gif") no-repeat
 }
 .deleteItem_grey {
-background: transparent url("../../../../assets/img/icons/delete_grey.gif") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/delete_grey.gif") no-repeat
 }
 .actionItem {
-background: transparent url("../../../../assets/img/icons/action.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/action.png") no-repeat
 }
 .actionItem_grey {
-background: transparent url("../../../../assets/img/icons/action_grey.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/action_grey.png") no-repeat
 }
 .referenceItem {
-background: transparent url("../../../../assets/img/icons/action2.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/action2.png") no-repeat
 }
 .newLink {
-background: transparent url("../../../../assets/img/icons/newlink.PNG") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/newlink.PNG") no-repeat
 }
 .selectItem {
-background: transparent url("../../../../assets/img/icons/select.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/select.png") no-repeat
 }
 .selectItem_grey {
-background: transparent url("../../../../assets/img/icons/select_grey.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/select_grey.png") no-repeat
 }
 .presentieVerwerktItem {
-background: transparent url("../../../../assets/img/icons/icon_absentiereg_done.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/icon_absentiereg_done.png") no-repeat
 }
 .presentieNietVerwerktItem {
-background: transparent url("../../../../assets/img/icons/icon_absentiereg_notdone.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/icon_absentiereg_notdone.png") no-repeat
 }
 .aangevinkt {
-background: transparent url("../../../../assets/img/icons/aangevinkt.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/aangevinkt.png") no-repeat
 }
 .uitgevinkt {
-background: transparent url("../../../../assets/img/icons/uitgevinkt.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/uitgevinkt.png") no-repeat
 }
 .verified {
-background: transparent url("../../../../assets/img/icons/verified.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/verified.png") no-repeat
 }
 .falsified {
-background: transparent url("../../../../assets/img/icons/notverified.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/notverified.png") no-repeat
 }
 .notverified {
-background: transparent url("../../../../assets/img/icons/verified-grey.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/verified-grey.png") no-repeat
 }
 .malformed {
-background: transparent url("../../../../assets/img/icons/error.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/error.png") no-repeat
 }
 .activateItem {
-background: transparent url("../../../../assets/img/icons/activatebutton.gif") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/activatebutton.gif") no-repeat
 }
 .activateItem_grey {
-background: transparent url("../../../../assets/img/icons/activatebutton0.gif") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/activatebutton0.gif") no-repeat
 }
 .deactivateItem {
-background: transparent url("../../../../assets/img/icons/deactivatebutton.gif") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/deactivatebutton.gif") no-repeat
 }
 .deactivateItem_grey {
-background: transparent url("../../../../assets/img/icons/deactivatebutton0.gif") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/deactivatebutton0.gif") no-repeat
 }
 .orderUp {
-background: transparent url("../../../../assets/img/icons/selection_up.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/selection_up.png") no-repeat
 }
 .orderDown {
-background: transparent url("../../../../assets/img/icons/selection_down.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/selection_down.png") no-repeat
 }
 .deleteItemSlim {
 display: block;
 width: 18px;
 height: 14px;
 margin-right: 5px;
-background: transparent url("../../../../assets/img/icons/delete_slim.gif") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/delete_slim.gif") no-repeat
 }
 .resendItem {
 display: block;
 width: 20px;
 height: 18px;
-background: transparent url("../../../../assets/img/agenda/icon_reminder.gif") no-repeat
+background: transparent url("EduarteHome_files/assets/img/agenda/icon_reminder.gif") no-repeat
 }
 .expandItem {
 display: block;
 width: 20px;
 height: 18px;
-background: transparent url("../../../../assets/img/agenda/icon_expand.gif") no-repeat
+background: transparent url("EduarteHome_files/assets/img/agenda/icon_expand.gif") no-repeat
 }
 .lesuurSelect {
 display: block;
 width: 20px;
 height: 18px;
-background: transparent url("../../../../assets/img/agenda/icon_roosterafspraak.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/agenda/icon_roosterafspraak.png") no-repeat
 }
 .tijdSelect {
 display: block;
 width: 20px;
 height: 18px;
-background: transparent url("../../../../assets/img/agenda/icon_timeafspraak.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/agenda/icon_timeafspraak.png") no-repeat
 }
 .checkBoxNoCheck {
 display: block;
 width: 20px;
 height: 18px;
-background: transparent url("../../../../assets/img/icons/nocheck.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/nocheck.png") no-repeat
 }
 .afdrukLink {
 display: block;
 width: 20px;
 height: 18px;
 margin-right: 4px;
-background: transparent url("../../../../assets/img/icons/printPDF.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/printPDF.png") no-repeat
 }
 .navigeerLinks {
 display: block;
 width: 20px;
 height: 20px;
-background: transparent url("../../../../assets/img/icons/navigate_l.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/navigate_l.png") no-repeat
 }
 .navigeerRechts {
 display: block;
 width: 20px;
 height: 20px;
-background: transparent url("../../../../assets/img/icons/navigate_r.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/navigate_r.png") no-repeat
 }
 .comment {
 display: block;
 width: 16px;
 height: 16px;
-background: transparent url("../../../../assets/img/icons/comments.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/comments.png") no-repeat
 }
 .cog_go {
 display: block;
 width: 16px;
 height: 16px;
-background: transparent url("../../../../assets/img/icons/cog_go.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/cog_go.png") no-repeat
 }
 .deelnemerNotitie {
 display: block;
 width: 16px;
 height: 16px;
-background: transparent url("../../../../assets/img/icons/document_attachment.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/document_attachment.png") no-repeat
 }
 .deelnemerNotitie.grey {
 display: block;
 width: 16px;
 height: 16px;
-background: transparent url("../../../../assets/img/icons/document_attachment_grey.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/document_attachment_grey.png") no-repeat
 }
 .linkext {
 display: block;
 float: left;
 width: 18px;
 height: 11px;
-background: transparent url("../../../../assets/img/icons/linkext.png") no-repeat;
+background: transparent url("EduarteHome_files/assets/img/icons/linkext.png") no-repeat;
 margin-right: 5px
 }
 .infoballoon {
@@ -2036,23 +2036,23 @@ float: left;
 width: 18px;
 height: 11px;
 clear: both;
-background: transparent url("../../../../assets/img/icons/infoballoon.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/infoballoon.png") no-repeat
 }
 .inschrijvenIcon {
 display: block;
 width: 16px;
 height: 16px;
-background: transparent url("../../../../assets/img/OLS/inschrijven.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/inschrijven.png") no-repeat
 }
 span.arrow {
 float: left;
 display: block;
 width: 16px;
 height: 16px;
-background: transparent url("../../../../assets/img/OLS/pijltje_closed.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/pijltje_closed.png") no-repeat
 }
 span.arrow.open {
-background: transparent url("../../../../assets/img/OLS/pijltje_opened.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/pijltje_opened.png") no-repeat
 }
 .waarschuwingsniveauDropDown img {
 vertical-align: text-top
@@ -2233,7 +2233,7 @@ color: #878787
 background: #f1f3f6
 }
 .tblSelected td.first {
-background: url("../../../../assets/img/layout/cbdetail2.png") repeat-y scroll 0 0 #f1f3f6
+background: url("EduarteHome_files/assets/img/layout/cbdetail2.png") repeat-y scroll 0 0 #f1f3f6
 }
 .tblClick tbody tr:hover,.tblClick tbody tr.tlhover {
 background: #e2e6ec
@@ -2263,7 +2263,7 @@ color: #fff
 }
 .tblDatagrid tr.groupCollapseHeader td.collapseCell {
 padding-left: 20px;
-background-image: url("../../../../assets/img/icons/selection_down.png");
+background-image: url("EduarteHome_files/assets/img/icons/selection_down.png");
 background-position: left;
 background-repeat: no-repeat
 }
@@ -2317,10 +2317,10 @@ padding-left: 10px
 color: #4a8ea5 !important
 }
 th.wicket_orderUp {
-background: #cdcfce url("../../../../assets/img/icons/selection_up.png") no-repeat center left !important
+background: #cdcfce url("EduarteHome_files/assets/img/icons/selection_up.png") no-repeat center left !important
 }
 th.wicket_orderDown {
-background: #cdcfce url("../../../../assets/img/icons/selection_down.png") no-repeat center left !important
+background: #cdcfce url("EduarteHome_files/assets/img/icons/selection_down.png") no-repeat center left !important
 }
 .tblDatagrid td.Goedgekeurd {
 color: #008000
@@ -2358,28 +2358,28 @@ font-style: italic
 text-indent: 20px
 }
 .blue-cell {
-background: #00f url("../../../../assets/img/icons/cell_blue.gif") repeat-x
+background: #00f url("EduarteHome_files/assets/img/icons/cell_blue.gif") repeat-x
 }
 .green-cell {
-background: #008000 url("../../../../assets/img/icons/cell_green.gif") repeat-x
+background: #008000 url("EduarteHome_files/assets/img/icons/cell_green.gif") repeat-x
 }
 .light_green_cell {
-background: #008000 url("../../../../assets/img/icons/cell_light_green.gif") repeat-x
+background: #008000 url("EduarteHome_files/assets/img/icons/cell_light_green.gif") repeat-x
 }
 .yellow-cell {
-background: #ff0 url("../../../../assets/img/icons/cell_yellow.gif") repeat-x
+background: #ff0 url("EduarteHome_files/assets/img/icons/cell_yellow.gif") repeat-x
 }
 .red-cell {
-background: #f00 url("../../../../assets/img/icons/cell_red.gif") repeat-x
+background: #f00 url("EduarteHome_files/assets/img/icons/cell_red.gif") repeat-x
 }
 .orange-cell {
-background: #f00 url("../../../../assets/img/icons/cell_orange.gif") repeat-x
+background: #f00 url("EduarteHome_files/assets/img/icons/cell_orange.gif") repeat-x
 }
 .purple-cell {
-background: #f00 url("../../../../assets/img/icons/cell_purple.gif") repeat-x
+background: #f00 url("EduarteHome_files/assets/img/icons/cell_purple.gif") repeat-x
 }
 .light_blue-cell {
-background: #f00 url("../../../../assets/img/icons/cell_light_blue.gif") repeat-x
+background: #f00 url("EduarteHome_files/assets/img/icons/cell_light_blue.gif") repeat-x
 }
 .loginPage {
 background-color: #f1f1f1;
@@ -2399,14 +2399,14 @@ margin-right: auto;
 width: 643px
 }
 #loginBox_top {
-background: url("../../../../assets/img/login/loginBox_top2.png") no-repeat scroll 0 0 transparent;
+background: url("EduarteHome_files/assets/img/login/loginBox_top2.png") no-repeat scroll 0 0 transparent;
 color: #eb6b0a;
 height: 44px;
 margin-left: -2px;
 width: 647px
 }
 #loginBox_center {
-background: url("../../../../assets/img/login/loginBox_center2.png") repeat-y scroll 0 0 transparent;
+background: url("EduarteHome_files/assets/img/login/loginBox_center2.png") repeat-y scroll 0 0 transparent;
 color: #999;
 margin-left: auto;
 margin-right: auto;
@@ -2414,12 +2414,12 @@ margin-top: 25px;
 width: 577px
 }
 .loginBox_centerTop {
-background: url("../../../../assets/img/login/loginBox_centerTop2.png") no-repeat scroll 0 0 transparent;
+background: url("EduarteHome_files/assets/img/login/loginBox_centerTop2.png") no-repeat scroll 0 0 transparent;
 height: 14px;
 width: 577px
 }
 .loginBox_centerBottom {
-background: url("../../../../assets/img/login/loginBox_centerBottom.png") no-repeat scroll center bottom transparent;
+background: url("EduarteHome_files/assets/img/login/loginBox_centerBottom.png") no-repeat scroll center bottom transparent;
 height: 10px;
 width: 577px
 }
@@ -2531,19 +2531,19 @@ font-size: 11px
 padding-top: 0
 }
 #chromelink {
-background-image: url('../../../../assets/img/logos/chrome.png')
+background-image: url('EduarteHome_files/assets/img/logos/chrome.png')
 }
 #firefoxlink {
-background-image: url('../../../../assets/img/logos/ff.png')
+background-image: url('EduarteHome_files/assets/img/logos/ff.png')
 }
 #ielink {
-background-image: url('../../../../assets/img/logos/ie.png')
+background-image: url('EduarteHome_files/assets/img/logos/ie.png')
 }
 #safarilink {
-background-image: url('../../../../assets/img/logos/safari.png')
+background-image: url('EduarteHome_files/assets/img/logos/safari.png')
 }
 #operalink {
-background-image: url('../../../../assets/img/logos/opera.png')
+background-image: url('EduarteHome_files/assets/img/logos/opera.png')
 }
 div.wicket-mask-extra-dark {
 position: fixed;
@@ -2885,7 +2885,7 @@ background-color: #fff
 }
 .grating .handle {
 height: 75px;
-background-image: url("../../../../assets/img/agenda/lesuren.png")
+background-image: url("EduarteHome_files/assets/img/agenda/lesuren.png")
 }
 .schedule {
 position: absolute;
@@ -2903,7 +2903,7 @@ height: 960px;
 position: absolute;
 -moz-user-select: none;
 z-index: 1;
-background-image: url("../../../../assets/img/agenda/transparent.png")
+background-image: url("EduarteHome_files/assets/img/agenda/transparent.png")
 }
 .schedule .schedule-drag-display {
 display: none;
@@ -2925,10 +2925,10 @@ opacity: .5;
 filter: "alpha(opacity = 50)"
 }
 .schedule .item.someone-notaccepted .content {
-background-image: url("../../../../assets/img/agenda/notaccepted.png")
+background-image: url("EduarteHome_files/assets/img/agenda/notaccepted.png")
 }
 .schedule .item.someone-declined .content {
-background-image: url("../../../../assets/img/agenda/declined.png")
+background-image: url("EduarteHome_files/assets/img/agenda/declined.png")
 }
 .schedule .item .title td {
 white-space: nowrap
@@ -2949,23 +2949,23 @@ height: 17px;
 display: block
 }
 .schedule .item .title .presentie-on {
-background-image: url("../../../../assets/img/agenda/presentiereg_on.png")
+background-image: url("EduarteHome_files/assets/img/agenda/presentiereg_on.png")
 }
 .schedule .item .title .presentie-off {
-background-image: url("../../../../assets/img/agenda/presentiereg_off.png")
+background-image: url("EduarteHome_files/assets/img/agenda/presentiereg_off.png")
 }
 .schedule .item .title .presentie-block {
-background-image: url("../../../../assets/img/agenda/presentiereg_block.png")
+background-image: url("EduarteHome_files/assets/img/agenda/presentiereg_block.png")
 }
 .schedule .item .title .herhalingAanwezig {
 background-position: center;
 background-repeat: no-repeat;
-background-image: url("../../../../assets/img/agenda/herhaling.png")
+background-image: url("EduarteHome_files/assets/img/agenda/herhaling.png")
 }
 .schedule .item .title .bijlageAanwezig {
 background-position: center;
 background-repeat: no-repeat;
-background-image: url("../../../../assets/img/agenda/bijlage.png")
+background-image: url("EduarteHome_files/assets/img/agenda/bijlage.png")
 }
 .item .content {
 position: absolute;
@@ -3032,7 +3032,7 @@ margin-left: -15px;
 margin-top: -1px;
 height: 90px;
 width: 15px;
-background-image: url("../../../../assets/img/agenda/btn_sidebaruit2.png");
+background-image: url("EduarteHome_files/assets/img/agenda/btn_sidebaruit2.png");
 z-index: 2001
 }
 .agenda .sidebar .narrow .narrow-handle_en {
@@ -3044,7 +3044,7 @@ margin-left: -15px;
 margin-top: -1px;
 height: 90px;
 width: 15px;
-background-image: url("../../../../assets/img/agenda/expand.png");
+background-image: url("EduarteHome_files/assets/img/agenda/expand.png");
 z-index: 2001
 }
 .agenda .sidebar .wide .wide-handle_nl {
@@ -3055,7 +3055,7 @@ cursor: pointer;
 margin-top: 0;
 height: 90px;
 width: 15px;
-background-image: url("../../../../assets/img/agenda/btn_sidebarin.png");
+background-image: url("EduarteHome_files/assets/img/agenda/btn_sidebarin.png");
 z-index: 10
 }
 .agenda .sidebar .wide .wide-handle_en {
@@ -3066,7 +3066,7 @@ cursor: pointer;
 margin-top: 0;
 height: 90px;
 width: 15px;
-background-image: url("../../../../assets/img/agenda/collapse.png");
+background-image: url("EduarteHome_files/assets/img/agenda/collapse.png");
 z-index: 10
 }
 .agenda .sidebar .wide {
@@ -3103,40 +3103,40 @@ color: #6a7b96
 padding: 5px
 }
 .agenda .c-caption .button .next {
-background-image: url("../../../../assets/img/agenda/btn_arrowright0.png")
+background-image: url("EduarteHome_files/assets/img/agenda/btn_arrowright0.png")
 }
 .agenda .c-caption .button .prev {
-background-image: url("../../../../assets/img/agenda/btn_arrowleft0.png")
+background-image: url("EduarteHome_files/assets/img/agenda/btn_arrowleft0.png")
 }
 .agenda .c-caption .button .prev-prev {
-background-image: url("../../../../assets/img/agenda/btn_2arrowsleft0.png")
+background-image: url("EduarteHome_files/assets/img/agenda/btn_2arrowsleft0.png")
 }
 .agenda .c-caption .button .next-next {
-background-image: url("../../../../assets/img/agenda/btn_2arrowsright0.png")
+background-image: url("EduarteHome_files/assets/img/agenda/btn_2arrowsright0.png")
 }
 .agenda .c-caption .button .next:hover {
-background-image: url("../../../../assets/img/agenda/btn_arrowright2.png")
+background-image: url("EduarteHome_files/assets/img/agenda/btn_arrowright2.png")
 }
 .agenda .c-caption .button .prev:hover {
-background-image: url("../../../../assets/img/agenda/btn_arrowleft2.png")
+background-image: url("EduarteHome_files/assets/img/agenda/btn_arrowleft2.png")
 }
 .agenda .c-caption .button .prev-prev:hover {
-background-image: url("../../../../assets/img/agenda/btn_2arrowsleft2.png")
+background-image: url("EduarteHome_files/assets/img/agenda/btn_2arrowsleft2.png")
 }
 .agenda .c-caption .button .next-next:hover {
-background-image: url("../../../../assets/img/agenda/btn_2arrowsright2.png")
+background-image: url("EduarteHome_files/assets/img/agenda/btn_2arrowsright2.png")
 }
 .agenda .c-caption .button .next:active {
-background-image: url("../../../../assets/img/agenda/btn_arrowright1.png")
+background-image: url("EduarteHome_files/assets/img/agenda/btn_arrowright1.png")
 }
 .agenda .c-caption .button .prev:active {
-background-image: url("../../../../assets/img/agenda/btn_arrowleft1.png")
+background-image: url("EduarteHome_files/assets/img/agenda/btn_arrowleft1.png")
 }
 .agenda .c-caption .button .prev-prev:active {
-background-image: url("../../../../assets/img/agenda/btn_2arrowsleft1.png")
+background-image: url("EduarteHome_files/assets/img/agenda/btn_2arrowsleft1.png")
 }
 .agenda .c-caption .button .next-next:active {
-background-image: url("../../../../assets/img/agenda/btn_2arrowsright1.png")
+background-image: url("EduarteHome_files/assets/img/agenda/btn_2arrowsright1.png")
 }
 .agenda .c-caption table {
 width: 100%
@@ -3233,10 +3233,10 @@ text-align: center;
 width: 30px;
 float: left;
 height: 20px;
-background-image: url("../../../../assets/img/agenda/availheader.png")
+background-image: url("EduarteHome_files/assets/img/agenda/availheader.png")
 }
 table.tblAvail td.tblAvailRow {
-background-image: url("../../../../assets/img/agenda/availbackground.png")
+background-image: url("EduarteHome_files/assets/img/agenda/availbackground.png")
 }
 table.tblAvail .tblAvailRow div.occupied,table.tblAvail .tblAvailRow div.multiItem {
 background-color: #bbb
@@ -3255,7 +3255,7 @@ height: 21px;
 float: left
 }
 table.tblAvail .tblAvailRow div.occupiedApp,table.tblAvail .tblAvailRow div.availApp,table.tblAvail .tblAvailRow div.availItem {
-background-image: url("../../../../assets/img/agenda/availmask.png")
+background-image: url("EduarteHome_files/assets/img/agenda/availmask.png")
 }
 .txtcenter {
 font-weight: bold !important
@@ -3286,7 +3286,7 @@ width: 20px
 -moz-user-select: none
 }
 td.greyDisabled {
-background: #fff url('../../../../assets/img/grades/grade_disabled.gif')
+background: #fff url('EduarteHome_files/assets/img/grades/grade_disabled.gif')
 }
 td.compRequired {
 background-color: #ffffd0
@@ -3313,7 +3313,7 @@ td.hover,tr.hover td {
 background: #e8e8ff
 }
 td.hover.greyDisabled,tr.hover td.greyDisabled {
-background: #e8e8ff url('../../../../assets/img/grades/grades_disabled_hover.gif')
+background: #e8e8ff url('EduarteHome_files/assets/img/grades/grades_disabled_hover.gif')
 }
 td.hover.compRequired,tr.hover td.compRequired {
 background: #e5ffe3
@@ -3323,7 +3323,7 @@ padding: 3px;
 white-space: nowrap
 }
 .tblCompetenties th {
-background: #bebebe url("../../../../assets/img/layout/cijfersHeader.gif") repeat-x;
+background: #bebebe url("EduarteHome_files/assets/img/layout/cijfersHeader.gif") repeat-x;
 color: #2158d3;
 font-style: italic;
 font-size: 11px;
@@ -3360,39 +3360,39 @@ text-align: center;
 vertical-align: middle
 }
 td.hover.compLocked,tr.hover td.compLocked {
-background-image: url("../../../../assets/img/competentie/lock.png");
+background-image: url("EduarteHome_files/assets/img/competentie/lock.png");
 background-repeat: no-repeat
 }
 td.compLockedMini {
-background-image: url("../../../../assets/img/competentie/minilock.png");
+background-image: url("EduarteHome_files/assets/img/competentie/minilock.png");
 background-repeat: no-repeat
 }
 td.hover.compLockedMini,tr.hover td.compLockedMini {
-background-image: url("../../../../assets/img/competentie/minilock.png");
+background-image: url("EduarteHome_files/assets/img/competentie/minilock.png");
 background-repeat: no-repeat
 }
 td.compHasMax {
-background-image: url("../../../../assets/img/competentie/hasmax.png");
+background-image: url("EduarteHome_files/assets/img/competentie/hasmax.png");
 background-repeat: no-repeat
 }
 td.hover.compHasMax,tr.hover td.compHasMax {
-background-image: url("../../../../assets/img/competentie/hasmax.png");
+background-image: url("EduarteHome_files/assets/img/competentie/hasmax.png");
 background-repeat: no-repeat
 }
 td.compIndividueel {
-background-image: url("../../../../assets/img/competentie/individueel.png");
+background-image: url("EduarteHome_files/assets/img/competentie/individueel.png");
 background-repeat: no-repeat
 }
 td.hover.compIndividueel,tr.hover td.compIndividueel {
-background-image: url("../../../../assets/img/competentie/individueel.png");
+background-image: url("EduarteHome_files/assets/img/competentie/individueel.png");
 background-repeat: no-repeat
 }
 td.compIndividueel.compHasMax {
-background-image: url("../../../../assets/img/competentie/max_individueel.png");
+background-image: url("EduarteHome_files/assets/img/competentie/max_individueel.png");
 background-repeat: no-repeat
 }
 td.hover.compIndividueel.compHasMax,tr.hover td.compIndividueel.compHasMax {
-background-image: url("../../../../assets/img/competentie/max_individueel.png");
+background-image: url("EduarteHome_files/assets/img/competentie/max_individueel.png");
 background-repeat: no-repeat
 }
 td.compVoldoende {
@@ -3454,7 +3454,7 @@ bottom: 0;
 cursor: pointer;
 position: fixed;
 z-index: 400;
-background-image: url("../../../../assets/img/icons/dropout.png");
+background-image: url("EduarteHome_files/assets/img/icons/dropout.png");
 visibility: hidden
 }
 .slider_terug {
@@ -3514,7 +3514,7 @@ float: left
 float: none !important
 }
 .bpvDetail {
-background: url("../../../../assets/img/layout/cbdetail2.png") repeat-y -15px 0
+background: url("EduarteHome_files/assets/img/layout/cbdetail2.png") repeat-y -15px 0
 }
 .bpvDetail table {
 margin-left: 12px;
@@ -3693,37 +3693,37 @@ top: 10px
 margin-left: 20px
 }
 .eduarteLogo {
-background: transparent url("../../../../assets/img/logos/eduarte_logo.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/logos/eduarte_logo.png") no-repeat
 }
 .eduarteLogo2 {
-background: transparent url("../../../../assets/img/logos/eduarte_logo2.png2") no-repeat;
+background: transparent url("EduarteHome_files/assets/img/logos/eduarte_logo2.png2") no-repeat;
 display: block;
 width: 40px;
 height: 40px;
 margin-left: 10px
 }
 .absentie_checked {
-background: transparent url("../../../../assets/img/icons/absentie_checked.png") no-repeat;
+background: transparent url("EduarteHome_files/assets/img/icons/absentie_checked.png") no-repeat;
 display: block;
 width: 37px;
 height: 40px;
 margin-left: 2px
 }
 .absentie_notchecked {
-background: transparent url("../../../../assets/img/icons/absentie_notchecked.png") no-repeat;
+background: transparent url("EduarteHome_files/assets/img/icons/absentie_notchecked.png") no-repeat;
 display: block;
 width: 37px;
 height: 40px;
 margin-left: 2px
 }
 .logout {
-background: transparent url("../../../../assets/img/icons/logout") no-repeat;
+background: transparent url("EduarteHome_files/assets/img/icons/logout") no-repeat;
 display: block;
 width: 32px;
 height: 32px
 }
 .display {
-background: transparent url("../../../../assets/img/icons/display") no-repeat;
+background: transparent url("EduarteHome_files/assets/img/icons/display") no-repeat;
 display: block;
 width: 32px;
 height: 32px
@@ -3817,7 +3817,7 @@ overflow: hidden
 }
 div.studiemeter {
 position: relative;
-background-image: url('../../../../assets/img/studiemeter/meter_leeg.png');
+background-image: url('EduarteHome_files/assets/img/studiemeter/meter_leeg.png');
 width: 745px;
 height: 76px;
 display: block;
@@ -3841,12 +3841,12 @@ width: 98px;
 height: 33px
 }
 div.studiemeter div.boog.left {
-background-image: url('../../../../assets/img/studiemeter/boog_groen.png');
+background-image: url('EduarteHome_files/assets/img/studiemeter/boog_groen.png');
 left: 20px;
 top: -20px
 }
 div.studiemeter div.boog.right {
-background-image: url('../../../../assets/img/studiemeter/boog_blauw.png');
+background-image: url('EduarteHome_files/assets/img/studiemeter/boog_blauw.png');
 left: -490px;
 top: -61px
 }
@@ -3897,7 +3897,7 @@ display: block
 div.studiemeter div.meter.left {
 position: relative;
 left: -58px;
-background-image: url('../../../../assets/img/studiemeter/pijltjes_groen.png');
+background-image: url('EduarteHome_files/assets/img/studiemeter/pijltjes_groen.png');
 background-position: 0 0;
 top: -14px;
 z-index: 3
@@ -3906,7 +3906,7 @@ div.studiemeter div.meter.right {
 position: relative;
 left: -406px;
 top: -58px;
-background-image: url('../../../../assets/img/studiemeter/pijltjes_blauw.png');
+background-image: url('EduarteHome_files/assets/img/studiemeter/pijltjes_blauw.png');
 z-index: 3;
 background-position: 0 0
 }
@@ -3974,7 +3974,7 @@ position: relative;
 top: -63px;
 width: 10px;
 height: 10px;
-background-image: url('../../../../assets/img/studiemeter/oranje_driehoekje.png');
+background-image: url('EduarteHome_files/assets/img/studiemeter/oranje_driehoekje.png');
 display: block;
 float: none
 }
@@ -4117,22 +4117,22 @@ width: 18px;
 height: 18px
 }
 ol.deelnemerKeuzePeriodes li span.Goedgekeurd {
-background: transparent url("../../../../assets/img/OLS/goedgekeurd.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/goedgekeurd.png") no-repeat
 }
 ol.deelnemersPeriodes li span.Afgekeurd {
-background: transparent url("../../../../assets/img/OLS/afgekeurd.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/afgekeurd.png") no-repeat
 }
 ol.deelnemerKeuzePeriodes li span.Open {
-background: transparent url("../../../../assets/img/OLS/nietgekeurd.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/nietgekeurd.png") no-repeat
 }
 ol.deelnemerKeuzePeriodes li span.Ingeleverd {
-background: transparent url("../../../../assets/img/OLS/ingeleverd.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/ingeleverd.png") no-repeat
 }
 div.deelnemerKeuzePeriodesHeader span.opengeklapt {
-background: transparent url("../../../../assets/img/OLS/pijltje_opened.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/pijltje_opened.png") no-repeat
 }
 div.deelnemerKeuzePeriodesHeader span.dicht {
-background: transparent url("../../../../assets/img/OLS/pijltje_closed.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/pijltje_closed.png") no-repeat
 }
 div.deelnemerKeuzePeriodesHeader span.periodetitel {
 margin-left: 10px
@@ -4386,49 +4386,49 @@ div.voortgangcontainer div.voortganguiteinde {
 width: 15px
 }
 div.voortgangcontainer div.voortganglinksvrij {
-background: transparent url("../../../../assets/img/OLS/voortgangOLS_vrij_links.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/voortgangOLS_vrij_links.png") no-repeat
 }
 div.voortgangcontainer div.voortganglinksopen {
-background: transparent url("../../../../assets/img/OLS/voortgangOLS_leeg_links.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/voortgangOLS_leeg_links.png") no-repeat
 }
 div.voortgangcontainer div.voortganglinksverplicht {
-background: transparent url("../../../../assets/img/OLS/voortgangOLS_plicht_links.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/voortgangOLS_plicht_links.png") no-repeat
 }
 div.voortgangcontainer div.voortgangrechtsvrij {
-background: transparent url("../../../../assets/img/OLS/voortgangOLS_vrij_rechts.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/voortgangOLS_vrij_rechts.png") no-repeat
 }
 div.voortgangcontainer div.voortgangrechtsopen {
-background: transparent url("../../../../assets/img/OLS/voortgangOLS_leeg_rechts.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/voortgangOLS_leeg_rechts.png") no-repeat
 }
 div.voortgangcontainer div.voortgangrechtsverplicht {
-background: transparent url("../../../../assets/img/OLS/voortgangOLS_plicht_rechts.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/voortgangOLS_plicht_rechts.png") no-repeat
 }
 div.voortgangcontainer div.voortgangverplicht {
-background: transparent url("../../../../assets/img/OLS/voortgangOLS_plicht_mid.png") repeat-x
+background: transparent url("EduarteHome_files/assets/img/OLS/voortgangOLS_plicht_mid.png") repeat-x
 }
 div.voortgangcontainer div.voortgangopen {
-background: transparent url("../../../../assets/img/OLS/voortgangOLS_leeg_mid.png") repeat-x
+background: transparent url("EduarteHome_files/assets/img/OLS/voortgangOLS_leeg_mid.png") repeat-x
 }
 div.voortgangcontainer div.voortgangvrij {
-background: transparent url("../../../../assets/img/OLS/voortgangOLS_vrij_mid.png") repeat-x
+background: transparent url("EduarteHome_files/assets/img/OLS/voortgangOLS_vrij_mid.png") repeat-x
 }
 div.voortgangcontainer div.voortganglinksperiode {
-background: transparent url("../../../../assets/img/OLS/voortgangOLS_periodevakken_links.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/voortgangOLS_periodevakken_links.png") no-repeat
 }
 div.voortgangcontainer div.voortgangrechtsperiode {
-background: transparent url("../../../../assets/img/OLS/voortgangOLS_periodevakken_rechts.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/voortgangOLS_periodevakken_rechts.png") no-repeat
 }
 div.voortgangcontainer div.voortganglinksbpv {
-background: transparent url("../../../../assets/img/OLS/voortgangOLS_bpv_links.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/voortgangOLS_bpv_links.png") no-repeat
 }
 div.voortgangcontainer div.voortgangrechtsbpv {
-background: transparent url("../../../../assets/img/OLS/voortgangOLS_bpv_rechts.png") no-repeat
+background: transparent url("EduarteHome_files/assets/img/OLS/voortgangOLS_bpv_rechts.png") no-repeat
 }
 div.voortgangcontainer div.voortgangperiode {
-background: transparent url("../../../../assets/img/OLS/voortgangOLS_periodevakken_mid.png") repeat-x
+background: transparent url("EduarteHome_files/assets/img/OLS/voortgangOLS_periodevakken_mid.png") repeat-x
 }
 div.voortgangcontainer div.voortgangbpv {
-background: transparent url("../../../../assets/img/OLS/voortgangOLS_bpv_mid.png") repeat-x
+background: transparent url("EduarteHome_files/assets/img/OLS/voortgangOLS_bpv_mid.png") repeat-x
 }
 div.periodeKeuzeTotaal {
 clear: both;
@@ -4596,7 +4596,7 @@ border: 1px solid #abc837;
 border-radius: 10px;
 color: #89a02c;
 background-color: #fff;
-background-image: url("../../../../assets/img/OLS/biginfoicon.png");
+background-image: url("EduarteHome_files/assets/img/OLS/biginfoicon.png");
 background-position: 4% center;
 background-repeat: no-repeat;
 font-size: 17px
@@ -4643,7 +4643,7 @@ margin: 4px;
 float: left;
 width: 16px;
 height: 16px;
-background: transparent url("../../../../assets/img/icons/searchicon.gif") no-repeat
+background: transparent url("EduarteHome_files/assets/img/icons/searchicon.gif") no-repeat
 }
 div.periodeKeuzeTitel {
 font-weight: bold;
@@ -4834,12 +4834,12 @@ width: 120px
 }
 .inpAutoComplete {
 border: 1px solid #c5c5c5;
-background: #fff url("../../../../assets/img/icons/autoCompleet2.gif") no-repeat left center;
+background: #fff url("EduarteHome_files/assets/img/icons/autoCompleet2.gif") no-repeat left center;
 padding-left: 14px
 }
 .inpAutoCompleteFail {
 border-color: #f00 !important;
-background: #fff url("../../../../assets/img/icons/autoCompleetFail.gif") no-repeat left center
+background: #fff url("EduarteHome_files/assets/img/icons/autoCompleetFail.gif") no-repeat left center
 }
 .inpAutoComplete:disabled {
 background-color: #f0f0f0;
@@ -4896,29 +4896,29 @@ height: 16px !important
 border-bottom: 1px solid #918e8d !important
 }
 .spanBijlage {
-background: url("../../../../assets/img/icons/attach.png") no-repeat left top;
+background: url("EduarteHome_files/assets/img/icons/attach.png") no-repeat left top;
 padding-left: 20px
 }
 .spanError {
-background: url("../../../../assets/img/icons/error.png") no-repeat left top;
+background: url("EduarteHome_files/assets/img/icons/error.png") no-repeat left top;
 padding-left: 20px
 }
 .spanErrorRight {
-background: url("../../../../assets/img/icons/error.png") no-repeat right top;
+background: url("EduarteHome_files/assets/img/icons/error.png") no-repeat right top;
 padding-left: 20px
 }
 .spanBijlage a:hover {
 text-decoration: underline
 }
 .imgPasfoto {
-background: url("../../../../assets/img/layout/fotobox_bottom.png") no-repeat bottom left;
+background: url("EduarteHome_files/assets/img/layout/fotobox_bottom.png") no-repeat bottom left;
 padding: 0 0 8px 0;
 display: block;
 margin: 20px 12px;
 width: 116px
 }
 .imgPasfoto img {
-background: url("../../../../assets/img/layout/fotobox.png") no-repeat top left;
+background: url("EduarteHome_files/assets/img/layout/fotobox.png") no-repeat top left;
 padding: 8px 9px 0 9px;
 width: 98px;
 height: auto
@@ -4981,7 +4981,7 @@ float: left
 .irislogo {
 height: 38px;
 width: 105px;
-background: url("../../../../assets/img/irisplus_logo.png") no-repeat top left;
+background: url("EduarteHome_files/assets/img/irisplus_logo.png") no-repeat top left;
 background-position: 10px 10px;
 position: relative;
 right: 5px;
@@ -5050,7 +5050,7 @@ margin-top: -100px !important
 }
 .extraAuthenticatie {
 padding-left: 10px;
-background-image: url("../../../../assets/img/icons/mobile_phone.png");
+background-image: url("EduarteHome_files/assets/img/icons/mobile_phone.png");
 background-position: left;
 background-repeat: no-repeat
 }
@@ -5281,7 +5281,7 @@ border: 1px solid #900
 }
 input.moneyinputfield,span.moneyinputfield {
 text-align: right;
-background: url("../../../../assets/img/icons/euro.png") left no-repeat
+background: url("EduarteHome_files/assets/img/icons/euro.png") left no-repeat
 }
 span.moneyinputfield {
 padding-left: 22px
