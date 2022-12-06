@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://sdp.educus.nl/app/home/Home?1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+/*<![CDATA[*/
+
+var clientStartParseTimeVariable = new Date().getTime();
+
+/*]]>*/
+</script>
+
+<link rel="stylesheet" type="text/css" href="./EduarteHome_files/jquery-ui-ver-974F87E9D58936809A70A3E079AAD628.css">
+<script type="text/javascript" src="./EduarteHome_files/core-ver-4C7B7E6E58A8A51846A828EC8DFB8C81.js"></script>
+<script type="text/javascript" id="wicket-ajax-base-url">
+/*<![CDATA[*/
+Wicket.Ajax.baseUrl="home/Home?1";
+/*]]>*/
+</script>
+
+<script type="text/javascript" id="nl-topicus-eduarte-web-components-menu-main-EduArteMainMenu-0">
+/*<![CDATA[*/
+
+function wikiLogin(username, password, page, url)
+{
+if (url.startsWith("https://")) {
+var form = document.getElementById('postEduarteLogin');
+form.action=url + '/eduarte-login.php';
+form.username.value=username;
+form.password.value=password;
+form.page.value=page;
+form.submit();
+} else {
+// Old way of doing stuff, can be removed once we are using the new wiki servers
+var form = document.getElementById('helpForm');
+form.action=url + '/api.php';
+// Voor IE, anders gaat form.action= fout
+var input = document.createElement('input');
+input.type = 'hidden';
+input.name = 'action';
+input.value = 'login';
+form.appendChild(input);
+form.lgname.value=username;
+form.lgpassword.value=password;
+form.target='Wiki';
+form.submit();
+setTimeout("openWiki('"+url+"/index.php/"+page+"')", 1000);
+}
+}
+function openWiki(url)
+{
+mywindow = window.open(url, 'Wiki');
+mywindow.focus();
+}
+function sleep(naptime)
+{
+var sleeping = true;
+var now = new Date();
+var alarm;
+var startingMSeconds = now.getTime();
+while(sleeping)
+{
+alarm = new Date();
+alarmMSeconds = alarm.getTime();
+if(alarmMSeconds - startingMSeconds > naptime){ sleeping = false; }
+}
+}
+
+/*]]>*/
+</script>
+<link rel="stylesheet" type="text/css" href="./EduarteHome_files/newstylemenu-ver-7E6F252DCB426DB66F86F1F53CC1E294.css">
+<script type="text/javascript" src="./EduarteHome_files/freezepanes-ver-189E3580DF01510270FC358B4E066D40.js"></script>
+<link rel="stylesheet" type="text/css" href="./EduarteHome_files/jquery.treeTable-ver-3697A81523FF2C4916EC59986CBC47E2.css">
+<link rel="stylesheet" type="text/css" href="./EduarteHome_files/info-800-ver-B99E9EDDAC0FE5DC5E744CE0A8A6E9EA.css" media="screen and (max-width:1014px)">
+<link rel="stylesheet" type="text/css" href="./EduarteHome_files/info-1024-ver-55C27EEF14D97DDB98C21205131AD2BE.css" media="screen and (min-width:1015px) and (max-width:1270px)">
+<link rel="stylesheet" type="text/css" href="./EduarteHome_files/info-1280-ver-EE4CD5519CBF666442105B9CA3D9BCBB.css" media="screen and (min-width:1271px) and (max-width:1430px)">
+<link rel="stylesheet" type="text/css" href="./EduarteHome_files/info-1440-ver-4252C41A4B3F137ED0B5D6B8D6BD86C1.css" media="screen and (min-width:1431px)">
+<link rel="stylesheet" type="text/css" href="./EduarteHome_files/info-panel-ver-0DE0FCABD97C39DBA4655C445AD4A962.css">
+<link rel="stylesheet" type="text/css" href="./EduarteHome_files/modal-ver-E99D4201F0F6C5D3081AD42ACB1F22C2.css">
+
+<title>Eduarte</title>
+
+<link rel="shortcut icon" href="https://sdp.educus.nl/assets/img/icons/eduarte.ico">
+<meta name="viewport" content="width=1024">
+<script type="text/javascript">
+/*<![CDATA[*/
+
+function initServerTime() {/* Statusbalk Marker */
+window.defaultStatus='Server tijd: 0.001s, Client tijd: ' + (new Date().getTime() - clientStartParseTimeVariable)/1000 +  's (' + (clientEndParseTimeVariable - clientStartParseTimeVariable)/1000 +  's parsen + ' + (new Date().getTime() - clientEndParseTimeVariable)/1000 +  's renderen)';
+}
+
+/*]]>*/
+</script>
+<link rel="stylesheet" type="text/css" href="./EduarteHome_files/jquery.cluetip-ver-604529FE0E34829890EB64724498EF2A.css">
+<link rel="stylesheet" type="text/css" href="./EduarteHome_files/base-ver-F4A64F95EB7F6647217A9768318826F4.css">
+<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="../wicket/resource/assets.AssetsResourceMarker/stylesheets/ie_7-ver-826408DA968587B2BFC702D079F62769.css" /><![endif]-->
+<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="../wicket/resource/assets.AssetsResourceMarker/stylesheets/ie_7en8-ver-5D73B8964470A54605F65A9604072050.css" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="./EduarteHome_files/style-max1279-ver-F5264C91A6FBEB4D1F8C9BA324B38EAC.css" media="screen and (max-width:1260px)">
+<link rel="stylesheet" type="text/css" href="./EduarteHome_files/style-min1280-ver-DC5F857C1E4FB3009F3700AF967E9DAA.css" media="screen and (min-width:1261px)">
+<link rel="stylesheet" type="text/css" href="./EduarteHome_files/testomgeving-ver-B3DDEC93C1CCA86986CD0695ED90586E.css">
+<link rel="stylesheet" type="text/css" href="./EduarteHome_files/flaticons-stroke-ver-B3DD554EBF54AEC52EEFEA4E3D1C03DE.css">
+<script type="text/javascript">
+/*<![CDATA[*/
+Wicket.Event.add(window, "domready", function(event) { 
+$('#scrollBox').scrollBox({feedback: 'idd'});;
+$('#ide').screenSaver(1200000, 3600000, 300000, '#screenSaverLogoutCounter', false);;
+$('#ide').bindServerCall({ajax: {"u":"./Home?1-1.0-centerContainer-layLeft-screensaver","m":"POST","c":"ide"}});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-layHeader-mainmenu-mainMenuItems-14-mainMenuItem-div-link","c":"ida","e":"click","pd":true});;
+$('#idf').ajaxIndicator();;
+$('#id10').newStyleMenu({enabled: true, alwaysOpen: false, name: 'Ga naar', menuBox: '#scrollBox .menuBox', contentBox: '#scrollBox .contentBox', sortOrder: 'alphabet', sortOrderCallback: function(menu, val){menu.serverCall('setSortOrder', val);}, items: [{"id":"Agenda","url":"./Agenda","name":"Agenda","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Agenda","sub":"Agenda"}],"modules":["Aanwezigheid"]},{"id":"AgendaInstellingen","url":"./AgendaInstellingen","name":"Agenda","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Instellingen","sub":"Instellingen"}],"modules":["Aanwezigheid"]},{"id":"AfsprakenZonderPresentieRegistratie","url":"./AfsprakenZonderPresentieRegistratie","name":"Openstaande afspraken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Te doen","sub":"Te doen"}],"modules":["Aanwezigheid"]},{"id":"MijnTaken","url":"./MijnTaken","name":"Mijn taken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Te doen","sub":"Te doen"}],"modules":["Deelnemer begeleiding"]},{"id":"UitgezetteTaken","url":"./UitgezetteTaken","name":"Uitgezette taken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Te doen","sub":"Te doen"}],"modules":["Deelnemer begeleiding"]},{"id":"AlleTaken","url":"./AlleTaken","name":"Alle taken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Te doen","sub":"Te doen"}],"modules":["Deelnemer begeleiding"]},{"id":"Home","url":"./Home","name":"Home","description":"","score":14.999013333333334,"tags":["test","blaat"],"categories":[{"main":"Home","sub":"Home"}],"modules":["Basisfunctionaliteit"]},{"id":"Account","url":"./Account","name":"Account","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Account","sub":"Account"}],"modules":["Basisfunctionaliteit"]},{"id":"Intakegesprekken","url":"./Intakegesprekken","name":"Intakegesprekken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Te doen","sub":"Te doen"}],"modules":["Basisfunctionaliteit"]},{"id":"Contractverplichtingen","url":"./Contractverplichtingen","name":"Contractverplichtingen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Te doen","sub":"Te doen"}],"modules":["Basisfunctionaliteit"]},{"id":"BeheerSignalen","url":"./BeheerSignalen","name":"Beheer signalen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Instellingen","sub":"Instellingen"}],"modules":["Basisfunctionaliteit"]},{"id":"Signaleringsgroepen","url":"./Signaleringsgroepen","name":"Signaleringsgroepen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Instellingen","sub":"Instellingen"}],"modules":["Basisfunctionaliteit"]},{"id":"Signaleringsdeelnemers","url":"./Signaleringsdeelnemers","name":"Signaleringsdeelnemers","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Instellingen","sub":"Instellingen"}],"modules":["Basisfunctionaliteit"]},{"id":"OverzichtSignalen","url":"./OverzichtSignalen","name":"Signalen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Overzicht signalen","sub":"Overzicht signalen"}],"modules":["Basisfunctionaliteit"]},{"id":"Rapportages","url":"./Rapportages","name":"Rapportages","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Rapportages","sub":"Rapportages"}],"modules":["Basisfunctionaliteit"]},{"id":"LopendeTaken","url":"./LopendeTaken","name":"Lopende taken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Rapportages","sub":"Rapportages"}],"modules":["Basisfunctionaliteit"]},{"id":"Toetsfilters","url":"./Toetsfilters","name":"Toetsfilters","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Instellingen","sub":"Instellingen"}],"modules":["Basisfunctionaliteit"]},{"id":"HomePageSettings","url":"./HomePageSettings","name":"Homepage settings","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Instellingen","sub":"Instellingen"}],"modules":["Basisfunctionaliteit"]},{"id":"Resultaatstructuren","url":"./Resultaatstructuren","name":"Resultaatstructuren","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaatstructuren","sub":"Resultaatstructuren"}],"modules":["Resultaten"]},{"id":"Activiteiten","url":"./Activiteiten","name":"Activiteiten","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Te doen","sub":"Te doen"}],"modules":["Workflow"]},{"id":"Emails","url":"./Emails","name":"E-mails","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"E-mails","sub":"E-mails"}],"modules":["Workflow"]}]});;
+$('#id10').bindServerCall({ajax: {"u":"./Home?1-1.0-layHeader-menu","m":"POST","c":"id10"}});;
+$('#id11').sidebar(true);;
+$('#id11').bindServerCall({ajax: {"u":"./Home?1-1.0-laySide-recenteDeelnemers","m":"POST","c":"id11"}});;
+$('#id12').sidebar(true);$('#id12').navsidebar(5);;
+$('#id12').bindServerCall({ajax: {"u":"./Home?1-1.0-laySide-berichten","m":"POST","c":"id12"}});;
+$('#idb').treeTable({callback: function(node, val){node.serverCall('setExpanded', val);}});;
+$('#scrollBox #idb').freezePanes(0);;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-laySide-bookmarks-bookmarkToevoegen","c":"id13","e":"click"});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-laySide-bookmarks-foldersBeherenLink","c":"id14","e":"click"});;
+$('#id15').sidebar(true);;
+$('#id15').bindServerCall({ajax: {"u":"./Home?1-1.0-laySide-bookmarks","m":"POST","c":"id15"}});;
+$('#id16').sidebar(true);;
+$('#id16').bindServerCall({ajax: {"u":"./Home?1-1.0-laySide-rapportage","m":"POST","c":"id16"}});;
+$('#id17').sidebar(true);$('#id17').navsidebar(5);;
+$('#id17').bindServerCall({ajax: {"u":"./Home?1-1.0-laySide-navigatie","m":"POST","c":"id17"}});;
+$('#id18').sidebar(true);;
+$('#id18').bindServerCall({ajax: {"u":"./Home?1-1.0-laySide-sso","m":"POST","c":"id18"}});;
+$('#id19').sidebar(true);$('#id19').navsidebar(5);;
+$('#id19').bindServerCall({ajax: {"u":"./Home?1-1.0-laySide-activiteiten","m":"POST","c":"id19"}});;
+$('#id1a').slidebar();;
+$('#id1b').infoPanel();;
+$('#id1c').dialog({autoOpen: false, closeText: '', title: 'Eduarte', resizable: true, minHeight: 30, dialogClass: 'shaded', width: 600});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-infoButton-infoButton","c":"infoButton","e":"click"});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-signalen-signaalDataPanel-tableContainer-table-headerbars-0-toolbar-headers-0-wrapper-orderByLink","c":"id1d","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-signalen-signaalDataPanel-settings","c":"id1e","e":"click"});;
+$('#scrollBox #id1f').freezePanes(0);;
+$('#id20').dropDownChoice({autoselect: true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-signalen-filter-form-submit","m":"POST","c":"id22","f":"id21","sc":"p::submit","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-handelingenPanel-handelingenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-0-wrapper-orderByLink","c":"id23","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-handelingenPanel-handelingenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-2-wrapper-orderByLink","c":"id24","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-handelingenPanel-handelingenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-3-wrapper-orderByLink","c":"id25","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-handelingenPanel-handelingenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-4-wrapper-orderByLink","c":"id26","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-handelingenPanel-handelingenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-5-wrapper-orderByLink","c":"id27","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-handelingenPanel-handelingenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-6-wrapper-orderByLink","c":"id28","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-handelingenPanel-handelingenDataPanel-settings","c":"id29","e":"click"});;
+$('#scrollBox #id2a').freezePanes(0);;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-uitnodigingenPanel-afsprakenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-0-wrapper-orderByLink","c":"id2b","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-uitnodigingenPanel-afsprakenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-2-wrapper-orderByLink","c":"id2c","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-uitnodigingenPanel-afsprakenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-3-wrapper-orderByLink","c":"id2d","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-uitnodigingenPanel-afsprakenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-4-wrapper-orderByLink","c":"id2e","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-uitnodigingenPanel-afsprakenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-5-wrapper-orderByLink","c":"id2f","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-uitnodigingenPanel-afsprakenDataPanel-settings","c":"id30","e":"click"});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-uitnodigingenPanel-afsprakenDataPanel-groeperen","c":"id31","e":"click"});;
+$('#scrollBox #id32').freezePanes(0);;
+$('#scrollBox #id33').freezePanes(0);;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-activiteitenPanel-activiteitenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-0-wrapper-orderByLink","c":"id34","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-activiteitenPanel-activiteitenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-2-wrapper-orderByLink","c":"id35","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-activiteitenPanel-activiteitenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-3-wrapper-orderByLink","c":"id36","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-activiteitenPanel-activiteitenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-5-wrapper-orderByLink","c":"id37","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-activiteitenPanel-activiteitenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-6-wrapper-orderByLink","c":"id38","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-activiteitenPanel-activiteitenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-7-wrapper-orderByLink","c":"id39","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./Home?1-1.0-activiteitenPanel-activiteitenDataPanel-settings","c":"id3a","e":"click"});;
+$('#scrollBox #id3b').freezePanes(0);;
+$('#idc').treeTable({callback: function(node, val){node.serverCall('setExpanded', val);}});;
+$('#scrollBox #idc').freezePanes(0);;
+$(document).bind('keydown', 'Ctrl+Shift+Up', function(e) {if(!'#id3d'.disabled) followLink('#id3d');return false;})
+$(document).bind('keydown', 'Alt+Ctrl+B', function(e) {if(!'#id9'.disabled) followLink('#id9');return false;})
+$(document).bind('keydown', 'Alt+Ctrl+D', function(e) {if(!'#id3'.disabled) followLink('#id3');return false;})
+$(document).bind('keydown', 'Alt+Ctrl+F1', function(e) {if(!'#ida'.disabled) followLink('#ida');return false;})
+$(document).bind('keydown', 'Alt+Ctrl+M', function(e) {if(!'#id5'.disabled) followLink('#id5');return false;})
+$(document).bind('keydown', 'Alt+Ctrl+G', function(e) {if(!'#id4'.disabled) followLink('#id4');return false;})
+$(document).bind('keydown', 'Alt+Ctrl+F', function(e) {if(!'#id8'.disabled) followLink('#id8');return false;})
+$(document).bind('keydown', 'Ctrl+Shift+Down', function(e) {if(!'#id40'.disabled) followLink('#id40');return false;})
+$(document).bind('keydown', 'Alt+Ctrl+H', function(e) {if(!'#id2'.disabled) followLink('#id2');return false;})
+$(document).bind('keydown', 'Alt+Ctrl+R', function(e) {if(!'#id7'.disabled) followLink('#id7');return false;})
+$(document).bind('keydown', 'Alt+Ctrl+O', function(e) {if(!'#id6'.disabled) followLink('#id6');return false;})
+$(document).bind('keydown', 'Ctrl+Shift+Right', function(e) {if(!'#id3f'.disabled) followLink('#id3f');return false;})
+$(document).bind('keydown', 'Ctrl+Shift+Left', function(e) {if(!'#id3e'.disabled) followLink('#id3e');return false;})
+$(document).bind('keydown', 'Alt+Ctrl+Z', function(e) {if(!'#id3c'.disabled) followLink('#id3c');return false;})
+;$('.inpDescription').cluetip({splitTitle: ' - ', cluetipClass: 'jtip', mouseOutClose: 'true', cluezIndex: 30000, delayedClose: 10000});;$('.panelError').cluetip({splitTitle: ' - ', cluetipClass: 'jtip-error', mouseOutClose: 'true', cluezIndex: 30000, delayedClose: 3000});$('input.error').cluetip({splitTitle: ' - ', cluetipClass: 'jtip-error', mouseOutClose: 'true', cluezIndex: 30000, delayedClose: 3000});;if(!(Wicket.Browser.isIE() || window.navigator.userAgent.indexOf('Trident/')>-1)){$('select.error').cluetip({splitTitle: ' - ', cluetipClass: 'jtip-error', mouseOutClose: 'true', cluezIndex: 30000, delayedClose: 3000});};
+Wicket.Event.publish(Wicket.Event.Topic.AJAX_HANDLERS_BOUND);
+;});
+/*]]>*/
+</script>
+</head>
+<body onload="initServerTime();" onbeforeunload="$(&#39;#idf&#39;).css(&#39;visibility&#39;, &#39;visible&#39;).find(&#39;.image&#39;).show()">
+<div class="container">
+<!-- Header bevat de navigatie en titels van 115px hoog -->
+<div class="layHeader subtract-from-scrollbox" id="id41">
+
+<div class="layTopbar">
+<div class="layTopbarLeft">
+
+<div class="layTopbuttons">
+
+
+<div class="top_button icon_home top_button_active"><a class="mainMenuItem" href="https://sdp.educus.nl/app/home/Home" id="id2" title="Home (Alt+Ctrl+H)"><span>Home</span></a></div>
+
+
+
+<div class="top_button icon_home"></div>
+
+
+
+<div class="top_button icon_onderwijs"></div>
+
+
+
+<div class="top_button icon_deelnemer"><a class="mainMenuItem" href="https://sdp.educus.nl/app/deelnemers/DeelnemerZoeken" id="id3" title="Deelnemer (Alt+Ctrl+D)"><span>Deelnemer</span></a></div>
+
+
+
+<div class="top_button icon_groep"></div>
+
+
+
+<div class="top_button icon_onderwijs"></div>
+
+
+
+<div class="top_button icon_groep"><a class="mainMenuItem" href="https://sdp.educus.nl/app/groepen/GroepZoeken" id="id4" title="Groep (Alt+Ctrl+G)"><span>Groep</span></a></div>
+
+
+
+<div class="top_button icon_financieel"></div>
+
+
+
+<div class="top_button icon_medewerker"><a class="mainMenuItem" href="https://sdp.educus.nl/app/medewerkers/Zoeken" id="id5" title="Medewerker (Alt+Ctrl+M)"><span>Medewerker</span></a></div>
+
+
+
+<div class="top_button icon_onderwijs"><a class="mainMenuItem" href="https://sdp.educus.nl/app/onderwijs/OpleidingenZoeken" id="id6" title="Onderwijs (Alt+Ctrl+O)"><span>Onderwijs</span></a></div>
+
+
+
+<div class="top_button icon_onderwijs"></div>
+
+
+
+<div class="top_button icon_contacts"><a class="mainMenuItem" href="https://sdp.educus.nl/app/relatie/ExterneOrganisaties" id="id7" title="Relatie (Alt+Ctrl+R)"><span>Relatie</span></a></div>
+
+
+
+<div class="top_button icon_financieel"><a class="mainMenuItem" href="https://sdp.educus.nl/app/financieel/Zoekopdrachten" id="id8" title="Financieel (Alt+Ctrl+F)"><span>Financieel</span></a></div>
+
+
+
+<div class="top_button icon_beheer"><a class="mainMenuItem" href="https://sdp.educus.nl/app/beheer/Start" id="id9" title="Beheer (Alt+Ctrl+B)"><span>Beheer</span></a></div>
+
+
+
+<div class="top_button icon_help"><a class="mainMenuItem" href="https://sdp.educus.nl/app/home/Home?1-1.-layHeader-mainmenu-mainMenuItems-14-mainMenuItem-div-link" id="ida" title="Help (Alt+Ctrl+F1)"><span>Help</span></a></div>
+
+
+</div>
+<div class="search right">
+<form title="Zoeken naar deelnemers, medewerkers of groepen op basis van nummers, BSN, namen, afkortingen of codes. (Alt+Ctrl+z)" id="id42" method="post" action="https://sdp.educus.nl/app/zoek">
+<div>
+<input type="text" class="unit_80" value="" name="snelzoeken" id="id3c">
+<input class="inpImage" type="image" alt="Submit" src="./EduarteHome_files/llnrsearch.png">
+</div>
+</form>
+</div>
+</div>
+<div class="layTopbarRight">
+<div class="layUserBox">
+<div>
+<a href="https://sdp.educus.nl/app/home/Home?1-1.-layHeader-mainmenu-logoff" class="logoff" title="afmelden"></a>
+
+</div>
+</div>
+</div>
+
+
+<div class="inloggegevens">
+<span>&nbsp;</span>
+Dashorst |&nbsp;
+<div title="Openstaande signalen (Ongelezen signalen)" class="signalen">
+<a href="https://sdp.educus.nl/app/home/Home?1-1.-layHeader-mainmenu-eduArteUserBox-link" class="hand">
+<span>0 (0) <img src="./EduarteHome_files/message.png" alt="openstaande (ongelezen) signalen"></span>
+</a>
+</div>
+<div class="organisatie">
+Eduarte1 - SDP | &nbsp;
+</div>
+</div>
+
+<div class="layTopbarUserbox"></div>
+<form id="helpForm" action="https://sdp.educus.nl/app/home/Home?1#" method="post">
+<fieldset>
+<legend></legend>
+<input type="hidden" name="lgname" value="">
+<input type="hidden" name="lgpassword" value="">
+</fieldset>
+</form>
+<form id="postEduarteLogin" action="https://sdp.educus.nl/app/home/Home?1#" method="post" target="eduarte-wiki">
+<fieldset>
+<legend></legend>
+<input type="hidden" name="username" value="">
+<input type="hidden" name="password" value="">
+<input type="hidden" name="page" value="">
+</fieldset>
+</form>
+
+</div>
+
+
+<div class="omgevingIndicator testomgeving"></div>
+<div class="instellingsLogo">
+<img src="./EduarteHome_files/4648cf8f70035d01d41c0f908fdaeeb360f0a80a" alt="">
+</div>
+<div class="layTitlebar">
+<h2 class="layTitlebarTitle">Home</h2>
+<div class="ajaxIndicator" id="idf">
+<div class="image"></div>
+</div>
+
+</div>
+<div class="layMenubar">
+<div id="id10" class="new-style-menu">
+<div class="widget-menu">
+
+<ul>
+<li class="wmActive"><a class="menuLink" href="https://sdp.educus.nl/app/home/Home"><span>Home</span></a></li>
+<li class="widget-menu-dropdown"><a class="menuLink" href="https://sdp.educus.nl/app/home/Home?1-1.-layHeader-menu-items-1-item-li-tablink"><span>Rapportages</span></a>
+<ul>
+
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/Rapportages"><span>Rapportages</span></a></li>
+
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/LopendeTaken"><span>Lopende taken</span></a></li>
+
+</ul>
+</li>
+
+<li class="widget-menu-dropdown"><a class="menuLink" href="https://sdp.educus.nl/app/home/Home?1-1.-layHeader-menu-items-2-item-li-tablink"><span>Te doen</span></a>
+<ul>
+
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/Intakegesprekken"><span>Intakegesprekken</span></a></li>
+
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/Contractverplichtingen"><span>Contractverplichtingen</span></a></li>
+
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/AfsprakenZonderPresentieRegistratie"><span>Openstaande afspraken</span></a></li>
+
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/MijnTaken"><span>Mijn taken</span></a></li>
+
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/UitgezetteTaken"><span>Uitgezette taken</span></a></li>
+
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/AlleTaken"><span>Alle taken</span></a></li>
+
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/Activiteiten"><span>Activiteiten</span></a></li>
+
+</ul>
+</li>
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/OverzichtSignalen"><span>Signalen</span></a></li><li><a class="menuLink" href="https://sdp.educus.nl/app/home/Account"><span>Account</span></a></li>
+<li class="widget-menu-dropdown"><a class="menuLink" href="https://sdp.educus.nl/app/home/Home?1-1.-layHeader-menu-items-5-item-li-tablink"><span>Instellingen</span></a>
+<ul>
+
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/AgendaInstellingen"><span>Agenda</span></a></li>
+
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/BeheerSignalen"><span>Beheer signalen</span></a></li>
+
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/Signaleringsgroepen"><span>Signaleringsgroepen</span></a></li>
+
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/Signaleringsdeelnemers"><span>Signaleringsdeelnemers</span></a></li>
+
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/Toetsfilters"><span>Toetsfilters</span></a></li>
+
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/HomePageSettings"><span>Homepage settings</span></a></li>
+
+</ul>
+</li>
+<li><a class="menuLink" href="https://sdp.educus.nl/app/home/Resultaatstructuren"><span>Resultaatstructuren</span></a></li><li><a class="menuLink" href="https://sdp.educus.nl/app/home/Agenda"><span>Agenda</span></a></li><li><a class="menuLink" href="https://sdp.educus.nl/app/home/Emails"><span>E-mails</span></a></li>
+</ul>
+
+</div>
+<div class="menu-slider"><div class="menu-fields-container"><div class="menu-fields"><label class="menu-sort-order" for="menu-sort-order">Groeperen op</label><select class="menu-sort-order" id="menu-sort-order"><option value="alphabet">Alfabet</option><option value="category">Categorie</option><option value="module">Module</option></select><input type="text" class="menu-zoekterm init" value="vul hier uw zoekterm in"></div></div><div class="menu-vinden" title="Menu (Ctrl+M)">Ga naar...</div></div></div>
+</div>
+
+</div>
+<!-- Left bevat alle content, is uitgevuld over de hoogte en breedte -->
+<div class="content">
+<div class="layLeft" id="layLeft">
+<div class="widget-feedback subtract-from-scrollbox" title="Klik om deze balk te sluiten..." id="idd" style="">
+
+</div>
+<div class="scrollContainer">
+<div class="scrollBox" id="scrollBox" style="max-height: 681px;">
+<div class="menuBox" style="display: none;"><div class="menu-quick-links alphabet"><div class="menu-quick-link alphabet-a active" title="A"></div><div class="menu-quick-link alphabet-b active" title="B"></div><div class="menu-quick-link alphabet-c active" title="C"></div><div class="menu-quick-link alphabet-e active" title="E"></div><div class="menu-quick-link alphabet-h active" title="H"></div><div class="menu-quick-link alphabet-i active" title="I"></div><div class="menu-quick-link alphabet-l active" title="L"></div><div class="menu-quick-link alphabet-m active" title="M"></div><div class="menu-quick-link alphabet-o active" title="O"></div><div class="menu-quick-link alphabet-r active" title="R"></div><div class="menu-quick-link alphabet-s active" title="S"></div><div class="menu-quick-link alphabet-t active" title="T"></div><div class="menu-quick-link alphabet-u active" title="U"></div></div><div class="menu-column menu-favorites"><div class="menu-favorites-title">recente pagina's</div><div class="menu-favorites-items"><a class="menu-item" href="https://sdp.educus.nl/app/home/Home" title="">Home</a></div></div><div class="menu-column menu-column1"><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-a"></div><div class="menu-header-text">A</div></div><a class="menu-item" href="https://sdp.educus.nl/app/home/Account" title="" name="Account">Account</a><a class="menu-item" href="https://sdp.educus.nl/app/home/Activiteiten" title="" name="Activiteiten">Activiteiten</a><a class="menu-item" href="https://sdp.educus.nl/app/home/Agenda" title="" name="Agenda">Agenda</a><a class="menu-item" href="https://sdp.educus.nl/app/home/AgendaInstellingen" title="" name="AgendaInstellingen">Agenda</a><a class="menu-item" href="https://sdp.educus.nl/app/home/AlleTaken" title="" name="AlleTaken">Alle taken</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-b"></div><div class="menu-header-text">B</div></div><a class="menu-item" href="https://sdp.educus.nl/app/home/BeheerSignalen" title="" name="BeheerSignalen">Beheer signalen</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-c"></div><div class="menu-header-text">C</div></div><a class="menu-item" href="https://sdp.educus.nl/app/home/Contractverplichtingen" title="" name="Contractverplichtingen">Contractverplichtingen</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-e"></div><div class="menu-header-text">E</div></div><a class="menu-item" href="https://sdp.educus.nl/app/home/Emails" title="" name="Emails">E-mails</a></div></div><div class="menu-column menu-column2"><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-h"></div><div class="menu-header-text">H</div></div><a class="menu-item" href="https://sdp.educus.nl/app/home/Home" title="" name="Home">Home</a><a class="menu-item" href="https://sdp.educus.nl/app/home/HomePageSettings" title="" name="HomePageSettings">Homepage settings</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-i"></div><div class="menu-header-text">I</div></div><a class="menu-item" href="https://sdp.educus.nl/app/home/Intakegesprekken" title="" name="Intakegesprekken">Intakegesprekken</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-l"></div><div class="menu-header-text">L</div></div><a class="menu-item" href="https://sdp.educus.nl/app/home/LopendeTaken" title="" name="LopendeTaken">Lopende taken</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-m"></div><div class="menu-header-text">M</div></div><a class="menu-item" href="https://sdp.educus.nl/app/home/MijnTaken" title="" name="MijnTaken">Mijn taken</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-o"></div><div class="menu-header-text">O</div></div><a class="menu-item" href="https://sdp.educus.nl/app/home/AfsprakenZonderPresentieRegistratie" title="" name="AfsprakenZonderPresentieRegistratie">Openstaande afspraken</a></div></div><div class="menu-column menu-column3"><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-r"></div><div class="menu-header-text">R</div></div><a class="menu-item" href="https://sdp.educus.nl/app/home/Rapportages" title="" name="Rapportages">Rapportages</a><a class="menu-item" href="https://sdp.educus.nl/app/home/Resultaatstructuren" title="" name="Resultaatstructuren">Resultaatstructuren</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-s"></div><div class="menu-header-text">S</div></div><a class="menu-item" href="https://sdp.educus.nl/app/home/OverzichtSignalen" title="" name="OverzichtSignalen">Signalen</a><a class="menu-item" href="https://sdp.educus.nl/app/home/Signaleringsdeelnemers" title="" name="Signaleringsdeelnemers">Signaleringsdeelnemers</a><a class="menu-item" href="https://sdp.educus.nl/app/home/Signaleringsgroepen" title="" name="Signaleringsgroepen">Signaleringsgroepen</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-t"></div><div class="menu-header-text">T</div></div><a class="menu-item" href="https://sdp.educus.nl/app/home/Toetsfilters" title="" name="Toetsfilters">Toetsfilters</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-u"></div><div class="menu-header-text">U</div></div><a class="menu-item" href="https://sdp.educus.nl/app/home/UitgezetteTaken" title="" name="UitgezetteTaken">Uitgezette taken</a></div></div><div class="clear"></div></div>
+<div class="contentBox">
+
+
+
+<div id="id43">
+<div class="laySearchbar">
+<form id="id21" method="post" action="https://sdp.educus.nl/app/home/Home?1-1.-signalen-filter-form"><div style="width:0px;height:0px;position:absolute;left:-100px;top:-100px;overflow:hidden" class="hidden-fields"><input type="text" tabindex="-1" autocomplete="off"><input type="submit" tabindex="-1" name="p::submit" onclick=" var b=document.getElementById(&#39;id22&#39;); if (b!=null&amp;&amp;b.onclick!=null&amp;&amp;typeof(b.onclick) != &#39;undefined&#39;) {  var r = Wicket.bind(b.onclick, b)(); if (r != false) b.click(); } else { b.click(); };  return false;"></div>
+<fieldset>
+
+
+
+<div class="nowrap inline">
+
+
+<select class="inpSelect unit_160 required" name="inputfields:fieldSetMarkup:inputFields:0:formField" id="id20" onkeypress="if ((window.event &amp;&amp; window.event.keyCode==13)||event.which==13){jQuery(&#39;#id22&#39;).click();}">
+<option value="0">Gearchiveerde signalen</option>
+<option selected="selected" value="1">Openstaande signalen</option>
+<option value="2">Nieuwe signalen</option>
+</select>
+
+</div>­ <!-- dat is een smerige hack voor IE, omdat hij anders niet kan wrappen -->
+
+
+
+<input class="inpImage" type="image" name="Submit" alt="Zoeken" title="Zoeken" src="./EduarteHome_files/searchicon.gif" id="id22">
+</fieldset>
+</form>
+</div>
+<div class="clear"></div>
+</div>
+<div id="id44">
+<h3 class="caption">
+<span class="left" id="id45">Signalen - 0 t/m 0 (van 0)</span>
+<span class="tblButtons">
+
+<a href="javascript:;" title="Kolommen kiezen" class="btnKolommen" id="id1e"><img src="./EduarteHome_files/customize.gif" alt="Kolommen"></a>
+<a href="https://sdp.educus.nl/app/home/Home?1-1.-signalen-signaalDataPanel-csvexport" title="Exporteren naar Excel" class="btnExport"><img src="./EduarteHome_files/excel.gif" alt="Excel"></a>
+
+<a href="https://sdp.educus.nl/app/home/Home?1-1.-signalen-signaalDataPanel-print" title="Afdrukken" class="btnAfdrukken"><img src="./EduarteHome_files/printPDF.png" alt="Print"></a>
+
+
+
+
+</span>
+<span class="clear"></span>
+</h3>
+<div id="id46">
+<table class="tblDatagrid tblClick" id="id1f">
+
+<thead>
+<tr>
+
+
+<th class="wicket_orderDown"><a href="https://sdp.educus.nl/app/home/Home?1-1.-signalen-signaalDataPanel-tableContainer-table-headerbars-0-toolbar-headers-0-wrapper-orderByLink" id="id1d">
+<span>Datum</span>
+</a></th>
+
+<th>
+<span>Omschrijving</span>
+</th>
+
+<th class="unit_60">
+<span>Archiveren</span>
+</th>
+
+<th class="unit_60">
+<span>Gelezen</span>
+</th>
+
+
+</tr>
+</thead>
+
+
+
+<tbody>
+
+<tr class="tblNoHightlight">
+<td colspan="4">Er zijn geen gegevens gevonden</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+<div id="id47" style="display:none"></div>
+<div>
+</div>
+<div>
+</div>
+</div>
+
+
+<div id="id48">
+<h3 class="caption">
+<span class="left" id="id49">Begeleidingshandelingen</span>
+<span class="tblButtons">
+
+<a href="javascript:;" title="Kolommen kiezen" class="btnKolommen" id="id29"><img src="./EduarteHome_files/customize.gif" alt="Kolommen"></a>
+<a href="https://sdp.educus.nl/app/home/Home?1-1.-handelingenPanel-handelingenDataPanel-csvexport" title="Exporteren naar Excel" class="btnExport"><img src="./EduarteHome_files/excel.gif" alt="Excel"></a>
+
+<a href="https://sdp.educus.nl/app/home/Home?1-1.-handelingenPanel-handelingenDataPanel-print" title="Afdrukken" class="btnAfdrukken"><img src="./EduarteHome_files/printPDF.png" alt="Print"></a>
+
+
+
+
+</span>
+<span class="clear"></span>
+</h3>
+<div id="id4a">
+<table class="tblDatagrid tblClick" id="id2a">
+
+<thead>
+<tr>
+
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-handelingenPanel-handelingenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-0-wrapper-orderByLink" id="id23">
+<span>Soort handeling</span>
+</a></th>
+
+<th>
+<span>Kenmerk</span>
+</th>
+
+<th class="wicket_orderUp"><a href="https://sdp.educus.nl/app/home/Home?1-1.-handelingenPanel-handelingenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-2-wrapper-orderByLink" id="id24">
+<span>Deadline</span>
+</a></th>
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-handelingenPanel-handelingenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-3-wrapper-orderByLink" id="id25">
+<span>Toegekend aan</span>
+</a></th>
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-handelingenPanel-handelingenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-4-wrapper-orderByLink" id="id26">
+<span>Omschrijving</span>
+</a></th>
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-handelingenPanel-handelingenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-5-wrapper-orderByLink" id="id27">
+<span>Eigenaar</span>
+</a></th>
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-handelingenPanel-handelingenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-6-wrapper-orderByLink" id="id28">
+<span>Status</span>
+</a></th>
+
+
+</tr>
+</thead>
+
+
+
+<tbody>
+
+<tr class="tblNoHightlight">
+<td colspan="7">Er zijn geen gegevens gevonden</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+<div id="id4b" style="display:none"></div>
+<div>
+</div>
+<div>
+</div>
+</div>
+
+
+<div id="id4c">
+<h3 class="caption">
+<span class="left" id="id4d">Vandaag (dinsdag 06-12-2022) - 0 t/m 0 (van 0)</span>
+<span class="tblButtons">
+
+
+
+
+
+
+
+
+
+</span>
+<span class="clear"></span>
+</h3>
+<div id="id4e">
+<table class="tblDatagrid" id="id33">
+
+<thead>
+<tr>
+
+
+<th>
+<span>Titel</span>
+</th>
+
+<th>
+<span>Tijd</span>
+</th>
+
+<th>
+<span>Lesuren</span>
+</th>
+
+<th>
+<span>Locatie</span>
+</th>
+
+<th>
+<span>Onderwijsproduct</span>
+</th>
+
+<th>
+<span>Groep</span>
+</th>
+
+<th>
+<span>Presentie registreren</span>
+</th>
+
+
+</tr>
+</thead>
+
+
+
+<tbody>
+
+<tr class="tblNoHightlight">
+<td colspan="7">Er zijn geen gegevens gevonden</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+<div id="id4f" style="display:none"></div>
+
+
+</div>
+
+<!--<div wicket:id="presentieregistratiePanel"></div>-->
+
+<div id="id50">
+<h3 class="caption">
+<span class="left" id="id51">Aankomende individuele afspraken - 0 t/m 0 (van 0)</span>
+<span class="tblButtons">
+<a href="javascript:;" title="Groeperen op" class="btnGroeperen" id="id31"><img src="./EduarteHome_files/groepeer.gif" alt="Groeperen"></a>
+<a href="javascript:;" title="Kolommen kiezen" class="btnKolommen" id="id30"><img src="./EduarteHome_files/customize.gif" alt="Kolommen"></a>
+<a href="https://sdp.educus.nl/app/home/Home?1-1.-uitnodigingenPanel-afsprakenDataPanel-csvexport" title="Exporteren naar Excel" class="btnExport"><img src="./EduarteHome_files/excel.gif" alt="Excel"></a>
+
+<a href="https://sdp.educus.nl/app/home/Home?1-1.-uitnodigingenPanel-afsprakenDataPanel-print" title="Afdrukken" class="btnAfdrukken"><img src="./EduarteHome_files/printPDF.png" alt="Print"></a>
+
+
+
+
+</span>
+<span class="clear"></span>
+</h3>
+<div id="id52">
+<table class="tblDatagrid" id="id32">
+
+<thead>
+<tr>
+
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-uitnodigingenPanel-afsprakenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-0-wrapper-orderByLink" id="id2b">
+<span>Titel</span>
+</a></th>
+
+<th>
+<span>Tijd</span>
+</th>
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-uitnodigingenPanel-afsprakenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-2-wrapper-orderByLink" id="id2c">
+<span>Lesuren</span>
+</a></th>
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-uitnodigingenPanel-afsprakenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-3-wrapper-orderByLink" id="id2d">
+<span>Onderwijsproduct</span>
+</a></th>
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-uitnodigingenPanel-afsprakenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-4-wrapper-orderByLink" id="id2e">
+<span>Organisatie-eenheid</span>
+</a></th>
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-uitnodigingenPanel-afsprakenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-5-wrapper-orderByLink" id="id2f">
+<span>Locatie</span>
+</a></th>
+
+<th>
+<span>Medewerker</span>
+</th>
+
+<th>
+<span>Roostercode</span>
+</th>
+
+
+</tr>
+</thead>
+
+
+
+<tbody>
+
+<tr class="tblNoHightlight">
+<td colspan="8">Er zijn geen gegevens gevonden</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+<div id="id53" style="display:none"></div>
+<div>
+</div>
+<div>
+</div>
+</div>
+
+
+<div id="id54">
+<h3 class="caption">
+<span class="left" id="id55">Activiteiten - 0 t/m 0 (van 0)</span>
+<span class="tblButtons">
+
+<a href="javascript:;" title="Kolommen kiezen" class="btnKolommen" id="id3a"><img src="./EduarteHome_files/customize.gif" alt="Kolommen"></a>
+<a href="https://sdp.educus.nl/app/home/Home?1-1.-activiteitenPanel-activiteitenDataPanel-csvexport" title="Exporteren naar Excel" class="btnExport"><img src="./EduarteHome_files/excel.gif" alt="Excel"></a>
+
+<a href="https://sdp.educus.nl/app/home/Home?1-1.-activiteitenPanel-activiteitenDataPanel-print" title="Afdrukken" class="btnAfdrukken"><img src="./EduarteHome_files/printPDF.png" alt="Print"></a>
+
+
+
+
+</span>
+<span class="clear"></span>
+</h3>
+<div id="id56">
+<table class="tblDatagrid tblClick" id="id3b">
+
+<thead>
+<tr>
+
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-activiteitenPanel-activiteitenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-0-wrapper-orderByLink" id="id34">
+<span>Proces</span>
+</a></th>
+
+<th>
+<span>Onderwerp</span>
+</th>
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-activiteitenPanel-activiteitenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-2-wrapper-orderByLink" id="id35">
+<span>Code</span>
+</a></th>
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-activiteitenPanel-activiteitenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-3-wrapper-orderByLink" id="id36">
+<span>Naam</span>
+</a></th>
+
+<th>
+<span>account</span>
+</th>
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-activiteitenPanel-activiteitenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-5-wrapper-orderByLink" id="id37">
+<span>Datum gestart</span>
+</a></th>
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-activiteitenPanel-activiteitenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-6-wrapper-orderByLink" id="id38">
+<span>Activiteit deadline</span>
+</a></th>
+
+<th class="wicket_orderNone"><a href="https://sdp.educus.nl/app/home/Home?1-1.-activiteitenPanel-activiteitenDataPanel-tableContainer-table-headerbars-0-toolbar-headers-7-wrapper-orderByLink" id="id39">
+<span>Proces deadline</span>
+</a></th>
+
+
+</tr>
+</thead>
+
+
+
+<tbody>
+
+<tr class="tblNoHightlight">
+<td colspan="8">Er zijn geen gegevens gevonden</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+<div id="id57" style="display:none"></div>
+<div>
+</div>
+<div>
+</div>
+</div>
+
+<div>
+<div id="id58">
+<h3 class="caption">
+<span class="left" id="id59">Favorieten - 0 t/m 0 (van 0)</span>
+<span class="tblButtons">
+
+
+
+
+
+
+
+
+
+</span>
+<span class="clear"></span>
+</h3>
+<div id="id5a">
+<table class="tblDatagrid tblClick treeTable" id="idc">
+
+<thead>
+<tr>
+
+
+<th>
+<span>Favorieten</span>
+</th>
+
+
+</tr>
+</thead>
+
+
+
+<tbody>
+
+<tr class="tblNoHightlight">
+<td colspan="1" class="treeColumn">Er zijn geen gegevens gevonden</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+<div id="id5b" style="display:none"></div>
+
+
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<div class="layFooter subtract-from-scrollbox" id="id5c">
+<div class="left">
+
+</div>
+<div class="right">
+
+</div>
+<div class="clear"></div>
+</div>
+<div id="ide">
+</div>
+</div>
+<!-- Side is een extra balk aan de rechterkant, is uitgevuld over de hoogte en heeft een vaste breedte -->
+<div class="laySide" id="id1a">
+<div class="slider"></div>
+
+<div class="movedown_10" id="id11">
+<table class="tblDatagrid tblClick">
+<thead>
+<tr>
+<th colspan="2" class="header_clickable">Recente deelnemers</th>
+</tr>
+</thead>
+<tbody>
+
+
+<tr class="tblNoHightlight">
+<td colspan="2">Geen deelnemers bezocht</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+<div class="movedown_10" id="id12">
+<table class="tblDatagrid tblClick treeTable">
+<thead>
+<tr>
+<th colspan="2" class="header_clickable">Mededelingen</th>
+</tr>
+</thead>
+
+
+<tbody><tr class="tblNoHightlight">
+<td colspan="2">Geen mededelingen</td>
+</tr>
+
+</tbody></table>
+<table class="tblData sidebarNav" style="display: none;">
+<tbody><tr class="knoppen">
+<td><a href="https://sdp.educus.nl/app/home/Home?1#" class="vorige" style="display: none;"><img src="./EduarteHome_files/selection_left.png" alt="vorige 5" class="left"></a></td>
+<td><a href="https://sdp.educus.nl/app/home/Home?1#" class="volgende"><img src="./EduarteHome_files/selection_right.png" alt="volgende 5" class="right"></a></td>
+</tr>
+</tbody></table>
+<div>
+</div>
+</div>
+<div class="movedown_10" id="id15">
+<div id="id5d">
+<h3 class="caption">
+
+<span class="tblButtons">
+
+
+
+
+
+
+
+
+
+</span>
+<span class="clear"></span>
+</h3>
+<div id="id5e">
+<table class="tblDatagrid tblClick treeTable" id="idb">
+
+<thead>
+<tr>
+
+
+<th class="header_clickable">
+<span>Favorieten</span>
+</th>
+
+<th class="unit_20 header_clickable">
+<span></span>
+</th>
+
+
+</tr>
+</thead>
+
+
+
+<tbody>
+
+<tr class="tblNoHightlight">
+<td colspan="2" class="treeColumn">Er zijn geen gegevens gevonden</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+<div id="id5f" style="display:none"></div>
+
+
+</div>
+<table class="tblData">
+<tbody><tr>
+<td>
+<a title="Deze pagina als favoriet toevoegen" id="id13" href="javascript:;">
+<span>Als favoriet toevoegen</span>
+</a>
+</td>
+</tr>
+<tr>
+<td>
+<a title="Mappen beheren" id="id14" href="javascript:;">
+<span>Beheer mappen</span>
+</a>
+</td>
+</tr>
+</tbody></table>
+<div>
+</div>
+<div>
+</div>
+</div>
+<!-- <div wicket:id="todos" class="movedown_10"></div> -->
+<div class="movedown_10" id="id16">
+<div id="id60">
+<table class="tblDatagrid">
+<thead>
+<tr>
+<th colspan="2" class="header_clickable">Rapportages</th>
+</tr>
+</thead>
+<tbody>
+
+
+<tr class="tblNoHightlight">
+<td colspan="2">Geen rapportages gevonden</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</div>
+<div class="movedown_10" id="id17">
+<table class="tblDatagrid tblClick treeTable">
+<thead>
+<tr>
+<th colspan="2" class="header_clickable">Geschiedenis</th>
+</tr>
+</thead>
+<tbody>
+
+
+<tr class="tblNoHightlight">
+<td colspan="2">Geen to-do's toegevoegd</td>
+</tr>
+
+</tbody>
+</table>
+<table class="tblData sidebarNav" style="display: none;">
+<tbody><tr class="knoppen">
+<td><a href="https://sdp.educus.nl/app/home/Home?1#" class="vorige" style="display: none;"><img src="./EduarteHome_files/selection_left.png" alt="vorige 5" class="left"></a></td>
+<td><a href="https://sdp.educus.nl/app/home/Home?1#" class="volgende"><img src="./EduarteHome_files/selection_right.png" alt="volgende 5" class="right"></a></td>
+</tr>
+</tbody></table>
+</div>
+<div class="movedown_10" id="id18">
+<table class="tblDatagrid tblClick treeTable">
+<thead>
+<tr>
+<th colspan="2" class="header_clickable">Single sign-on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="clickable">
+<a target="_blank" href="https://sdp.educus.nl/app/home/Home?1-1.-laySide-sso-onderwijsLink">Eduarte Portalen</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="movedown_10" id="id19">
+<table class="tblDatagrid tblClick treeTable">
+<thead>
+<tr>
+<th colspan="2" class="header_clickable">Activiteiten</th>
+</tr>
+</thead>
+
+
+<tbody><tr class="tblNoHightlight">
+<td colspan="2">Geen to-do's toegevoegd</td>
+</tr>
+
+</tbody></table>
+<table class="tblData sidebarNav" style="display: none;">
+<tbody><tr class="knoppen">
+<td><a href="https://sdp.educus.nl/app/home/Home?1#" class="vorige" style="display: none;"><img src="./EduarteHome_files/selection_left.png" alt="vorige 5" class="left"></a></td>
+<td><a href="https://sdp.educus.nl/app/home/Home?1#" class="volgende"><img src="./EduarteHome_files/selection_right.png" alt="volgende 5" class="right"></a></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="infoButton">&nbsp;</div>
+
+<div class="clear"></div>
+<div id="id61">
+<div id="id62" style="display:none">
+
+</div><div id="id63" style="display:none">
+
+</div><div id="id64" style="display:none">
+
+</div><div id="id65" style="display:none">
+
+</div><div id="id66" style="display:none">
+
+</div><div id="id67" style="display:none">
+
+</div><div id="id68" style="display:none">
+
+</div><div id="id69" style="display:none">
+
+</div><div id="id6a" style="display:none">
+
+</div><div id="id6b" style="display:none">
+
+</div><div id="id6c" style="display:none">
+
+</div><div id="id6d" style="display:none">
+
+</div>
+</div>
+</div>
+<script type="text/javascript"></script>
+<script type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+
+var clientEndParseTimeVariable = new Date().getTime();
+
+/*]]>*/
+</script>
+
+
+
+
+<div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front shaded ui-draggable ui-resizable" aria-describedby="id1c" style="display: none; position: absolute;" aria-labelledby="ui-id-1"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-1" class="ui-dialog-title">Eduarte</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title=""><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span></button></div><div class="hide ui-dialog-content ui-widget-content" id="id1c" style="display: block;">
+<div>
+<table id="infotable" class="fontsize_09">
+<tbody><tr>
+<td class="unit_100"><b>Pagina:</b></td>
+<td><span>Home</span></td>
+</tr>
+<tr>
+<td class="unit_100"><b>Classname:</b></td>
+<td><span id="pageclassname">nl.topicus.eduarte.web.pages.home.HomePage</span></td>
+</tr>
+<tr>
+<td class="unit_100"><b>Paginanummer:</b></td>
+<td><span id="wicketpageid">1</span></td>
+</tr>
+<tr>
+<td class="unit_100"><b>Versie:</b></td>
+<td><span>2.2022.11.28, sha1=f17d64811d1</span> - build <span>2022-11-28T22:57:00Z</span></td>
+</tr>
+<tr>
+<td class="unit_100"><b>Models:</b></td>
+<td>
+<ul>
+<li>
+contextModel:
+n/a
+(n/a)</li><li>
+defaultModel:
+n/a
+(n/a)</li><li>
+innermostModel:
+n/a
+(n/a)</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div id="id1b">
+<table class="fontsize_09">
+<tbody><tr>
+<td class="unit_100"><b>Schermbreedte</b></td>
+<td>
+<span class="info-support info-800">800 of minder</span>
+<span class="info-support info-1024">1024</span>
+<span class="info-support info-1280">1280</span>
+<span class="info-support info-1440">1440 of meer</span>
+</td>
+</tr>
+<tr>
+<td class="unit_100"><b>History API</b></td>
+<td class="history-api support-detected">
+<span class="info-support">ja</span>
+<span class="info-nosupport">nee</span>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div></body></html>
