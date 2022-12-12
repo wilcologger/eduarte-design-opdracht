@@ -1,968 +1,1154 @@
 <!DOCTYPE html>
 <!-- saved from url=(0064)https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript">
-/*<![CDATA[*/
-
-var clientStartParseTimeVariable = new Date().getTime();
-
-/*]]>*/
-</script>
-
-<link rel="stylesheet" type="text/css" href="./EduarteHome_files/jquery-ui-ver-974F87E9D58936809A70A3E079AAD628.css">
-<script type="text/javascript" src="./EduarteHome_files/core-ver-4C7B7E6E58A8A51846A828EC8DFB8C81.js"></script>
-<script type="text/javascript" id="wicket-ajax-base-url">
-/*<![CDATA[*/
-Wicket.Ajax.baseUrl="deelnemers/DeelnemerUitgebreidZoeken?3";
-/*]]>*/
-</script>
-
-<script type="text/javascript" id="nl-topicus-eduarte-web-components-menu-main-EduArteMainMenu-0">
-/*<![CDATA[*/
-
-function wikiLogin(username, password, page, url)
-{
-if (url.startsWith("https://")) {
-var form = document.getElementById('postEduarteLogin');
-form.action=url + '/eduarte-login.php';
-form.username.value=username;
-form.password.value=password;
-form.page.value=page;
-form.submit();
-} else {
-// Old way of doing stuff, can be removed once we are using the new wiki servers
-var form = document.getElementById('helpForm');
-form.action=url + '/api.php';
-// Voor IE, anders gaat form.action= fout
-var input = document.createElement('input');
-input.type = 'hidden';
-input.name = 'action';
-input.value = 'login';
-form.appendChild(input);
-form.lgname.value=username;
-form.lgpassword.value=password;
-form.target='Wiki';
-form.submit();
-setTimeout("openWiki('"+url+"/index.php/"+page+"')", 1000);
-}
-}
-function openWiki(url)
-{
-mywindow = window.open(url, 'Wiki');
-mywindow.focus();
-}
-function sleep(naptime)
-{
-var sleeping = true;
-var now = new Date();
-var alarm;
-var startingMSeconds = now.getTime();
-while(sleeping)
-{
-alarm = new Date();
-alarmMSeconds = alarm.getTime();
-if(alarmMSeconds - startingMSeconds > naptime){ sleeping = false; }
-}
-}
-
-/*]]>*/
-</script>
-<link rel="stylesheet" type="text/css" href="./EduarteHome_files/newstylemenu-ver-7E6F252DCB426DB66F86F1F53CC1E294.css">
-<script type="text/javascript" src="./EduarteHome_files/freezepanes-ver-189E3580DF01510270FC358B4E066D40.js"></script>
-<link rel="stylesheet" type="text/css" href="./EduarteHome_files/jquery.treeTable-ver-3697A81523FF2C4916EC59986CBC47E2.css">
-<link rel="stylesheet" type="text/css" href="./EduarteHome_files/info-800-ver-B99E9EDDAC0FE5DC5E744CE0A8A6E9EA.css" media="screen and (max-width:1014px)">
-<link rel="stylesheet" type="text/css" href="./EduarteHome_files/info-1024-ver-55C27EEF14D97DDB98C21205131AD2BE.css" media="screen and (min-width:1015px) and (max-width:1270px)">
-<link rel="stylesheet" type="text/css" href="./EduarteHome_files/info-1280-ver-EE4CD5519CBF666442105B9CA3D9BCBB.css" media="screen and (min-width:1271px) and (max-width:1430px)">
-<link rel="stylesheet" type="text/css" href="./EduarteHome_files/info-1440-ver-4252C41A4B3F137ED0B5D6B8D6BD86C1.css" media="screen and (min-width:1431px)">
-<link rel="stylesheet" type="text/css" href="./EduarteHome_files/info-panel-ver-0DE0FCABD97C39DBA4655C445AD4A962.css">
-<link rel="stylesheet" type="text/css" href="./EduarteHome_files/modal-ver-E99D4201F0F6C5D3081AD42ACB1F22C2.css">
-<script type="text/javascript" src="./Eduarte-uitgebreidzoeken_files/datepicker-nl-ver-1C858E294430E6162F1AF97A809F2C4D.js"></script>
-<link rel="stylesheet" type="text/css" href="./Eduarte-uitgebreidzoeken_files/modal-ver-E99D4201F0F6C5D3081AD42ACB1F22C2.css">
-
-<title>Eduarte</title>
-
-<link rel="shortcut icon" href="https://sdp.educus.nl/assets/img/icons/eduarte.ico">
-<meta name="viewport" content="width=1024">
-<script type="text/javascript">
-/*<![CDATA[*/
-
-function initServerTime() {/* Statusbalk Marker */
-window.defaultStatus='Server tijd: 0.0s, Client tijd: ' + (new Date().getTime() - clientStartParseTimeVariable)/1000 +  's (' + (clientEndParseTimeVariable - clientStartParseTimeVariable)/1000 +  's parsen + ' + (new Date().getTime() - clientEndParseTimeVariable)/1000 +  's renderen)';
-}
-
-/*]]>*/
-</script>
-<link rel="stylesheet" type="text/css" href="./EduarteHome_files/jquery.cluetip-ver-604529FE0E34829890EB64724498EF2A.css">
-<link rel="stylesheet" type="text/css" href="./base-ver-F4A64F95EB7F6647217A9768318826F4.css">
-<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="../wicket/resource/assets.AssetsResourceMarker/stylesheets/ie_7-ver-826408DA968587B2BFC702D079F62769.css" /><![endif]-->
-<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="../wicket/resource/assets.AssetsResourceMarker/stylesheets/ie_7en8-ver-5D73B8964470A54605F65A9604072050.css" /><![endif]-->
-<link rel="stylesheet" type="text/css" href="./EduarteHome_files/style-max1279-ver-F5264C91A6FBEB4D1F8C9BA324B38EAC.css" media="screen and (max-width:1260px)">
-<link rel="stylesheet" type="text/css" href="./EduarteHome_files/style-min1280-ver-DC5F857C1E4FB3009F3700AF967E9DAA.css" media="screen and (min-width:1261px)">
-<link rel="stylesheet" type="text/css" href="./EduarteHome_files/testomgeving-ver-B3DDEC93C1CCA86986CD0695ED90586E.css">
-<link rel="stylesheet" type="text/css" href="./EduarteHome_files/flaticons-stroke-ver-B3DD554EBF54AEC52EEFEA4E3D1C03DE.css">
-<script type="text/javascript">
-/*<![CDATA[*/
-Wicket.Event.add(window, "domready", function(event) { 
-$('#scrollBox').scrollBox({feedback: 'id15a'});;
-$('#id15b').screenSaver(1200000, 3600000, 300000, '#screenSaverLogoutCounter', false);;
-$('#id15b').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-centerContainer-layLeft-screensaver","m":"POST","c":"id15b"}});;
-Wicket.Ajax.ajax({"u":"./DeelnemerUitgebreidZoeken?3-1.0-layHeader-mainmenu-mainMenuItems-14-mainMenuItem-div-link","c":"id158","e":"click","pd":true});;
-$('#id15c').ajaxIndicator();;
-$('#id15d').newStyleMenu({enabled: true, alwaysOpen: false, name: 'Ga naar', menuBox: '#scrollBox .menuBox', contentBox: '#scrollBox .contentBox', sortOrder: 'alphabet', sortOrderCallback: function(menu, val){menu.serverCall('setSortOrder', val);}, items: [{"id":"AbsentieMelden","url":"./AbsentieMelden","name":"Absentie melden","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Absentie melden","sub":"Absentie melden"}],"modules":["Aanwezigheid"]},{"id":"OpenstaandeAbsentieMeldingen","url":"./OpenstaandeAbsentieMeldingen","name":"Openstaande meldingen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["Aanwezigheid"]},{"id":"OpenstaandeAbsentieWaarnemingen","url":"./OpenstaandeAbsentieWaarnemingen","name":"Openstaande waarnemingen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["Aanwezigheid"]},{"id":"OpenstaandeMaatregelen","url":"./OpenstaandeMaatregelen","name":"Openstaande maatregelen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["Aanwezigheid"]},{"id":"OLC","url":"./OLC","name":"OLC-registraties","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["Aanwezigheid"]},{"id":"CollectiefBudget","url":"./CollectiefBudget","name":"Collectief budget toekennen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["Aanwezigheid"]},{"id":"VerlofAanvragen","url":"./VerlofAanvragen","name":"Openstaande verlofaanvragen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["Aanwezigheid"]},{"id":"OnderwijsproductenToekennen","url":"./OnderwijsproductenToekennen","name":"Productregels invullen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Onderwijs","sub":"Onderwijs"}],"modules":["Kernregistratie Deelnemers"]},{"id":"KeuzesAangeven","url":"./KeuzesAangeven","name":"Keuzes aangeven","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Onderwijs","sub":"Onderwijs"}],"modules":["Kernregistratie Deelnemers"]},{"id":"KeuzesControleren","url":"./KeuzesControleren","name":"Keuzes controleren","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Onderwijs","sub":"Onderwijs"}],"modules":["Kernregistratie Deelnemers"]},{"id":"OnderwijsproductenAfnemen","url":"./OnderwijsproductenAfnemen","name":"Onderwijsproducten afnemen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Onderwijs","sub":"Onderwijs"}],"modules":["Kernregistratie Deelnemers"]},{"id":"ActieOverzicht","url":"./ActieOverzicht","name":"Actieoverzicht","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Examens","sub":"Examens"}],"modules":["Kernregistratie Deelnemers"]},{"id":"Criteriumbankcontrole","url":"./Criteriumbankcontrole","name":"Criteriumbankcontrole","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Examens","sub":"Examens"}],"modules":["Kernregistratie Deelnemers"]},{"id":"Studieadviesberekening","url":"./Studieadviesberekening","name":"Studieadviesberekening","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Examens","sub":"Examens"}],"modules":["Kernregistratie Deelnemers"]},{"id":"Verbintenissen","url":"./Verbintenissen","name":"Status verbintenis aanpassen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Kernregistratie Deelnemers"]},{"id":"BPVs","url":"./BPVs","name":"Status BPV's aanpassen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Kernregistratie Deelnemers"]},{"id":"OrgEhdLocatieWijzigen","url":"./OrgEhdLocatieWijzigen","name":"Organisatie-eenheden aanpassen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Kernregistratie Deelnemers"]},{"id":"BronMutatiesAanmaken","url":"./BronMutatiesAanmaken","name":"Bronmutaties aanmaken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Kernregistratie Deelnemers"]},{"id":"Aanmaken","url":"./Aanmaken","name":"Verbintenissen/plaatsingen aanmaken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Kernregistratie Deelnemers"]},{"id":"KenmerkenMuteren","url":"./KenmerkenMuteren","name":"Kenmerken verwerken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Kernregistratie Deelnemers"]},{"id":"VolgnummersWijzigen","url":"./VolgnummersWijzigen","name":"Verbintenisvolgnummers wijzigen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Kernregistratie Deelnemers"]},{"id":"Intakemomenten","url":"./Intakemomenten","name":"Intakemomenten","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Deelnemers","sub":"Zoeken"}],"modules":["Basisfunctionaliteit"]},{"id":"ParticipatieItemsAfsluiten","url":"./ParticipatieItemsAfsluiten","name":"Participatie-items afsluiten","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Aanwezigheid"]},{"id":"TrajectenAfsluiten","url":"./TrajectenAfsluiten","name":"Trajecten afsluiten","description":"Collectief trajecten afsluiten","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Deelnemer begeleiding"]},{"id":"DeelnemerZoeken","url":"./DeelnemerZoeken","name":"Deelnemeroverzicht","description":"","score":11.011453333333334,"tags":["test","blaat"],"categories":[{"main":"Deelnemers","sub":"Zoeken"}],"modules":["Basisfunctionaliteit"]},{"id":"IntakeZoeken","url":"./IntakeZoeken","name":"Intakeoverzicht","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Deelnemers","sub":"Zoeken"}],"modules":["Basisfunctionaliteit"]},{"id":"IntakeWachtlijst","url":"./IntakeWachtlijst","name":"Intakewachtlijst","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Deelnemers","sub":"Zoeken"}],"modules":["Basisfunctionaliteit"]},{"id":"DeelnemerUitgebreidZoeken","url":"./DeelnemerUitgebreidZoeken","name":"Deelnemers uitgebreid zoeken","description":"","score":14.99896,"tags":["test","blaat"],"categories":[{"main":"Deelnemers","sub":"Zoeken"}],"modules":["Basisfunctionaliteit"]},{"id":"OpgeslagenZoekopdrachten","url":"./OpgeslagenZoekopdrachten","name":"Opgeslagen zoekopdrachten","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Deelnemers","sub":"Zoeken"}],"modules":["Basisfunctionaliteit"]},{"id":"MijnDeelnemers","url":"./MijnDeelnemers","name":"Mijn deelnemers","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Mijn deelnemers","sub":"Mijn deelnemers"}],"modules":["Basisfunctionaliteit"]},{"id":"Rapportages","url":"./Rapportages","name":"Rapportages","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Rapportages","sub":"Rapportages"}],"modules":["Basisfunctionaliteit"]},{"id":"ExactCsvRapportage","url":"./ExactCsvRapportage","name":"Exact csv rapportage","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Rapportages","sub":"Rapportages"}],"modules":["Exact CSV export"]},{"id":"DeelnemerBerichten","url":"./DeelnemerBerichten","name":"Berichten versturen","description":"","score":0.0,"tags":["bericht","self_service","self service","self","service","selfservice"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["SelfService","Studentenportaal"]},{"id":"MijnBPVKandidaten","url":"./MijnBPVKandidaten","name":"Mijn BPV-dashboardoverzicht","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Mijn deelnemers","sub":"Mijn deelnemers"}],"modules":["BPV/Stage"]},{"id":"BPVsAanmaken","url":"./BPVsAanmaken","name":"Kwalificatie BPV's aanmaken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["BPV/Stage"]},{"id":"BPVDashboard","url":"./BPVDashboard","name":"BPV-dashboardoverzicht","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Mijn deelnemers","sub":"Mijn deelnemers"}],"modules":["BPV/Stage"]},{"id":"Stagewijzers","url":"./Stagewijzers","name":"Stagewijzers koppelen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["EduArte Onderwijs ELO"]},{"id":"ToetsmomentenWijzigen","url":"./ToetsmomentenWijzigen","name":"Acties op toetsmomenten","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Toets- en examenlogistiek"]},{"id":"Toetsmomenten","url":"./Toetsmomenten","name":"Toetsmomenten","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Toets- en examenlogistiek"]},{"id":"DigitaleAanmeldingenZoeken","url":"./DigitaleAanmeldingenZoeken","name":"Digitaleaanmeldingoverzicht","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Deelnemers","sub":"Zoeken"}],"modules":["Digitaalaanmelden"]},{"id":"VerzuimRapportage","url":"./VerzuimRapportage","name":"Verzuimrapportage","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["KRD-Participatie"]},{"id":"Verzuimloket","url":"./Verzuimloket","name":"Verzuimloket","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["KRD-Participatie"]},{"id":"Invoeren","url":"./Invoeren","name":"Invoeren","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Basisfunctionaliteit"]},{"id":"InvoerenMeervoudig","url":"./InvoerenMeervoudig","name":"Invoeren meervoudig","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Basisfunctionaliteit"]},{"id":"InvoerenOpEquivalentie","url":"./InvoerenOpEquivalentie","name":"Invoeren op equivalentiecode","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Basisfunctionaliteit"]},{"id":"Afdrukken","url":"./Afdrukken","name":"Afdrukken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Basisfunctionaliteit"]},{"id":"Bevriezen","url":"./Bevriezen","name":"Bevriezen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Basisfunctionaliteit"]},{"id":"ResultatenImporteren","url":"./ResultatenImporteren","name":"Resultaten importeren","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Basisfunctionaliteit"]},{"id":"FacetCSVExport","url":"./FacetCSVExport","name":"Facet csv export","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Basisfunctionaliteit"]},{"id":"EmailSturen","url":"./EmailSturen","name":"E-mail sturen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Workflow"]},{"id":"Uploadverzoeken","url":"./Uploadverzoeken","name":"Uploadverzoeken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Workflow"]}]});;
-$('#id15d').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-layHeader-menu","m":"POST","c":"id15d"}});;
-$('#id15e').sidebar(true);;
-$('#id15e').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-recenteDeelnemers","m":"POST","c":"id15e"}});;
-$('#id15f').sidebar(true);$('#id15f').navsidebar(5);;
-$('#id15f').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-berichten","m":"POST","c":"id15f"}});;
-$('#id159').treeTable({callback: function(node, val){node.serverCall('setExpanded', val);}});;
-$('#scrollBox #id159').freezePanes(0);;
-Wicket.Ajax.ajax({"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-bookmarks-bookmarkToevoegen","c":"id160","e":"click"});;
-Wicket.Ajax.ajax({"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-bookmarks-foldersBeherenLink","c":"id161","e":"click"});;
-$('#id162').sidebar(true);;
-$('#id162').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-bookmarks","m":"POST","c":"id162"}});;
-$('#id163').sidebar(true);;
-$('#id163').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-rapportage","m":"POST","c":"id163"}});;
-$('#id164').sidebar(true);$('#id164').navsidebar(5);;
-$('#id164').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-navigatie","m":"POST","c":"id164"}});;
-$('#id165').sidebar(true);;
-$('#id165').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-sso","m":"POST","c":"id165"}});;
-$('#id166').sidebar(true);$('#id166').navsidebar(5);;
-$('#id166').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-activiteiten","m":"POST","c":"id166"}});;
-$('#id167').slidebar();;
-$('#id168').infoPanel();;
-$('#id169').dialog({autoOpen: false, closeText: '', title: 'Eduarte', resizable: true, minHeight: 30, dialogClass: 'shaded', width: 600});;
-Wicket.Ajax.ajax({"u":"./DeelnemerUitgebreidZoeken?3-1.0-infoButton-infoButton","c":"infoButton","e":"click"});;
-$('#id16a + img.ui-datepicker-trigger').remove();$('#id16a:enabled').datepicker({dateFormat: 'dd-mm-yy', buttonImageOnly: true, showAnim: 'fadeIn', showOn: 'button', duration: 'fast', showButtonPanel: true, buttonImage: '../../assets/img/icons/calendar2.png'});;
-Wicket.Ajax.ajax({"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-peilEindDatum","m":"POST","c":"id16a","e":"change"});;
-$('#id16b + img.ui-datepicker-trigger').remove();$('#id16b:enabled').datepicker({dateFormat: 'dd-mm-yy', buttonImageOnly: true, showAnim: 'fadeIn', showOn: 'button', duration: 'fast', showButtonPanel: true, buttonImage: '../../assets/img/icons/calendar2.png'});;
-Wicket.Ajax.ajax({"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-peildatum","m":"POST","c":"id16b","e":"change"});;
-$('#id16c').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id16c').unbind('accordionbeforeactivate').serverCall('onOpen');});;
-$('#id16c').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-personalia","m":"POST","c":"id16c"}});;
-$('#id16d').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id16d').unbind('accordionbeforeactivate').serverCall('onOpen');});;
-$('#id16d').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-adres","m":"POST","c":"id16d"}});;
-$('#id16e').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id16e').unbind('accordionbeforeactivate').serverCall('onOpen');});;
-$('#id16e').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-verbintenis","m":"POST","c":"id16e"}});;
-$('#id16f').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id16f').unbind('accordionbeforeactivate').serverCall('onOpen');});;
-$('#id16f').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-onderwijs","m":"POST","c":"id16f"}});;
-$('#id170').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id170').unbind('accordionbeforeactivate').serverCall('onOpen');});;
-$('#id170').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-examendeelname","m":"POST","c":"id170"}});;
-$('#id171').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id171').unbind('accordionbeforeactivate').serverCall('onOpen');});;
-$('#id171').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-intakegesprek","m":"POST","c":"id171"}});;
-$('#id172').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id172').unbind('accordionbeforeactivate').serverCall('onOpen');});;
-$('#id172').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-vooropleiding","m":"POST","c":"id172"}});;
-$('#id173').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id173').unbind('accordionbeforeactivate').serverCall('onOpen');});;
-$('#id173').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-contract","m":"POST","c":"id173"}});;
-$('#id174').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id174').unbind('accordionbeforeactivate').serverCall('onOpen');});;
-$('#id174').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-relatie","m":"POST","c":"id174"}});;
-$('#id175').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id175').unbind('accordionbeforeactivate').serverCall('onOpen');});;
-$('#id175').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-bpv","m":"POST","c":"id175"}});;
-$('#id176').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id176').unbind('accordionbeforeactivate').serverCall('onOpen');});;
-$('#id176').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-inburgering","m":"POST","c":"id176"}});;
-$('#id177').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id177').unbind('accordionbeforeactivate').serverCall('onOpen');});;
-$('#id177').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-vrijveld","m":"POST","c":"id177"}});;
-$('#id178').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id178').unbind('accordionbeforeactivate').serverCall('onOpen');});;
-$('#id178').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-begeleiding","m":"POST","c":"id178"}});;
-$('#id179').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id179').unbind('accordionbeforeactivate').serverCall('onOpen');});;
-$('#id179').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-digitaalAanmelding","m":"POST","c":"id179"}});;
-$(document).bind('keydown', 'Ctrl+Shift+Up', function(e) {if(!'#id17d'.disabled) followLink('#id17d');return false;})
-$(document).bind('keydown', 'Alt+Ctrl+B', function(e) {if(!'#id157'.disabled) followLink('#id157');return false;})
-$(document).bind('keydown', 'Alt+Ctrl+D', function(e) {if(!'#id151'.disabled) followLink('#id151');return false;})
-$(document).bind('keydown', 'Alt+Ctrl+F1', function(e) {if(!'#id158'.disabled) followLink('#id158');return false;})
-$(document).bind('keydown', 'Ctrl+Insert', function(e) {if(!'#id17a'.disabled) followLink('#id17a');return false;})
-$(document).bind('keydown', 'Ctrl+Return', function(e) {if(!'#id17b'.disabled) followLink('#id17b');return false;})
-$(document).bind('keydown', 'Alt+Ctrl+M', function(e) {if(!'#id153'.disabled) followLink('#id153');return false;})
-$(document).bind('keydown', 'Alt+Ctrl+G', function(e) {if(!'#id152'.disabled) followLink('#id152');return false;})
-$(document).bind('keydown', 'Alt+Ctrl+F', function(e) {if(!'#id156'.disabled) followLink('#id156');return false;})
-$(document).bind('keydown', 'Ctrl+Shift+Down', function(e) {if(!'#id180'.disabled) followLink('#id180');return false;})
-$(document).bind('keydown', 'Alt+Ctrl+H', function(e) {if(!'#id150'.disabled) followLink('#id150');return false;})
-$(document).bind('keydown', 'Alt+Ctrl+R', function(e) {if(!'#id155'.disabled) followLink('#id155');return false;})
-$(document).bind('keydown', 'Alt+Ctrl+O', function(e) {if(!'#id154'.disabled) followLink('#id154');return false;})
-$(document).bind('keydown', 'Ctrl+Shift+Right', function(e) {if(!'#id17f'.disabled) followLink('#id17f');return false;})
-$(document).bind('keydown', 'Ctrl+Shift+Left', function(e) {if(!'#id17e'.disabled) followLink('#id17e');return false;})
-$(document).bind('keydown', 'Alt+Ctrl+Z', function(e) {if(!'#id17c'.disabled) followLink('#id17c');return false;})
-;$('.inpDescription').cluetip({splitTitle: ' - ', cluetipClass: 'jtip', mouseOutClose: 'true', cluezIndex: 30000, delayedClose: 10000});;$('.panelError').cluetip({splitTitle: ' - ', cluetipClass: 'jtip-error', mouseOutClose: 'true', cluezIndex: 30000, delayedClose: 3000});$('input.error').cluetip({splitTitle: ' - ', cluetipClass: 'jtip-error', mouseOutClose: 'true', cluezIndex: 30000, delayedClose: 3000});;if(!(Wicket.Browser.isIE() || window.navigator.userAgent.indexOf('Trident/')>-1)){$('select.error').cluetip({splitTitle: ' - ', cluetipClass: 'jtip-error', mouseOutClose: 'true', cluezIndex: 30000, delayedClose: 3000});};
-Wicket.Event.publish(Wicket.Event.Topic.AJAX_HANDLERS_BOUND);
-;});
-/*]]>*/
-</script>
-</head>
-<body onload="initServerTime();" onbeforeunload="$(&#39;#id15c&#39;).css(&#39;visibility&#39;, &#39;visible&#39;).find(&#39;.image&#39;).show()">
-<div class="container">
-<!-- Header bevat de navigatie en titels van 115px hoog -->
-<div class="layHeader subtract-from-scrollbox" id="id181">
-
-<div class="layTopbar">
-<div class="layTopbarLeft">
-
-<div class="layTopbuttons">
-
-
-<div class="top_button icon_home"><a class="mainMenuItem" href="Eduarte-home.html" id="id150" title="Home (Alt+Ctrl+H)"><span>Home</span></a></div>
-
-
-
-<div class="top_button icon_home"></div>
-
-
-
-<div class="top_button icon_onderwijs"></div>
-
-
-
-<div class="top_button icon_deelnemer top_button_active"><a class="mainMenuItem" href="Eduarte-uitgebreidzoeken.html" id="id151" title="Deelnemer (Alt+Ctrl+D)"><span>Deelnemer</span></a></div>
-
-
-
-<div class="top_button icon_groep"></div>
-
-
-
-<div class="top_button icon_onderwijs"></div>
-
-
-
-<div class="top_button icon_groep"><a class="mainMenuItem" href="https://sdp.educus.nl/app/groepen/GroepZoeken" id="id152" title="Groep (Alt+Ctrl+G)"><span>Groep</span></a></div>
-
-
-
-<div class="top_button icon_financieel"></div>
-
-
-
-<div class="top_button icon_medewerker"><a class="mainMenuItem" href="https://sdp.educus.nl/app/medewerkers/Zoeken" id="id153" title="Medewerker (Alt+Ctrl+M)"><span>Medewerker</span></a></div>
-
-
-
-<div class="top_button icon_onderwijs"><a class="mainMenuItem" href="https://sdp.educus.nl/app/onderwijs/OpleidingenZoeken" id="id154" title="Onderwijs (Alt+Ctrl+O)"><span>Onderwijs</span></a></div>
-
-
-
-<div class="top_button icon_onderwijs"></div>
-
-
-
-<div class="top_button icon_contacts"><a class="mainMenuItem" href="https://sdp.educus.nl/app/relatie/ExterneOrganisaties" id="id155" title="Relatie (Alt+Ctrl+R)"><span>Relatie</span></a></div>
-
-
-
-<div class="top_button icon_financieel"><a class="mainMenuItem" href="https://sdp.educus.nl/app/financieel/Zoekopdrachten" id="id156" title="Financieel (Alt+Ctrl+F)"><span>Financieel</span></a></div>
-
-
-
-<div class="top_button icon_beheer"><a class="mainMenuItem" href="https://sdp.educus.nl/app/beheer/Start" id="id157" title="Beheer (Alt+Ctrl+B)"><span>Beheer</span></a></div>
-
-
-
-<div class="top_button icon_help"><a class="mainMenuItem" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-mainmenu-mainMenuItems-14-mainMenuItem-div-link" id="id158" title="Help (Alt+Ctrl+F1)"><span>Help</span></a></div>
-
-
-</div>
-<div class="search right">
-<form title="Zoeken naar deelnemers, medewerkers of groepen op basis van nummers, BSN, namen, afkortingen of codes. (Alt+Ctrl+z)" id="id182" method="post" action="https://sdp.educus.nl/app/zoek">
-<div>
-<input type="text" class="unit_80" value="" name="snelzoeken" id="id17c">
-<input class="inpImage" type="image" alt="Submit" src="./Eduarte-uitgebreidzoeken_files/llnrsearch.png">
-</div>
-</form>
-</div>
-</div>
-<div class="layTopbarRight">
-<div class="layUserBox">
-<div>
-<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-mainmenu-logoff" class="logoff" title="afmelden"></a>
-
-</div>
-</div>
-</div>
-
-
-<div class="inloggegevens">
-<span>&nbsp;</span>
-Dashorst |&nbsp;
-<div title="Openstaande signalen (Ongelezen signalen)" class="signalen">
-<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-mainmenu-eduArteUserBox-link" class="hand">
-<span>0 (0) <img src="./Eduarte-uitgebreidzoeken_files/message.png" alt="openstaande (ongelezen) signalen"></span>
-</a>
-</div>
-<div class="organisatie">
-Eduarte1 - SDP | &nbsp;
-</div>
-</div>
-
-<div class="layTopbarUserbox"></div>
-<form id="helpForm" action="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" method="post">
-<fieldset>
-<legend></legend>
-<input type="hidden" name="lgname" value="">
-<input type="hidden" name="lgpassword" value="">
-</fieldset>
-</form>
-<form id="postEduarteLogin" action="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" method="post" target="eduarte-wiki">
-<fieldset>
-<legend></legend>
-<input type="hidden" name="username" value="">
-<input type="hidden" name="password" value="">
-<input type="hidden" name="page" value="">
-</fieldset>
-</form>
-
-</div>
-
-
-<div class="omgevingIndicator testomgeving"></div>
-<div class="instellingsLogo">
-<img src="./Eduarte-uitgebreidzoeken_files/4648cf8f70035d01d41c0f908fdaeeb360f0a80a" alt="">
-</div>
-<div class="layTitlebar">
-<h2 class="layTitlebarTitle">Deelnemers uitgebreid zoeken</h2>
-<div class="ajaxIndicator" id="id15c">
-<div class="image"></div>
-</div>
-
-</div>
-<div class="layMenubar">
-<div id="id15d" class="new-style-menu">
-<div class="widget-menu">
-
-<ul>
-
-<li class="wmActive widget-menu-dropdown"><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-0-item-li-tablink"><span>Deelnemers</span></a>
-<ul>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerZoeken"><span>Deelnemeroverzicht</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/IntakeZoeken"><span>Intakeoverzicht</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/IntakeWachtlijst"><span>Intakewachtlijst</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Intakemomenten"><span>Intakemomenten</span></a></li>
-
-<li class="wmActive"><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken"><span>Deelnemers uitgebreid zoeken</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OpgeslagenZoekopdrachten"><span>Opgeslagen zoekopdrachten</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DigitaleAanmeldingenZoeken"><span>Digitaleaanmeldingoverzicht</span></a></li>
-
-
-
-
-
-</ul>
-</li>
-
-<li class="widget-menu-dropdown"><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-1-item-li-tablink"><span>Mijn deelnemers</span></a>
-<ul>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/MijnDeelnemers"><span>Mijn deelnemers</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/MijnBPVKandidaten"><span>Mijn BPV-dashboardoverzicht</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/BPVDashboard"><span>BPV-dashboardoverzicht</span></a></li>
-
-</ul>
-</li>
-
-<li class="widget-menu-dropdown"><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-2-item-li-tablink"><span>Rapportages</span></a>
-<ul>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Rapportages"><span>Rapportages</span></a></li>
-
-
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/ExactCsvRapportage"><span>Exact csv rapportage</span></a></li>
-
-
-
-
-
-
-
-
-
-</ul>
-</li>
-
-<li class="widget-menu-dropdown"><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-3-item-li-tablink"><span>Collectief</span></a>
-<ul>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Verbintenissen"><span>Status verbintenis aanpassen</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/BPVs"><span>Status BPV's aanpassen</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OrgEhdLocatieWijzigen"><span>Organisatie-eenheden aanpassen</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/BronMutatiesAanmaken"><span>Bronmutaties aanmaken</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Aanmaken"><span>Verbintenissen/plaatsingen aanmaken</span></a></li>
-
-
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/KenmerkenMuteren"><span>Kenmerken verwerken</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Stagewijzers"><span>Stagewijzers koppelen</span></a></li>
-
-
-
-
-
-
-
-
-
-
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/VolgnummersWijzigen"><span>Verbintenisvolgnummers wijzigen</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/BPVsAanmaken"><span>Kwalificatie BPV's aanmaken</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/EmailSturen"><span>E-mail sturen</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerBerichten"><span>Berichten versturen</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Uploadverzoeken"><span>Uploadverzoeken</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/ToetsmomentenWijzigen"><span>Acties op toetsmomenten</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/ParticipatieItemsAfsluiten"><span>Participatie-items afsluiten</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/TrajectenAfsluiten"><span>Trajecten afsluiten</span></a></li>
-
-</ul>
-</li>
-
-
-
-<li class="widget-menu-dropdown"><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-5-item-li-tablink"><span>Onderwijs</span></a>
-<ul>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OnderwijsproductenToekennen"><span>Productregels invullen</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/KeuzesAangeven"><span>Keuzes aangeven</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/KeuzesEnResultatenBevriezen"><span>Keuzes en resultaten bevriezen</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/CollectiefCohortVrijstellingPrregels"><span>Collectief cohort/vrijstelling pr regels</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/KeuzesControleren"><span>Keuzes controleren</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OnderwijsproductenAfnemen"><span>Onderwijsproducten afnemen</span></a></li>
-
-</ul>
-</li>
-
-<li class="widget-menu-dropdown"><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-6-item-li-tablink"><span>Examens</span></a>
-<ul>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/ActieOverzicht"><span>Actieoverzicht</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Criteriumbankcontrole"><span>Criteriumbankcontrole</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Studieadviesberekening"><span>Studieadviesberekening</span></a></li>
-
-</ul>
-</li>
-
-<li class="widget-menu-dropdown"><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-7-item-li-tablink"><span>Aanwezigheid</span></a>
-<ul>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OpenstaandeAbsentieMeldingen"><span>Openstaande meldingen</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OpenstaandeAbsentieWaarnemingen"><span>Openstaande waarnemingen</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OpenstaandeMaatregelen"><span>Openstaande maatregelen</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/VerzuimRapportage"><span>Verzuimrapportage</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Verzuimloket"><span>Verzuimloket</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OLC"><span>OLC-registraties</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/CollectiefBudget"><span>Collectief budget toekennen</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/VerlofAanvragen"><span>Openstaande verlofaanvragen</span></a></li>
-
-</ul>
-</li>
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/AbsentieMelden"><span>Absentie melden</span></a></li>
-<li class="widget-menu-dropdown"><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-9-item-li-tablink"><span>Resultaten</span></a>
-<ul>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Invoeren"><span>Invoeren</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/InvoerenOpEquivalentie"><span>Invoeren op equivalentiecode</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/InvoerenMeervoudig"><span>Invoeren meervoudig</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/FacetCSVExport"><span>Facet csv export</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Afdrukken"><span>Afdrukken</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Bevriezen"><span>Bevriezen</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/ResultatenImporteren"><span>Resultaten importeren</span></a></li>
-
-<li><a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Toetsmomenten"><span>Toetsmomenten</span></a></li>
-
-</ul>
-</li>
-
-</ul>
-
-</div>
-<div class="menu-slider"><div class="menu-fields-container"><div class="menu-fields"><label class="menu-sort-order" for="menu-sort-order">Groeperen op</label><select class="menu-sort-order" id="menu-sort-order"><option value="alphabet">Alfabet</option><option value="category">Categorie</option><option value="module">Module</option></select><input type="text" class="menu-zoekterm init" value="vul hier uw zoekterm in"></div></div><div class="menu-vinden" title="Menu (Ctrl+M)">Ga naar...</div></div></div>
-</div>
-
-</div>
-<!-- Left bevat alle content, is uitgevuld over de hoogte en breedte -->
-<div class="content">
-<div class="layLeft" id="layLeft">
-<div class="widget-feedback subtract-from-scrollbox" title="Klik om deze balk te sluiten..." id="id15a" style="">
-
-</div>
-<div class="scrollContainer">
-<div class="scrollBox" id="scrollBox" style="max-height: 657px;">
-<div class="menuBox" style="display: none;"><div class="menu-quick-links alphabet"><div class="menu-quick-link alphabet-a active" title="A"></div><div class="menu-quick-link alphabet-b active" title="B"></div><div class="menu-quick-link alphabet-c active" title="C"></div><div class="menu-quick-link alphabet-d active" title="D"></div><div class="menu-quick-link alphabet-e active" title="E"></div><div class="menu-quick-link alphabet-f active" title="F"></div><div class="menu-quick-link alphabet-i active" title="I"></div><div class="menu-quick-link alphabet-k active" title="K"></div><div class="menu-quick-link alphabet-m active" title="M"></div><div class="menu-quick-link alphabet-o active" title="O"></div><div class="menu-quick-link alphabet-p active" title="P"></div><div class="menu-quick-link alphabet-r active" title="R"></div><div class="menu-quick-link alphabet-s active" title="S"></div><div class="menu-quick-link alphabet-t active" title="T"></div><div class="menu-quick-link alphabet-u active" title="U"></div><div class="menu-quick-link alphabet-v active" title="V"></div></div><div class="menu-column menu-favorites"><div class="menu-favorites-title">recente pagina's</div><div class="menu-favorites-items"><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken" title="">Deelnemers uitgebreid zoeken</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/DeelnemerZoeken" title="">Deelnemeroverzicht</a></div></div><div class="menu-column menu-column1"><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-a"></div><div class="menu-header-text">A</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/AbsentieMelden" title="" name="AbsentieMelden">Absentie melden</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/ActieOverzicht" title="" name="ActieOverzicht">Actieoverzicht</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/ToetsmomentenWijzigen" title="" name="ToetsmomentenWijzigen">Acties op toetsmomenten</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Afdrukken" title="" name="Afdrukken">Afdrukken</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-b"></div><div class="menu-header-text">B</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/DeelnemerBerichten" title="" name="DeelnemerBerichten">Berichten versturen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Bevriezen" title="" name="Bevriezen">Bevriezen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/BPVDashboard" title="" name="BPVDashboard">BPV-dashboardoverzicht</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/BronMutatiesAanmaken" title="" name="BronMutatiesAanmaken">Bronmutaties aanmaken</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-c"></div><div class="menu-header-text">C</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/CollectiefBudget" title="" name="CollectiefBudget">Collectief budget toekennen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Criteriumbankcontrole" title="" name="Criteriumbankcontrole">Criteriumbankcontrole</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-d"></div><div class="menu-header-text">D</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/DeelnemerZoeken" title="" name="DeelnemerZoeken">Deelnemeroverzicht</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken" title="" name="DeelnemerUitgebreidZoeken">Deelnemers uitgebreid zoeken</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/DigitaleAanmeldingenZoeken" title="" name="DigitaleAanmeldingenZoeken">Digitaleaanmeldingoverzicht</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-e"></div><div class="menu-header-text">E</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/EmailSturen" title="" name="EmailSturen">E-mail sturen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/ExactCsvRapportage" title="" name="ExactCsvRapportage">Exact csv rapportage</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-f"></div><div class="menu-header-text">F</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/FacetCSVExport" title="" name="FacetCSVExport">Facet csv export</a></div></div><div class="menu-column menu-column2"><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-i"></div><div class="menu-header-text">I</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Intakemomenten" title="" name="Intakemomenten">Intakemomenten</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/IntakeZoeken" title="" name="IntakeZoeken">Intakeoverzicht</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/IntakeWachtlijst" title="" name="IntakeWachtlijst">Intakewachtlijst</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Invoeren" title="" name="Invoeren">Invoeren</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/InvoerenMeervoudig" title="" name="InvoerenMeervoudig">Invoeren meervoudig</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/InvoerenOpEquivalentie" title="" name="InvoerenOpEquivalentie">Invoeren op equivalentiecode</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-k"></div><div class="menu-header-text">K</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/KenmerkenMuteren" title="" name="KenmerkenMuteren">Kenmerken verwerken</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/KeuzesAangeven" title="" name="KeuzesAangeven">Keuzes aangeven</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/KeuzesControleren" title="" name="KeuzesControleren">Keuzes controleren</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/BPVsAanmaken" title="" name="BPVsAanmaken">Kwalificatie BPV's aanmaken</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-m"></div><div class="menu-header-text">M</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/MijnBPVKandidaten" title="" name="MijnBPVKandidaten">Mijn BPV-dashboardoverzicht</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/MijnDeelnemers" title="" name="MijnDeelnemers">Mijn deelnemers</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-o"></div><div class="menu-header-text">O</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OLC" title="" name="OLC">OLC-registraties</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OnderwijsproductenAfnemen" title="" name="OnderwijsproductenAfnemen">Onderwijsproducten afnemen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OpenstaandeMaatregelen" title="" name="OpenstaandeMaatregelen">Openstaande maatregelen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OpenstaandeAbsentieMeldingen" title="" name="OpenstaandeAbsentieMeldingen">Openstaande meldingen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/VerlofAanvragen" title="" name="VerlofAanvragen">Openstaande verlofaanvragen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OpenstaandeAbsentieWaarnemingen" title="" name="OpenstaandeAbsentieWaarnemingen">Openstaande waarnemingen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OpgeslagenZoekopdrachten" title="" name="OpgeslagenZoekopdrachten">Opgeslagen zoekopdrachten</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OrgEhdLocatieWijzigen" title="" name="OrgEhdLocatieWijzigen">Organisatie-eenheden aanpassen</a></div></div><div class="menu-column menu-column3"><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-p"></div><div class="menu-header-text">P</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/ParticipatieItemsAfsluiten" title="" name="ParticipatieItemsAfsluiten">Participatie-items afsluiten</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OnderwijsproductenToekennen" title="" name="OnderwijsproductenToekennen">Productregels invullen</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-r"></div><div class="menu-header-text">R</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Rapportages" title="" name="Rapportages">Rapportages</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/ResultatenImporteren" title="" name="ResultatenImporteren">Resultaten importeren</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-s"></div><div class="menu-header-text">S</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Stagewijzers" title="" name="Stagewijzers">Stagewijzers koppelen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/BPVs" title="" name="BPVs">Status BPV's aanpassen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Verbintenissen" title="" name="Verbintenissen">Status verbintenis aanpassen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Studieadviesberekening" title="" name="Studieadviesberekening">Studieadviesberekening</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-t"></div><div class="menu-header-text">T</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Toetsmomenten" title="" name="Toetsmomenten">Toetsmomenten</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/TrajectenAfsluiten" title="Collectief trajecten afsluiten" name="TrajectenAfsluiten">Trajecten afsluiten</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-u"></div><div class="menu-header-text">U</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Uploadverzoeken" title="" name="Uploadverzoeken">Uploadverzoeken</a></div><div class="menu-sub-box alphabet"><div class="menu-sub-box-header"><div class="menu-header-icon alphabet-v"></div><div class="menu-header-text">V</div></div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Aanmaken" title="" name="Aanmaken">Verbintenissen/plaatsingen aanmaken</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/VolgnummersWijzigen" title="" name="VolgnummersWijzigen">Verbintenisvolgnummers wijzigen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Verzuimloket" title="" name="Verzuimloket">Verzuimloket</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/VerzuimRapportage" title="" name="VerzuimRapportage">Verzuimrapportage</a></div></div><div class="clear"></div></div>
-<div class="contentBox">
-
-<form id="id183" method="post" action="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-form"><div style="width:0px;height:0px;position:absolute;left:-100px;top:-100px;overflow:hidden" class="hidden-fields"><input type="text" tabindex="-1" autocomplete="off"><input type="submit" tabindex="-1" name="centerContainer:layLeft:bottom:rightContainer:rightButtons:0:link" onclick=" var b=document.getElementById(&#39;id17b&#39;); if (b!=null&amp;&amp;b.onclick!=null&amp;&amp;typeof(b.onclick) != &#39;undefined&#39;) {  var r = Wicket.bind(b.onclick, b)(); if (r != false) b.click(); } else { b.click(); };  return false;"></div>
-<div id="id184">
-<div class="laySearchbar">
-<span>Peildatum
-<input type="text" value="06-12-2022" name="filter:peildatum" id="id16b" class="hasDatepicker"><img class="ui-datepicker-trigger" src="./Eduarte-uitgebreidzoeken_files/calendar2.png" alt="..." title="..."> t/m
-<input type="text" value="" name="filter:peilEindDatum" id="id16a" class="hasDatepicker"><img class="ui-datepicker-trigger" src="./Eduarte-uitgebreidzoeken_files/calendar2.png" alt="..." title="...">
-</span>­
-</div>
-<div class="clear laySeparator10"></div>
-
-<div id="id16c" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
-<div>
-<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-2" aria-controls="ui-id-3" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Personalia</a></h5>
-<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-3" aria-labelledby="ui-id-2" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
-<div id="id185" style="display:none"></div>
-</div>
-</div>
-</div>
-<div id="id16d" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
-<div>
-<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-4" aria-controls="ui-id-5" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Adres</a></h5>
-<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-5" aria-labelledby="ui-id-4" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
-<div id="id186" style="display:none"></div>
-</div>
-</div>
-</div>
-<div id="id16e" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
-<div>
-<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-6" aria-controls="ui-id-7" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Verbintenis</a></h5>
-<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-7" aria-labelledby="ui-id-6" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
-<div id="id187" style="display:none"></div>
-</div>
-</div>
-</div>
-<div id="id16f" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
-<div>
-<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-8" aria-controls="ui-id-9" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Onderwijs</a></h5>
-<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-9" aria-labelledby="ui-id-8" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
-<div id="id188" style="display:none"></div>
-</div>
-</div>
-</div>
-<div id="id170" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
-<div>
-<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-10" aria-controls="ui-id-11" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Examendeelname</a></h5>
-<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-11" aria-labelledby="ui-id-10" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
-<div id="id189" style="display:none"></div>
-</div>
-</div>
-</div>
-<div id="id171" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
-<div>
-<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-12" aria-controls="ui-id-13" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Intakegesprek</a></h5>
-<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-13" aria-labelledby="ui-id-12" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
-<div id="id18a" style="display:none"></div>
-</div>
-</div>
-</div>
-<div id="id172" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
-<div>
-<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-14" aria-controls="ui-id-15" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Vooropleiding</a></h5>
-<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-15" aria-labelledby="ui-id-14" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
-<div id="id18b" style="display:none"></div>
-</div>
-</div>
-</div>
-<div id="id173" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
-<div>
-<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-16" aria-controls="ui-id-17" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Contract</a></h5>
-<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-17" aria-labelledby="ui-id-16" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
-<div id="id18c" style="display:none"></div>
-</div>
-</div>
-</div>
-<div id="id174" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
-<div>
-<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-18" aria-controls="ui-id-19" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Relatie</a></h5>
-<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-19" aria-labelledby="ui-id-18" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
-<div id="id18d" style="display:none"></div>
-</div>
-</div>
-</div>
-<div id="id175" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
-<div>
-<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-20" aria-controls="ui-id-21" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">BPV</a></h5>
-<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-21" aria-labelledby="ui-id-20" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
-<div id="id18e" style="display:none"></div>
-</div>
-</div>
-</div>
-<div id="id176" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
-<div>
-<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-22" aria-controls="ui-id-23" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Inburgering</a></h5>
-<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-23" aria-labelledby="ui-id-22" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
-<div id="id18f" style="display:none"></div>
-</div>
-</div>
-</div>
-<div id="id177" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
-<div>
-<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-24" aria-controls="ui-id-25" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Vrije velden</a></h5>
-<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-25" aria-labelledby="ui-id-24" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
-<div id="id190" style="display:none"></div>
-</div>
-</div>
-</div>
-<div id="id178" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
-<div>
-<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons ui-state-hover" role="tab" id="ui-id-26" aria-controls="ui-id-27" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Begeleiding</a></h5>
-<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-27" aria-labelledby="ui-id-26" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
-<div id="id191" style="display:none"></div>
-</div>
-</div>
-</div>
-<div id="id179" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
-<div>
-<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-28" aria-controls="ui-id-29" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Digitale aanmeldingen</a></h5>
-<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-29" aria-labelledby="ui-id-28" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
-<div id="id192" style="display:none"></div>
-</div>
-</div>
-</div>
-
-
-
-<input type="submit" class="outsideScreen" tabindex="-1">
-</div>
-</form>
-
-</div>
-</div>
-</div>
-
-<div class="layFooter subtract-from-scrollbox" id="id193">
-<div class="left">
-<div class="widget-button left">
-<a href="javascript:;" id="id17a" onclick="var ff=document.getElementById(&#39;id183&#39;);if (typeof ff.onsubmit === &#39;function&#39; &amp;&amp; ff.onsubmit() == false) return false;var f = document.getElementById(&#39;id183&#39;);f.action=&#39;./DeelnemerUitgebreidZoeken?3-1.-centerContainer-layLeft-bottom-leftContainer-leftButtons-1-link&#39;;f.submit();return false;" title="Zoekopdracht opslaan (Ctrl+Insert)"><span>Zoekopdracht opslaan</span></a>
-</div>
-</div>
-<div class="right">
-<div class="widget-button left">
-<a href="javascript:;" id="id17b" onclick="var ff=document.getElementById(&#39;id183&#39;);if (typeof ff.onsubmit === &#39;function&#39; &amp;&amp; ff.onsubmit() == false) return false;var f = document.getElementById(&#39;id183&#39;);f.action=&#39;./DeelnemerUitgebreidZoeken?3-1.-centerContainer-layLeft-bottom-rightContainer-rightButtons-0-link&#39;;f.submit();return false;" title="Zoeken (Ctrl+Return)"><span>Zoeken</span></a>
-</div>
-</div>
-<div class="clear"></div>
-</div>
-<div id="id15b">
-</div>
-</div>
-<!-- Side is een extra balk aan de rechterkant, is uitgevuld over de hoogte en heeft een vaste breedte -->
-<div class="laySide" id="id167">
-<div class="slider"></div>
-
-<div class="movedown_10" id="id15e">
-<table class="tblDatagrid tblClick">
-<thead>
-<tr>
-<th colspan="2" class="header_clickable">Recente deelnemers</th>
-</tr>
-</thead>
-<tbody>
-
-
-<tr class="tblNoHightlight">
-<td colspan="2">Geen deelnemers bezocht</td>
-</tr>
-
-</tbody>
-</table>
-</div>
-<div class="movedown_10" id="id15f">
-<table class="tblDatagrid tblClick treeTable">
-<thead>
-<tr>
-<th colspan="2" class="header_clickable">Mededelingen</th>
-</tr>
-</thead>
-
-
-<tbody><tr class="tblNoHightlight">
-<td colspan="2">Geen mededelingen</td>
-</tr>
-
-</tbody></table>
-<table class="tblData sidebarNav" style="display: none;">
-<tbody><tr class="knoppen">
-<td><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" class="vorige" style="display: none;"><img src="./Eduarte-uitgebreidzoeken_files/selection_left.png" alt="vorige 5" class="left"></a></td>
-<td><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" class="volgende"><img src="./Eduarte-uitgebreidzoeken_files/selection_right.png" alt="volgende 5" class="right"></a></td>
-</tr>
-</tbody></table>
-<div>
-</div>
-</div>
-<div class="movedown_10" id="id162">
-<div id="id194">
-<h3 class="caption">
-
-<span class="tblButtons">
-
-
-
-
-
-
-
-
-
-</span>
-<span class="clear"></span>
-</h3>
-<div id="id195">
-<table class="tblDatagrid tblClick treeTable" id="id159">
-
-<thead>
-<tr>
-
-
-<th class="header_clickable">
-<span>Favorieten</span>
-</th>
-
-<th class="unit_20 header_clickable">
-<span></span>
-</th>
-
-
-</tr>
-</thead>
-
-
-
-<tbody>
-
-<tr class="tblNoHightlight">
-<td colspan="2" class="treeColumn">Er zijn geen gegevens gevonden</td>
-</tr>
-
-
-</tbody>
-</table>
-</div>
-<div id="id196" style="display:none"></div>
-
-
-</div>
-<table class="tblData">
-<tbody><tr>
-<td>
-<a title="Deze pagina als favoriet toevoegen" id="id160" href="javascript:;">
-<span>Als favoriet toevoegen</span>
-</a>
-</td>
-</tr>
-<tr>
-<td>
-<a title="Mappen beheren" id="id161" href="javascript:;">
-<span>Beheer mappen</span>
-</a>
-</td>
-</tr>
-</tbody></table>
-<div>
-</div>
-<div>
-</div>
-</div>
-<!-- <div wicket:id="todos" class="movedown_10"></div> -->
-<div class="movedown_10" id="id163">
-<div id="id197">
-<table class="tblDatagrid">
-<thead>
-<tr>
-<th colspan="2" class="header_clickable">Rapportages</th>
-</tr>
-</thead>
-<tbody>
-
-
-<tr class="tblNoHightlight">
-<td colspan="2">Geen rapportages gevonden</td>
-</tr>
-
-</tbody>
-</table>
-</div>
-</div>
-<div class="movedown_10" id="id164">
-<table class="tblDatagrid tblClick treeTable">
-<thead>
-<tr>
-<th colspan="2" class="header_clickable">Geschiedenis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="clickable" onclick="javascript:location.href=&#39;./DeelnemerUitgebreidZoeken?3-1.-laySide-navigatie-listview-0-geschiedenisPanel&#39;;">
-<div class="sidepanel_header">Deelnemeroverzicht</div>
-<div class="sidepanel_subcontent"></div>
-</td>
-</tr><tr>
-<td class="clickable" onclick="javascript:location.href=&#39;./DeelnemerUitgebreidZoeken?3-1.-laySide-navigatie-listview-1-geschiedenisPanel&#39;;">
-<div class="sidepanel_header">Home</div>
-<div class="sidepanel_subcontent"></div>
-</td>
-</tr>
-
-</tbody>
-</table>
-<table class="tblData sidebarNav" style="display: none;">
-<tbody><tr class="knoppen">
-<td><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" class="vorige" style="display: none;"><img src="./Eduarte-uitgebreidzoeken_files/selection_left.png" alt="vorige 5" class="left"></a></td>
-<td><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" class="volgende"><img src="./Eduarte-uitgebreidzoeken_files/selection_right.png" alt="volgende 5" class="right"></a></td>
-</tr>
-</tbody></table>
-</div>
-<div class="movedown_10" id="id165">
-<table class="tblDatagrid tblClick treeTable">
-<thead>
-<tr>
-<th colspan="2" class="header_clickable">Single sign-on</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="clickable">
-<a target="_blank" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-laySide-sso-onderwijsLink">Eduarte Portalen</a>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="movedown_10" id="id166">
-<table class="tblDatagrid tblClick treeTable">
-<thead>
-<tr>
-<th colspan="2" class="header_clickable">Activiteiten</th>
-</tr>
-</thead>
-
-
-<tbody><tr class="tblNoHightlight">
-<td colspan="2">Geen to-do's toegevoegd</td>
-</tr>
-
-</tbody></table>
-<table class="tblData sidebarNav" style="display: none;">
-<tbody><tr class="knoppen">
-<td><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" class="vorige" style="display: none;"><img src="./Eduarte-uitgebreidzoeken_files/selection_left.png" alt="vorige 5" class="left"></a></td>
-<td><a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" class="volgende"><img src="./Eduarte-uitgebreidzoeken_files/selection_right.png" alt="volgende 5" class="right"></a></td>
-</tr>
-</tbody></table>
-</div>
-</div>
-</div>
-
-
-
-
-<div id="infoButton">&nbsp;</div>
-
-<div class="clear"></div>
-<div id="id198">
-<div id="id199" style="display:none">
-
-</div><div id="id19a" style="display:none">
-
-</div><div id="id19b" style="display:none">
-
-</div><div id="id19c" style="display:none">
-
-</div>
-</div>
-</div>
-<script type="text/javascript"></script>
-<script type="text/javascript"></script>
-<script type="text/javascript">
-/*<![CDATA[*/
-
-var clientEndParseTimeVariable = new Date().getTime();
-
-/*]]>*/
-</script>
-
-
-
-
-<div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front shaded ui-draggable ui-resizable" aria-describedby="id169" style="display: none; position: absolute;" aria-labelledby="ui-id-1"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-1" class="ui-dialog-title">Eduarte</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title=""><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span></button></div><div class="hide ui-dialog-content ui-widget-content" id="id169" style="display: block;">
-<div>
-<table id="infotable" class="fontsize_09">
-<tbody><tr>
-<td class="unit_100"><b>Pagina:</b></td>
-<td><span>Deelnemers uitgebreid zoeken</span></td>
-</tr>
-<tr>
-<td class="unit_100"><b>Classname:</b></td>
-<td><span id="pageclassname">nl.topicus.eduarte.web.pages.deelnemer.DeelnemerUitgebreidZoekenPage</span></td>
-</tr>
-<tr>
-<td class="unit_100"><b>Paginanummer:</b></td>
-<td><span id="wicketpageid">3</span></td>
-</tr>
-<tr>
-<td class="unit_100"><b>Versie:</b></td>
-<td><span>2.2022.11.28, sha1=f17d64811d1</span> - build <span>2022-11-28T22:57:00Z</span></td>
-</tr>
-<tr>
-<td class="unit_100"><b>Models:</b></td>
-<td>
-<ul>
-<li>
-defaultModel:
-n/a
-(n/a)</li><li>
-innermostModel:
-n/a
-(n/a)</li>
-</ul>
-</td>
-</tr>
-</tbody></table>
-</div>
-<div id="id168">
-<table class="fontsize_09">
-<tbody><tr>
-<td class="unit_100"><b>Schermbreedte</b></td>
-<td>
-<span class="info-support info-800">800 of minder</span>
-<span class="info-support info-1024">1024</span>
-<span class="info-support info-1280">1280</span>
-<span class="info-support info-1440">1440 of meer</span>
-</td>
-</tr>
-<tr>
-<td class="unit_100"><b>History API</b></td>
-<td class="history-api support-detected">
-<span class="info-support">ja</span>
-<span class="info-nosupport">nee</span>
-</td>
-</tr>
-</tbody></table>
-</div>
-</div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script type="text/javascript">
+		/*<![CDATA[*/
+
+		var clientStartParseTimeVariable = new Date().getTime();
+
+		/*]]>*/
+		</script>
+		<link rel="stylesheet" type="text/css" href="./EduarteHome_files/jquery-ui-ver-974F87E9D58936809A70A3E079AAD628.css">
+		<script type="text/javascript" src="./EduarteHome_files/core-ver-4C7B7E6E58A8A51846A828EC8DFB8C81.js"></script>
+		<script type="text/javascript" id="wicket-ajax-base-url">
+		/*<![CDATA[*/
+		Wicket.Ajax.baseUrl="deelnemers/DeelnemerUitgebreidZoeken?3";
+		/*]]>*/
+		</script>
+		<script type="text/javascript" id="nl-topicus-eduarte-web-components-menu-main-EduArteMainMenu-0">
+		/*<![CDATA[*/
+
+		function wikiLogin(username, password, page, url)
+		{
+		if (url.startsWith("https://")) {
+		var form = document.getElementById('postEduarteLogin');
+		form.action=url + '/eduarte-login.php';
+		form.username.value=username;
+		form.password.value=password;
+		form.page.value=page;
+		form.submit();
+		} else {
+		// Old way of doing stuff, can be removed once we are using the new wiki servers
+		var form = document.getElementById('helpForm');
+		form.action=url + '/api.php';
+		// Voor IE, anders gaat form.action= fout
+		var input = document.createElement('input');
+		input.type = 'hidden';
+		input.name = 'action';
+		input.value = 'login';
+		form.appendChild(input);
+		form.lgname.value=username;
+		form.lgpassword.value=password;
+		form.target='Wiki';
+		form.submit();
+		setTimeout("openWiki('"+url+"/index.php/"+page+"')", 1000);
+		}
+		}
+		function openWiki(url)
+		{
+		mywindow = window.open(url, 'Wiki');
+		mywindow.focus();
+		}
+		function sleep(naptime)
+		{
+		var sleeping = true;
+		var now = new Date();
+		var alarm;
+		var startingMSeconds = now.getTime();
+		while(sleeping)
+		{
+		alarm = new Date();
+		alarmMSeconds = alarm.getTime();
+		if(alarmMSeconds - startingMSeconds > naptime){ sleeping = false; }
+		}
+		}
+
+		/*]]>*/
+		</script>
+		<link rel="stylesheet" type="text/css" href="./EduarteHome_files/newstylemenu-ver-7E6F252DCB426DB66F86F1F53CC1E294.css">
+		<script type="text/javascript" src="./EduarteHome_files/freezepanes-ver-189E3580DF01510270FC358B4E066D40.js"></script>
+		<link rel="stylesheet" type="text/css" href="./EduarteHome_files/jquery.treeTable-ver-3697A81523FF2C4916EC59986CBC47E2.css">
+		<link rel="stylesheet" type="text/css" href="./EduarteHome_files/info-800-ver-B99E9EDDAC0FE5DC5E744CE0A8A6E9EA.css" media="screen and (max-width:1014px)">
+		<link rel="stylesheet" type="text/css" href="./EduarteHome_files/info-1024-ver-55C27EEF14D97DDB98C21205131AD2BE.css" media="screen and (min-width:1015px) and (max-width:1270px)">
+		<link rel="stylesheet" type="text/css" href="./EduarteHome_files/info-1280-ver-EE4CD5519CBF666442105B9CA3D9BCBB.css" media="screen and (min-width:1271px) and (max-width:1430px)">
+		<link rel="stylesheet" type="text/css" href="./EduarteHome_files/info-1440-ver-4252C41A4B3F137ED0B5D6B8D6BD86C1.css" media="screen and (min-width:1431px)">
+		<link rel="stylesheet" type="text/css" href="./EduarteHome_files/info-panel-ver-0DE0FCABD97C39DBA4655C445AD4A962.css">
+		<link rel="stylesheet" type="text/css" href="./EduarteHome_files/modal-ver-E99D4201F0F6C5D3081AD42ACB1F22C2.css">
+		<script type="text/javascript" src="./Eduarte-uitgebreidzoeken_files/datepicker-nl-ver-1C858E294430E6162F1AF97A809F2C4D.js"></script>
+		<link rel="stylesheet" type="text/css" href="./Eduarte-uitgebreidzoeken_files/modal-ver-E99D4201F0F6C5D3081AD42ACB1F22C2.css">
+		<title>
+			Eduarte
+		</title>
+		<link rel="shortcut icon" href="https://sdp.educus.nl/assets/img/icons/eduarte.ico">
+		<meta name="viewport" content="width=1024">
+		<script type="text/javascript">
+		/*<![CDATA[*/
+
+		function initServerTime() {/* Statusbalk Marker */
+		window.defaultStatus='Server tijd: 0.0s, Client tijd: ' + (new Date().getTime() - clientStartParseTimeVariable)/1000 +  's (' + (clientEndParseTimeVariable - clientStartParseTimeVariable)/1000 +  's parsen + ' + (new Date().getTime() - clientEndParseTimeVariable)/1000 +  's renderen)';
+		}
+
+		/*]]>*/
+		</script>
+		<link rel="stylesheet" type="text/css" href="./EduarteHome_files/jquery.cluetip-ver-604529FE0E34829890EB64724498EF2A.css">
+		<link rel="stylesheet" type="text/css" href="./base-ver-F4A64F95EB7F6647217A9768318826F4.css"><!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="../wicket/resource/assets.AssetsResourceMarker/stylesheets/ie_7-ver-826408DA968587B2BFC702D079F62769.css" /><![endif]-->
+		<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="../wicket/resource/assets.AssetsResourceMarker/stylesheets/ie_7en8-ver-5D73B8964470A54605F65A9604072050.css" /><![endif]-->
+		<link rel="stylesheet" type="text/css" href="./EduarteHome_files/style-max1279-ver-F5264C91A6FBEB4D1F8C9BA324B38EAC.css" media="screen and (max-width:1260px)">
+		<link rel="stylesheet" type="text/css" href="./EduarteHome_files/style-min1280-ver-DC5F857C1E4FB3009F3700AF967E9DAA.css" media="screen and (min-width:1261px)">
+		<link rel="stylesheet" type="text/css" href="./EduarteHome_files/testomgeving-ver-B3DDEC93C1CCA86986CD0695ED90586E.css">
+		<link rel="stylesheet" type="text/css" href="./EduarteHome_files/flaticons-stroke-ver-B3DD554EBF54AEC52EEFEA4E3D1C03DE.css">
+		<script type="text/javascript">
+		/*<![CDATA[*/
+		Wicket.Event.add(window, "domready", function(event) { 
+		$('#scrollBox').scrollBox({feedback: 'id15a'});;
+		$('#id15b').screenSaver(1200000, 3600000, 300000, '#screenSaverLogoutCounter', false);;
+		$('#id15b').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-centerContainer-layLeft-screensaver","m":"POST","c":"id15b"}});;
+		Wicket.Ajax.ajax({"u":"./DeelnemerUitgebreidZoeken?3-1.0-layHeader-mainmenu-mainMenuItems-14-mainMenuItem-div-link","c":"id158","e":"click","pd":true});;
+		$('#id15c').ajaxIndicator();;
+		$('#id15d').newStyleMenu({enabled: true, alwaysOpen: false, name: 'Ga naar', menuBox: '#scrollBox .menuBox', contentBox: '#scrollBox .contentBox', sortOrder: 'alphabet', sortOrderCallback: function(menu, val){menu.serverCall('setSortOrder', val);}, items: [{"id":"AbsentieMelden","url":"./AbsentieMelden","name":"Absentie melden","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Absentie melden","sub":"Absentie melden"}],"modules":["Aanwezigheid"]},{"id":"OpenstaandeAbsentieMeldingen","url":"./OpenstaandeAbsentieMeldingen","name":"Openstaande meldingen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["Aanwezigheid"]},{"id":"OpenstaandeAbsentieWaarnemingen","url":"./OpenstaandeAbsentieWaarnemingen","name":"Openstaande waarnemingen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["Aanwezigheid"]},{"id":"OpenstaandeMaatregelen","url":"./OpenstaandeMaatregelen","name":"Openstaande maatregelen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["Aanwezigheid"]},{"id":"OLC","url":"./OLC","name":"OLC-registraties","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["Aanwezigheid"]},{"id":"CollectiefBudget","url":"./CollectiefBudget","name":"Collectief budget toekennen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["Aanwezigheid"]},{"id":"VerlofAanvragen","url":"./VerlofAanvragen","name":"Openstaande verlofaanvragen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["Aanwezigheid"]},{"id":"OnderwijsproductenToekennen","url":"./OnderwijsproductenToekennen","name":"Productregels invullen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Onderwijs","sub":"Onderwijs"}],"modules":["Kernregistratie Deelnemers"]},{"id":"KeuzesAangeven","url":"./KeuzesAangeven","name":"Keuzes aangeven","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Onderwijs","sub":"Onderwijs"}],"modules":["Kernregistratie Deelnemers"]},{"id":"KeuzesControleren","url":"./KeuzesControleren","name":"Keuzes controleren","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Onderwijs","sub":"Onderwijs"}],"modules":["Kernregistratie Deelnemers"]},{"id":"OnderwijsproductenAfnemen","url":"./OnderwijsproductenAfnemen","name":"Onderwijsproducten afnemen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Onderwijs","sub":"Onderwijs"}],"modules":["Kernregistratie Deelnemers"]},{"id":"ActieOverzicht","url":"./ActieOverzicht","name":"Actieoverzicht","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Examens","sub":"Examens"}],"modules":["Kernregistratie Deelnemers"]},{"id":"Criteriumbankcontrole","url":"./Criteriumbankcontrole","name":"Criteriumbankcontrole","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Examens","sub":"Examens"}],"modules":["Kernregistratie Deelnemers"]},{"id":"Studieadviesberekening","url":"./Studieadviesberekening","name":"Studieadviesberekening","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Examens","sub":"Examens"}],"modules":["Kernregistratie Deelnemers"]},{"id":"Verbintenissen","url":"./Verbintenissen","name":"Status verbintenis aanpassen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Kernregistratie Deelnemers"]},{"id":"BPVs","url":"./BPVs","name":"Status BPV's aanpassen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Kernregistratie Deelnemers"]},{"id":"OrgEhdLocatieWijzigen","url":"./OrgEhdLocatieWijzigen","name":"Organisatie-eenheden aanpassen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Kernregistratie Deelnemers"]},{"id":"BronMutatiesAanmaken","url":"./BronMutatiesAanmaken","name":"Bronmutaties aanmaken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Kernregistratie Deelnemers"]},{"id":"Aanmaken","url":"./Aanmaken","name":"Verbintenissen/plaatsingen aanmaken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Kernregistratie Deelnemers"]},{"id":"KenmerkenMuteren","url":"./KenmerkenMuteren","name":"Kenmerken verwerken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Kernregistratie Deelnemers"]},{"id":"VolgnummersWijzigen","url":"./VolgnummersWijzigen","name":"Verbintenisvolgnummers wijzigen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Kernregistratie Deelnemers"]},{"id":"Intakemomenten","url":"./Intakemomenten","name":"Intakemomenten","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Deelnemers","sub":"Zoeken"}],"modules":["Basisfunctionaliteit"]},{"id":"ParticipatieItemsAfsluiten","url":"./ParticipatieItemsAfsluiten","name":"Participatie-items afsluiten","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Aanwezigheid"]},{"id":"TrajectenAfsluiten","url":"./TrajectenAfsluiten","name":"Trajecten afsluiten","description":"Collectief trajecten afsluiten","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Deelnemer begeleiding"]},{"id":"DeelnemerZoeken","url":"./DeelnemerZoeken","name":"Deelnemeroverzicht","description":"","score":11.011453333333334,"tags":["test","blaat"],"categories":[{"main":"Deelnemers","sub":"Zoeken"}],"modules":["Basisfunctionaliteit"]},{"id":"IntakeZoeken","url":"./IntakeZoeken","name":"Intakeoverzicht","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Deelnemers","sub":"Zoeken"}],"modules":["Basisfunctionaliteit"]},{"id":"IntakeWachtlijst","url":"./IntakeWachtlijst","name":"Intakewachtlijst","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Deelnemers","sub":"Zoeken"}],"modules":["Basisfunctionaliteit"]},{"id":"DeelnemerUitgebreidZoeken","url":"./DeelnemerUitgebreidZoeken","name":"Deelnemers uitgebreid zoeken","description":"","score":14.99896,"tags":["test","blaat"],"categories":[{"main":"Deelnemers","sub":"Zoeken"}],"modules":["Basisfunctionaliteit"]},{"id":"OpgeslagenZoekopdrachten","url":"./OpgeslagenZoekopdrachten","name":"Opgeslagen zoekopdrachten","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Deelnemers","sub":"Zoeken"}],"modules":["Basisfunctionaliteit"]},{"id":"MijnDeelnemers","url":"./MijnDeelnemers","name":"Mijn deelnemers","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Mijn deelnemers","sub":"Mijn deelnemers"}],"modules":["Basisfunctionaliteit"]},{"id":"Rapportages","url":"./Rapportages","name":"Rapportages","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Rapportages","sub":"Rapportages"}],"modules":["Basisfunctionaliteit"]},{"id":"ExactCsvRapportage","url":"./ExactCsvRapportage","name":"Exact csv rapportage","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Rapportages","sub":"Rapportages"}],"modules":["Exact CSV export"]},{"id":"DeelnemerBerichten","url":"./DeelnemerBerichten","name":"Berichten versturen","description":"","score":0.0,"tags":["bericht","self_service","self service","self","service","selfservice"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["SelfService","Studentenportaal"]},{"id":"MijnBPVKandidaten","url":"./MijnBPVKandidaten","name":"Mijn BPV-dashboardoverzicht","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Mijn deelnemers","sub":"Mijn deelnemers"}],"modules":["BPV/Stage"]},{"id":"BPVsAanmaken","url":"./BPVsAanmaken","name":"Kwalificatie BPV's aanmaken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["BPV/Stage"]},{"id":"BPVDashboard","url":"./BPVDashboard","name":"BPV-dashboardoverzicht","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Mijn deelnemers","sub":"Mijn deelnemers"}],"modules":["BPV/Stage"]},{"id":"Stagewijzers","url":"./Stagewijzers","name":"Stagewijzers koppelen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["EduArte Onderwijs ELO"]},{"id":"ToetsmomentenWijzigen","url":"./ToetsmomentenWijzigen","name":"Acties op toetsmomenten","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Toets- en examenlogistiek"]},{"id":"Toetsmomenten","url":"./Toetsmomenten","name":"Toetsmomenten","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Toets- en examenlogistiek"]},{"id":"DigitaleAanmeldingenZoeken","url":"./DigitaleAanmeldingenZoeken","name":"Digitaleaanmeldingoverzicht","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Deelnemers","sub":"Zoeken"}],"modules":["Digitaalaanmelden"]},{"id":"VerzuimRapportage","url":"./VerzuimRapportage","name":"Verzuimrapportage","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["KRD-Participatie"]},{"id":"Verzuimloket","url":"./Verzuimloket","name":"Verzuimloket","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Aanwezigheid","sub":"Aanwezigheid"}],"modules":["KRD-Participatie"]},{"id":"Invoeren","url":"./Invoeren","name":"Invoeren","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Basisfunctionaliteit"]},{"id":"InvoerenMeervoudig","url":"./InvoerenMeervoudig","name":"Invoeren meervoudig","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Basisfunctionaliteit"]},{"id":"InvoerenOpEquivalentie","url":"./InvoerenOpEquivalentie","name":"Invoeren op equivalentiecode","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Basisfunctionaliteit"]},{"id":"Afdrukken","url":"./Afdrukken","name":"Afdrukken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Basisfunctionaliteit"]},{"id":"Bevriezen","url":"./Bevriezen","name":"Bevriezen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Basisfunctionaliteit"]},{"id":"ResultatenImporteren","url":"./ResultatenImporteren","name":"Resultaten importeren","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Basisfunctionaliteit"]},{"id":"FacetCSVExport","url":"./FacetCSVExport","name":"Facet csv export","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Resultaten","sub":"Resultaten"}],"modules":["Basisfunctionaliteit"]},{"id":"EmailSturen","url":"./EmailSturen","name":"E-mail sturen","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Workflow"]},{"id":"Uploadverzoeken","url":"./Uploadverzoeken","name":"Uploadverzoeken","description":"","score":0.0,"tags":["test","blaat"],"categories":[{"main":"Collectief","sub":"Collectief"}],"modules":["Workflow"]}]});;
+		$('#id15d').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-layHeader-menu","m":"POST","c":"id15d"}});;
+		$('#id15e').sidebar(true);;
+		$('#id15e').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-recenteDeelnemers","m":"POST","c":"id15e"}});;
+		$('#id15f').sidebar(true);$('#id15f').navsidebar(5);;
+		$('#id15f').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-berichten","m":"POST","c":"id15f"}});;
+		$('#id159').treeTable({callback: function(node, val){node.serverCall('setExpanded', val);}});;
+		$('#scrollBox #id159').freezePanes(0);;
+		Wicket.Ajax.ajax({"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-bookmarks-bookmarkToevoegen","c":"id160","e":"click"});;
+		Wicket.Ajax.ajax({"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-bookmarks-foldersBeherenLink","c":"id161","e":"click"});;
+		$('#id162').sidebar(true);;
+		$('#id162').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-bookmarks","m":"POST","c":"id162"}});;
+		$('#id163').sidebar(true);;
+		$('#id163').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-rapportage","m":"POST","c":"id163"}});;
+		$('#id164').sidebar(true);$('#id164').navsidebar(5);;
+		$('#id164').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-navigatie","m":"POST","c":"id164"}});;
+		$('#id165').sidebar(true);;
+		$('#id165').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-sso","m":"POST","c":"id165"}});;
+		$('#id166').sidebar(true);$('#id166').navsidebar(5);;
+		$('#id166').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-laySide-activiteiten","m":"POST","c":"id166"}});;
+		$('#id167').slidebar();;
+		$('#id168').infoPanel();;
+		$('#id169').dialog({autoOpen: false, closeText: '', title: 'Eduarte', resizable: true, minHeight: 30, dialogClass: 'shaded', width: 600});;
+		Wicket.Ajax.ajax({"u":"./DeelnemerUitgebreidZoeken?3-1.0-infoButton-infoButton","c":"infoButton","e":"click"});;
+		$('#id16a + img.ui-datepicker-trigger').remove();$('#id16a:enabled').datepicker({dateFormat: 'dd-mm-yy', buttonImageOnly: true, showAnim: 'fadeIn', showOn: 'button', duration: 'fast', showButtonPanel: true, buttonImage: '../../assets/img/icons/calendar2.png'});;
+		Wicket.Ajax.ajax({"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-peilEindDatum","m":"POST","c":"id16a","e":"change"});;
+		$('#id16b + img.ui-datepicker-trigger').remove();$('#id16b:enabled').datepicker({dateFormat: 'dd-mm-yy', buttonImageOnly: true, showAnim: 'fadeIn', showOn: 'button', duration: 'fast', showButtonPanel: true, buttonImage: '../../assets/img/icons/calendar2.png'});;
+		Wicket.Ajax.ajax({"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-peildatum","m":"POST","c":"id16b","e":"change"});;
+		$('#id16c').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id16c').unbind('accordionbeforeactivate').serverCall('onOpen');});;
+		$('#id16c').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-personalia","m":"POST","c":"id16c"}});;
+		$('#id16d').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id16d').unbind('accordionbeforeactivate').serverCall('onOpen');});;
+		$('#id16d').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-adres","m":"POST","c":"id16d"}});;
+		$('#id16e').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id16e').unbind('accordionbeforeactivate').serverCall('onOpen');});;
+		$('#id16e').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-verbintenis","m":"POST","c":"id16e"}});;
+		$('#id16f').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id16f').unbind('accordionbeforeactivate').serverCall('onOpen');});;
+		$('#id16f').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-onderwijs","m":"POST","c":"id16f"}});;
+		$('#id170').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id170').unbind('accordionbeforeactivate').serverCall('onOpen');});;
+		$('#id170').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-examendeelname","m":"POST","c":"id170"}});;
+		$('#id171').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id171').unbind('accordionbeforeactivate').serverCall('onOpen');});;
+		$('#id171').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-intakegesprek","m":"POST","c":"id171"}});;
+		$('#id172').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id172').unbind('accordionbeforeactivate').serverCall('onOpen');});;
+		$('#id172').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-vooropleiding","m":"POST","c":"id172"}});;
+		$('#id173').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id173').unbind('accordionbeforeactivate').serverCall('onOpen');});;
+		$('#id173').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-contract","m":"POST","c":"id173"}});;
+		$('#id174').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id174').unbind('accordionbeforeactivate').serverCall('onOpen');});;
+		$('#id174').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-relatie","m":"POST","c":"id174"}});;
+		$('#id175').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id175').unbind('accordionbeforeactivate').serverCall('onOpen');});;
+		$('#id175').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-bpv","m":"POST","c":"id175"}});;
+		$('#id176').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id176').unbind('accordionbeforeactivate').serverCall('onOpen');});;
+		$('#id176').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-inburgering","m":"POST","c":"id176"}});;
+		$('#id177').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id177').unbind('accordionbeforeactivate').serverCall('onOpen');});;
+		$('#id177').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-vrijveld","m":"POST","c":"id177"}});;
+		$('#id178').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id178').unbind('accordionbeforeactivate').serverCall('onOpen');});;
+		$('#id178').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-begeleiding","m":"POST","c":"id178"}});;
+		$('#id179').accordion({header: 'h5', alwaysOpen: false, collapsible: true, active: false, heightStyle: 'auto'}).bind('accordionbeforeactivate', function() {$('#id179').unbind('accordionbeforeactivate').serverCall('onOpen');});;
+		$('#id179').bindServerCall({ajax: {"u":"./DeelnemerUitgebreidZoeken?3-1.0-form-filter-digitaalAanmelding","m":"POST","c":"id179"}});;
+		$(document).bind('keydown', 'Ctrl+Shift+Up', function(e) {if(!'#id17d'.disabled) followLink('#id17d');return false;})
+		$(document).bind('keydown', 'Alt+Ctrl+B', function(e) {if(!'#id157'.disabled) followLink('#id157');return false;})
+		$(document).bind('keydown', 'Alt+Ctrl+D', function(e) {if(!'#id151'.disabled) followLink('#id151');return false;})
+		$(document).bind('keydown', 'Alt+Ctrl+F1', function(e) {if(!'#id158'.disabled) followLink('#id158');return false;})
+		$(document).bind('keydown', 'Ctrl+Insert', function(e) {if(!'#id17a'.disabled) followLink('#id17a');return false;})
+		$(document).bind('keydown', 'Ctrl+Return', function(e) {if(!'#id17b'.disabled) followLink('#id17b');return false;})
+		$(document).bind('keydown', 'Alt+Ctrl+M', function(e) {if(!'#id153'.disabled) followLink('#id153');return false;})
+		$(document).bind('keydown', 'Alt+Ctrl+G', function(e) {if(!'#id152'.disabled) followLink('#id152');return false;})
+		$(document).bind('keydown', 'Alt+Ctrl+F', function(e) {if(!'#id156'.disabled) followLink('#id156');return false;})
+		$(document).bind('keydown', 'Ctrl+Shift+Down', function(e) {if(!'#id180'.disabled) followLink('#id180');return false;})
+		$(document).bind('keydown', 'Alt+Ctrl+H', function(e) {if(!'#id150'.disabled) followLink('#id150');return false;})
+		$(document).bind('keydown', 'Alt+Ctrl+R', function(e) {if(!'#id155'.disabled) followLink('#id155');return false;})
+		$(document).bind('keydown', 'Alt+Ctrl+O', function(e) {if(!'#id154'.disabled) followLink('#id154');return false;})
+		$(document).bind('keydown', 'Ctrl+Shift+Right', function(e) {if(!'#id17f'.disabled) followLink('#id17f');return false;})
+		$(document).bind('keydown', 'Ctrl+Shift+Left', function(e) {if(!'#id17e'.disabled) followLink('#id17e');return false;})
+		$(document).bind('keydown', 'Alt+Ctrl+Z', function(e) {if(!'#id17c'.disabled) followLink('#id17c');return false;})
+		;$('.inpDescription').cluetip({splitTitle: ' - ', cluetipClass: 'jtip', mouseOutClose: 'true', cluezIndex: 30000, delayedClose: 10000});;$('.panelError').cluetip({splitTitle: ' - ', cluetipClass: 'jtip-error', mouseOutClose: 'true', cluezIndex: 30000, delayedClose: 3000});$('input.error').cluetip({splitTitle: ' - ', cluetipClass: 'jtip-error', mouseOutClose: 'true', cluezIndex: 30000, delayedClose: 3000});;if(!(Wicket.Browser.isIE() || window.navigator.userAgent.indexOf('Trident/')>-1)){$('select.error').cluetip({splitTitle: ' - ', cluetipClass: 'jtip-error', mouseOutClose: 'true', cluezIndex: 30000, delayedClose: 3000});};
+		Wicket.Event.publish(Wicket.Event.Topic.AJAX_HANDLERS_BOUND);
+		;});
+		/*]]>*/
+		</script>
+	</head>
+	<body onload="initServerTime();" onbeforeunload="$('#id15c').css('visibility', 'visible').find('.image').show()">
+		<div class="container">
+			<!-- Header bevat de navigatie en titels van 115px hoog -->
+			<div class="layHeader subtract-from-scrollbox" id="id181">
+				<div class="layTopbar">
+					<div class="layTopbarLeft">
+						<div class="layTopbuttons">
+							<div class="top_button icon_home">
+								<a class="mainMenuItem" href="Eduarte-home.html" id="id150" title="Home (Alt+Ctrl+H)"><span>Home</span></a>
+							</div>
+							<div class="top_button icon_home"></div>
+							<div class="top_button icon_onderwijs"></div>
+							<div class="top_button icon_deelnemer top_button_active">
+								<a class="mainMenuItem" href="Eduarte-uitgebreidzoeken.html" id="id151" title="Deelnemer (Alt+Ctrl+D)"><span>Deelnemer</span></a>
+							</div>
+							<div class="top_button icon_groep"></div>
+							<div class="top_button icon_onderwijs"></div>
+							<div class="top_button icon_groep">
+								<a class="mainMenuItem" href="https://sdp.educus.nl/app/groepen/GroepZoeken" id="id152" title="Groep (Alt+Ctrl+G)"><span>Groep</span></a>
+							</div>
+							<div class="top_button icon_financieel"></div>
+							<div class="top_button icon_medewerker">
+								<a class="mainMenuItem" href="https://sdp.educus.nl/app/medewerkers/Zoeken" id="id153" title="Medewerker (Alt+Ctrl+M)"><span>Medewerker</span></a>
+							</div>
+							<div class="top_button icon_onderwijs">
+								<a class="mainMenuItem" href="https://sdp.educus.nl/app/onderwijs/OpleidingenZoeken" id="id154" title="Onderwijs (Alt+Ctrl+O)"><span>Onderwijs</span></a>
+							</div>
+							<div class="top_button icon_onderwijs"></div>
+							<div class="top_button icon_contacts">
+								<a class="mainMenuItem" href="https://sdp.educus.nl/app/relatie/ExterneOrganisaties" id="id155" title="Relatie (Alt+Ctrl+R)"><span>Relatie</span></a>
+							</div>
+							<div class="top_button icon_financieel">
+								<a class="mainMenuItem" href="https://sdp.educus.nl/app/financieel/Zoekopdrachten" id="id156" title="Financieel (Alt+Ctrl+F)"><span>Financieel</span></a>
+							</div>
+							<div class="top_button icon_beheer">
+								<a class="mainMenuItem" href="https://sdp.educus.nl/app/beheer/Start" id="id157" title="Beheer (Alt+Ctrl+B)"><span>Beheer</span></a>
+							</div>
+							<div class="top_button icon_help">
+								<a class="mainMenuItem" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-mainmenu-mainMenuItems-14-mainMenuItem-div-link" id="id158" title="Help (Alt+Ctrl+F1)"><span>Help</span></a>
+							</div>
+						</div>
+						<div class="search right">
+							<form title="Zoeken naar deelnemers, medewerkers of groepen op basis van nummers, BSN, namen, afkortingen of codes. (Alt+Ctrl+z)" id="id182" method="post" action="https://sdp.educus.nl/app/zoek" name="id182">
+								<div>
+									<input type="text" class="unit_80" value="" name="snelzoeken" id="id17c"> <input class="inpImage" type="image" alt="Submit" src="./Eduarte-uitgebreidzoeken_files/llnrsearch.png">
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="layTopbarRight">
+						<div class="layUserBox">
+							<div>
+								<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-mainmenu-logoff" class="logoff" title="afmelden"></a>
+							</div>
+						</div>
+					</div>
+					<div class="inloggegevens">
+						<span>&nbsp;</span> Dashorst |&nbsp;
+						<div title="Openstaande signalen (Ongelezen signalen)" class="signalen">
+							<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-mainmenu-eduArteUserBox-link" class="hand"><span>0 (0) <img src="./Eduarte-uitgebreidzoeken_files/message.png" alt="openstaande (ongelezen) signalen"></span></a>
+						</div>
+						<div class="organisatie">
+							Eduarte1 - SDP | &nbsp;
+						</div>
+					</div>
+					<div class="layTopbarUserbox"></div>
+					<form id="helpForm" action="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" method="post" name="helpForm">
+						<fieldset>
+							<input type="hidden" name="lgname" value=""> <input type="hidden" name="lgpassword" value="">
+						</fieldset>
+					</form>
+					<form id="postEduarteLogin" action="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" method="post" target="eduarte-wiki" name="postEduarteLogin">
+						<fieldset>
+							<input type="hidden" name="username" value=""> <input type="hidden" name="password" value=""> <input type="hidden" name="page" value="">
+						</fieldset>
+					</form>
+				</div>
+				<div class="omgevingIndicator testomgeving"></div>
+				<div class="instellingsLogo">
+					<img src="./Eduarte-uitgebreidzoeken_files/4648cf8f70035d01d41c0f908fdaeeb360f0a80a" alt="">
+				</div>
+				<div class="layTitlebar">
+					<h2 class="layTitlebarTitle">
+						Deelnemers uitgebreid zoeken
+					</h2>
+					<div class="ajaxIndicator" id="id15c">
+						<div class="image"></div>
+					</div>
+				</div>
+				<div class="layMenubar">
+					<div id="id15d" class="new-style-menu">
+						<div class="widget-menu">
+							<ul>
+								<li class="wmActive widget-menu-dropdown">
+									<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-0-item-li-tablink"><span>Deelnemers</span></a>
+									<ul>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerZoeken"><span>Deelnemeroverzicht</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/IntakeZoeken"><span>Intakeoverzicht</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/IntakeWachtlijst"><span>Intakewachtlijst</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Intakemomenten"><span>Intakemomenten</span></a>
+										</li>
+										<li class="wmActive">
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken"><span>Deelnemers uitgebreid zoeken</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OpgeslagenZoekopdrachten"><span>Opgeslagen zoekopdrachten</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DigitaleAanmeldingenZoeken"><span>Digitaleaanmeldingoverzicht</span></a>
+										</li>
+									</ul>
+								</li>
+								<li class="widget-menu-dropdown">
+									<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-1-item-li-tablink"><span>Mijn deelnemers</span></a>
+									<ul>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/MijnDeelnemers"><span>Mijn deelnemers</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/MijnBPVKandidaten"><span>Mijn BPV-dashboardoverzicht</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/BPVDashboard"><span>BPV-dashboardoverzicht</span></a>
+										</li>
+									</ul>
+								</li>
+								<li class="widget-menu-dropdown">
+									<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-2-item-li-tablink"><span>Rapportages</span></a>
+									<ul>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Rapportages"><span>Rapportages</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/ExactCsvRapportage"><span>Exact csv rapportage</span></a>
+										</li>
+									</ul>
+								</li>
+								<li class="widget-menu-dropdown">
+									<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-3-item-li-tablink"><span>Collectief</span></a>
+									<ul>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Verbintenissen"><span>Status verbintenis aanpassen</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/BPVs"><span>Status BPV's aanpassen</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OrgEhdLocatieWijzigen"><span>Organisatie-eenheden aanpassen</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/BronMutatiesAanmaken"><span>Bronmutaties aanmaken</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Aanmaken"><span>Verbintenissen/plaatsingen aanmaken</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/KenmerkenMuteren"><span>Kenmerken verwerken</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Stagewijzers"><span>Stagewijzers koppelen</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/VolgnummersWijzigen"><span>Verbintenisvolgnummers wijzigen</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/BPVsAanmaken"><span>Kwalificatie BPV's aanmaken</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/EmailSturen"><span>E-mail sturen</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerBerichten"><span>Berichten versturen</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Uploadverzoeken"><span>Uploadverzoeken</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/ToetsmomentenWijzigen"><span>Acties op toetsmomenten</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/ParticipatieItemsAfsluiten"><span>Participatie-items afsluiten</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/TrajectenAfsluiten"><span>Trajecten afsluiten</span></a>
+										</li>
+									</ul>
+								</li>
+								<li class="widget-menu-dropdown">
+									<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-5-item-li-tablink"><span>Onderwijs</span></a>
+									<ul>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OnderwijsproductenToekennen"><span>Productregels invullen</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/KeuzesAangeven"><span>Keuzes aangeven</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/KeuzesEnResultatenBevriezen"><span>Keuzes en resultaten bevriezen</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/CollectiefCohortVrijstellingPrregels"><span>Collectief cohort/vrijstelling pr regels</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/KeuzesControleren"><span>Keuzes controleren</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OnderwijsproductenAfnemen"><span>Onderwijsproducten afnemen</span></a>
+										</li>
+									</ul>
+								</li>
+								<li class="widget-menu-dropdown">
+									<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-6-item-li-tablink"><span>Examens</span></a>
+									<ul>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/ActieOverzicht"><span>Actieoverzicht</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Criteriumbankcontrole"><span>Criteriumbankcontrole</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Studieadviesberekening"><span>Studieadviesberekening</span></a>
+										</li>
+									</ul>
+								</li>
+								<li class="widget-menu-dropdown">
+									<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-7-item-li-tablink"><span>Aanwezigheid</span></a>
+									<ul>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OpenstaandeAbsentieMeldingen"><span>Openstaande meldingen</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OpenstaandeAbsentieWaarnemingen"><span>Openstaande waarnemingen</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OpenstaandeMaatregelen"><span>Openstaande maatregelen</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/VerzuimRapportage"><span>Verzuimrapportage</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Verzuimloket"><span>Verzuimloket</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/OLC"><span>OLC-registraties</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/CollectiefBudget"><span>Collectief budget toekennen</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/VerlofAanvragen"><span>Openstaande verlofaanvragen</span></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/AbsentieMelden"><span>Absentie melden</span></a>
+								</li>
+								<li class="widget-menu-dropdown">
+									<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-layHeader-menu-items-9-item-li-tablink"><span>Resultaten</span></a>
+									<ul>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Invoeren"><span>Invoeren</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/InvoerenOpEquivalentie"><span>Invoeren op equivalentiecode</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/InvoerenMeervoudig"><span>Invoeren meervoudig</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/FacetCSVExport"><span>Facet csv export</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Afdrukken"><span>Afdrukken</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Bevriezen"><span>Bevriezen</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/ResultatenImporteren"><span>Resultaten importeren</span></a>
+										</li>
+										<li>
+											<a class="menuLink" href="https://sdp.educus.nl/app/deelnemers/Toetsmomenten"><span>Toetsmomenten</span></a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="menu-slider">
+							<div class="menu-fields-container">
+								<div class="menu-fields">
+									<label class="menu-sort-order" for="menu-sort-order">Groeperen op</label><select class="menu-sort-order" id="menu-sort-order">
+										<option value="alphabet">
+											Alfabet
+										</option>
+										<option value="category">
+											Categorie
+										</option>
+										<option value="module">
+											Module
+										</option>
+									</select><input type="text" class="menu-zoekterm init" value="vul hier uw zoekterm in">
+								</div>
+							</div>
+							<div class="menu-vinden" title="Menu (Ctrl+M)">
+								Ga naar...
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- Left bevat alle content, is uitgevuld over de hoogte en breedte -->
+			<div class="content">
+				<div class="layLeft" id="layLeft">
+					<div class="widget-feedback subtract-from-scrollbox" title="Klik om deze balk te sluiten..." id="id15a" style=""></div>
+					<div class="scrollContainer">
+						<div class="scrollBox" id="scrollBox" style="max-height: 657px;">
+							<div class="menuBox" style="display: none;">
+								<div class="menu-quick-links alphabet">
+									<div class="menu-quick-link alphabet-a active" title="A"></div>
+									<div class="menu-quick-link alphabet-b active" title="B"></div>
+									<div class="menu-quick-link alphabet-c active" title="C"></div>
+									<div class="menu-quick-link alphabet-d active" title="D"></div>
+									<div class="menu-quick-link alphabet-e active" title="E"></div>
+									<div class="menu-quick-link alphabet-f active" title="F"></div>
+									<div class="menu-quick-link alphabet-i active" title="I"></div>
+									<div class="menu-quick-link alphabet-k active" title="K"></div>
+									<div class="menu-quick-link alphabet-m active" title="M"></div>
+									<div class="menu-quick-link alphabet-o active" title="O"></div>
+									<div class="menu-quick-link alphabet-p active" title="P"></div>
+									<div class="menu-quick-link alphabet-r active" title="R"></div>
+									<div class="menu-quick-link alphabet-s active" title="S"></div>
+									<div class="menu-quick-link alphabet-t active" title="T"></div>
+									<div class="menu-quick-link alphabet-u active" title="U"></div>
+									<div class="menu-quick-link alphabet-v active" title="V"></div>
+								</div>
+								<div class="menu-column menu-favorites">
+									<div class="menu-favorites-title">
+										recente pagina's
+									</div>
+									<div class="menu-favorites-items">
+										<a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken" title="">Deelnemers uitgebreid zoeken</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/DeelnemerZoeken" title="">Deelnemeroverzicht</a>
+									</div>
+								</div>
+								<div class="menu-column menu-column1">
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-a"></div>
+											<div class="menu-header-text">
+												A
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/AbsentieMelden" title="" name="AbsentieMelden" id="AbsentieMelden">Absentie melden</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/ActieOverzicht" title="" name="ActieOverzicht" id="ActieOverzicht">Actieoverzicht</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/ToetsmomentenWijzigen" title="" name="ToetsmomentenWijzigen" id="ToetsmomentenWijzigen">Acties op toetsmomenten</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Afdrukken" title="" name="Afdrukken" id="Afdrukken">Afdrukken</a>
+									</div>
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-b"></div>
+											<div class="menu-header-text">
+												B
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/DeelnemerBerichten" title="" name="DeelnemerBerichten" id="DeelnemerBerichten">Berichten versturen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Bevriezen" title="" name="Bevriezen" id="Bevriezen">Bevriezen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/BPVDashboard" title="" name="BPVDashboard" id="BPVDashboard">BPV-dashboardoverzicht</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/BronMutatiesAanmaken" title="" name="BronMutatiesAanmaken" id="BronMutatiesAanmaken">Bronmutaties aanmaken</a>
+									</div>
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-c"></div>
+											<div class="menu-header-text">
+												C
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/CollectiefBudget" title="" name="CollectiefBudget" id="CollectiefBudget">Collectief budget toekennen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Criteriumbankcontrole" title="" name="Criteriumbankcontrole" id="Criteriumbankcontrole">Criteriumbankcontrole</a>
+									</div>
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-d"></div>
+											<div class="menu-header-text">
+												D
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/DeelnemerZoeken" title="" name="DeelnemerZoeken" id="DeelnemerZoeken">Deelnemeroverzicht</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken" title="" name="DeelnemerUitgebreidZoeken" id="DeelnemerUitgebreidZoeken">Deelnemers uitgebreid zoeken</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/DigitaleAanmeldingenZoeken" title="" name="DigitaleAanmeldingenZoeken" id="DigitaleAanmeldingenZoeken">Digitaleaanmeldingoverzicht</a>
+									</div>
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-e"></div>
+											<div class="menu-header-text">
+												E
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/EmailSturen" title="" name="EmailSturen" id="EmailSturen">E-mail sturen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/ExactCsvRapportage" title="" name="ExactCsvRapportage" id="ExactCsvRapportage">Exact csv rapportage</a>
+									</div>
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-f"></div>
+											<div class="menu-header-text">
+												F
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/FacetCSVExport" title="" name="FacetCSVExport" id="FacetCSVExport">Facet csv export</a>
+									</div>
+								</div>
+								<div class="menu-column menu-column2">
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-i"></div>
+											<div class="menu-header-text">
+												I
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Intakemomenten" title="" name="Intakemomenten" id="Intakemomenten">Intakemomenten</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/IntakeZoeken" title="" name="IntakeZoeken" id="IntakeZoeken">Intakeoverzicht</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/IntakeWachtlijst" title="" name="IntakeWachtlijst" id="IntakeWachtlijst">Intakewachtlijst</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Invoeren" title="" name="Invoeren" id="Invoeren">Invoeren</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/InvoerenMeervoudig" title="" name="InvoerenMeervoudig" id="InvoerenMeervoudig">Invoeren meervoudig</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/InvoerenOpEquivalentie" title="" name="InvoerenOpEquivalentie" id="InvoerenOpEquivalentie">Invoeren op equivalentiecode</a>
+									</div>
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-k"></div>
+											<div class="menu-header-text">
+												K
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/KenmerkenMuteren" title="" name="KenmerkenMuteren" id="KenmerkenMuteren">Kenmerken verwerken</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/KeuzesAangeven" title="" name="KeuzesAangeven" id="KeuzesAangeven">Keuzes aangeven</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/KeuzesControleren" title="" name="KeuzesControleren" id="KeuzesControleren">Keuzes controleren</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/BPVsAanmaken" title="" name="BPVsAanmaken" id="BPVsAanmaken">Kwalificatie BPV's aanmaken</a>
+									</div>
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-m"></div>
+											<div class="menu-header-text">
+												M
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/MijnBPVKandidaten" title="" name="MijnBPVKandidaten" id="MijnBPVKandidaten">Mijn BPV-dashboardoverzicht</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/MijnDeelnemers" title="" name="MijnDeelnemers" id="MijnDeelnemers">Mijn deelnemers</a>
+									</div>
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-o"></div>
+											<div class="menu-header-text">
+												O
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OLC" title="" name="OLC" id="OLC">OLC-registraties</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OnderwijsproductenAfnemen" title="" name="OnderwijsproductenAfnemen" id="OnderwijsproductenAfnemen">Onderwijsproducten afnemen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OpenstaandeMaatregelen" title="" name="OpenstaandeMaatregelen" id="OpenstaandeMaatregelen">Openstaande maatregelen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OpenstaandeAbsentieMeldingen" title="" name="OpenstaandeAbsentieMeldingen" id="OpenstaandeAbsentieMeldingen">Openstaande meldingen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/VerlofAanvragen" title="" name="VerlofAanvragen" id="VerlofAanvragen">Openstaande verlofaanvragen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OpenstaandeAbsentieWaarnemingen" title="" name="OpenstaandeAbsentieWaarnemingen" id="OpenstaandeAbsentieWaarnemingen">Openstaande waarnemingen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OpgeslagenZoekopdrachten" title="" name="OpgeslagenZoekopdrachten" id="OpgeslagenZoekopdrachten">Opgeslagen zoekopdrachten</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OrgEhdLocatieWijzigen" title="" name="OrgEhdLocatieWijzigen" id="OrgEhdLocatieWijzigen">Organisatie-eenheden aanpassen</a>
+									</div>
+								</div>
+								<div class="menu-column menu-column3">
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-p"></div>
+											<div class="menu-header-text">
+												P
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/ParticipatieItemsAfsluiten" title="" name="ParticipatieItemsAfsluiten" id="ParticipatieItemsAfsluiten">Participatie-items afsluiten</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/OnderwijsproductenToekennen" title="" name="OnderwijsproductenToekennen" id="OnderwijsproductenToekennen">Productregels invullen</a>
+									</div>
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-r"></div>
+											<div class="menu-header-text">
+												R
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Rapportages" title="" name="Rapportages" id="Rapportages">Rapportages</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/ResultatenImporteren" title="" name="ResultatenImporteren" id="ResultatenImporteren">Resultaten importeren</a>
+									</div>
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-s"></div>
+											<div class="menu-header-text">
+												S
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Stagewijzers" title="" name="Stagewijzers" id="Stagewijzers">Stagewijzers koppelen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/BPVs" title="" name="BPVs" id="BPVs">Status BPV's aanpassen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Verbintenissen" title="" name="Verbintenissen" id="Verbintenissen">Status verbintenis aanpassen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Studieadviesberekening" title="" name="Studieadviesberekening" id="Studieadviesberekening">Studieadviesberekening</a>
+									</div>
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-t"></div>
+											<div class="menu-header-text">
+												T
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Toetsmomenten" title="" name="Toetsmomenten" id="Toetsmomenten">Toetsmomenten</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/TrajectenAfsluiten" title="Collectief trajecten afsluiten" name="TrajectenAfsluiten" id="TrajectenAfsluiten">Trajecten afsluiten</a>
+									</div>
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-u"></div>
+											<div class="menu-header-text">
+												U
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Uploadverzoeken" title="" name="Uploadverzoeken" id="Uploadverzoeken">Uploadverzoeken</a>
+									</div>
+									<div class="menu-sub-box alphabet">
+										<div class="menu-sub-box-header">
+											<div class="menu-header-icon alphabet-v"></div>
+											<div class="menu-header-text">
+												V
+											</div>
+										</div><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Aanmaken" title="" name="Aanmaken" id="Aanmaken">Verbintenissen/plaatsingen aanmaken</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/VolgnummersWijzigen" title="" name="VolgnummersWijzigen" id="VolgnummersWijzigen">Verbintenisvolgnummers wijzigen</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/Verzuimloket" title="" name="Verzuimloket" id="Verzuimloket">Verzuimloket</a><a class="menu-item" href="https://sdp.educus.nl/app/deelnemers/VerzuimRapportage" title="" name="VerzuimRapportage" id="VerzuimRapportage">Verzuimrapportage</a>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="contentBox">
+								<form id="id183" method="post" action="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-form" name="id183">
+									<div style="width:0px;height:0px;position:absolute;left:-100px;top:-100px;overflow:hidden" class="hidden-fields">
+										<input type="text" tabindex="-1" autocomplete="off"><input type="submit" tabindex="-1" name="centerContainer:layLeft:bottom:rightContainer:rightButtons:0:link" onclick="var b=document.getElementById('id17b'); if (b!=null&amp;&amp;b.onclick!=null&amp;&amp;typeof(b.onclick) != 'undefined') { var r = Wicket.bind(b.onclick, b)(); if (r != false) b.click(); } else { b.click(); }; return false;">
+									</div>
+									<div id="id184">
+										<div class="laySearchbar">
+											<span>Peildatum <input type="text" value="06-12-2022" name="filter:peildatum" id="id16b" class="hasDatepicker"><img class="ui-datepicker-trigger" src="./Eduarte-uitgebreidzoeken_files/calendar2.png" alt="..." title="..."> t/m <input type="text" value="" name="filter:peilEindDatum" id="id16a" class="hasDatepicker"><img class="ui-datepicker-trigger" src="./Eduarte-uitgebreidzoeken_files/calendar2.png" alt="..." title="..."></span> ­
+										</div>
+										<div class="clear laySeparator10"></div>
+										<div id="id16c" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+											<div>
+												<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-2" aria-controls="ui-id-3" aria-selected="false" aria-expanded="false" tabindex="0">
+													<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Personalia</a>
+												</h5>
+												<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-3" aria-labelledby="ui-id-2" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
+													<div id="id185" style="display:none"></div>
+												</div>
+											</div>
+										</div>
+										<div id="id16d" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+											<div>
+												<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-4" aria-controls="ui-id-5" aria-selected="false" aria-expanded="false" tabindex="0">
+													<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Adres</a>
+												</h5>
+												<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-5" aria-labelledby="ui-id-4" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
+													<div id="id186" style="display:none"></div>
+												</div>
+											</div>
+										</div>
+										<div id="id16e" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+											<div>
+												<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-6" aria-controls="ui-id-7" aria-selected="false" aria-expanded="false" tabindex="0">
+													<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Verbintenis</a>
+												</h5>
+												<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-7" aria-labelledby="ui-id-6" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
+													<div id="id187" style="display:none"></div>
+												</div>
+											</div>
+										</div>
+										<div id="id16f" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+											<div>
+												<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-8" aria-controls="ui-id-9" aria-selected="false" aria-expanded="false" tabindex="0">
+													<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Onderwijs</a>
+												</h5>
+												<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-9" aria-labelledby="ui-id-8" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
+													<div id="id188" style="display:none"></div>
+												</div>
+											</div>
+										</div>
+										<div id="id170" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+											<div>
+												<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-10" aria-controls="ui-id-11" aria-selected="false" aria-expanded="false" tabindex="0">
+													<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Examendeelname</a>
+												</h5>
+												<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-11" aria-labelledby="ui-id-10" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
+													<div id="id189" style="display:none"></div>
+												</div>
+											</div>
+										</div>
+										<div id="id171" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+											<div>
+												<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-12" aria-controls="ui-id-13" aria-selected="false" aria-expanded="false" tabindex="0">
+													<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Intakegesprek</a>
+												</h5>
+												<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-13" aria-labelledby="ui-id-12" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
+													<div id="id18a" style="display:none"></div>
+												</div>
+											</div>
+										</div>
+										<div id="id172" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+											<div>
+												<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-14" aria-controls="ui-id-15" aria-selected="false" aria-expanded="false" tabindex="0">
+													<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Vooropleiding</a>
+												</h5>
+												<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-15" aria-labelledby="ui-id-14" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
+													<div id="id18b" style="display:none"></div>
+												</div>
+											</div>
+										</div>
+										<div id="id173" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+											<div>
+												<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-16" aria-controls="ui-id-17" aria-selected="false" aria-expanded="false" tabindex="0">
+													<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Contract</a>
+												</h5>
+												<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-17" aria-labelledby="ui-id-16" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
+													<div id="id18c" style="display:none"></div>
+												</div>
+											</div>
+										</div>
+										<div id="id174" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+											<div>
+												<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-18" aria-controls="ui-id-19" aria-selected="false" aria-expanded="false" tabindex="0">
+													<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Relatie</a>
+												</h5>
+												<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-19" aria-labelledby="ui-id-18" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
+													<div id="id18d" style="display:none"></div>
+												</div>
+											</div>
+										</div>
+										<div id="id175" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+											<div>
+												<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-20" aria-controls="ui-id-21" aria-selected="false" aria-expanded="false" tabindex="0">
+													<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">BPV</a>
+												</h5>
+												<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-21" aria-labelledby="ui-id-20" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
+													<div id="id18e" style="display:none"></div>
+												</div>
+											</div>
+										</div>
+										<div id="id176" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+											<div>
+												<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-22" aria-controls="ui-id-23" aria-selected="false" aria-expanded="false" tabindex="0">
+													<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Inburgering</a>
+												</h5>
+												<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-23" aria-labelledby="ui-id-22" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
+													<div id="id18f" style="display:none"></div>
+												</div>
+											</div>
+										</div>
+										<div id="id177" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+											<div>
+												<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-24" aria-controls="ui-id-25" aria-selected="false" aria-expanded="false" tabindex="0">
+													<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Vrije velden</a>
+												</h5>
+												<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-25" aria-labelledby="ui-id-24" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
+													<div id="id190" style="display:none"></div>
+												</div>
+											</div>
+										</div>
+										<div id="id178" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+											<div>
+												<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons ui-state-hover" role="tab" id="ui-id-26" aria-controls="ui-id-27" aria-selected="false" aria-expanded="false" tabindex="0">
+													<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Begeleiding</a>
+												</h5>
+												<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-27" aria-labelledby="ui-id-26" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
+													<div id="id191" style="display:none"></div>
+												</div>
+											</div>
+										</div>
+										<div id="id179" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+											<div>
+												<h5 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-28" aria-controls="ui-id-29" aria-selected="false" aria-expanded="false" tabindex="0">
+													<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#">Digitale aanmeldingen</a>
+												</h5>
+												<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-29" aria-labelledby="ui-id-28" role="tabpanel" aria-hidden="true" style="display: none; height: 0px;">
+													<div id="id192" style="display:none"></div>
+												</div>
+											</div>
+										</div><input type="submit" class="outsideScreen" tabindex="-1">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="layFooter subtract-from-scrollbox" id="id193">
+						<div class="left">
+							<div class="widget-button left">
+								<a href="javascript:;" id="id17a" onclick="var ff=document.getElementById('id183');if (typeof ff.onsubmit === 'function' &amp;&amp; ff.onsubmit() == false) return false;var f = document.getElementById('id183');f.action='./DeelnemerUitgebreidZoeken?3-1.-centerContainer-layLeft-bottom-leftContainer-leftButtons-1-link';f.submit();return false;" title="Zoekopdracht opslaan (Ctrl+Insert)"><span>Zoekopdracht opslaan</span></a>
+							</div>
+						</div>
+						<div class="right">
+							<div class="widget-button left">
+								<a href="javascript:;" id="id17b" onclick="var ff=document.getElementById('id183');if (typeof ff.onsubmit === 'function' &amp;&amp; ff.onsubmit() == false) return false;var f = document.getElementById('id183');f.action='./DeelnemerUitgebreidZoeken?3-1.-centerContainer-layLeft-bottom-rightContainer-rightButtons-0-link';f.submit();return false;" title="Zoeken (Ctrl+Return)"><span>Zoeken</span></a>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div id="id15b"></div>
+				</div><!-- Side is een extra balk aan de rechterkant, is uitgevuld over de hoogte en heeft een vaste breedte -->
+				<div class="laySide" id="id167">
+					<div class="slider"></div>
+					<div class="movedown_10" id="id15e">
+						<table class="tblDatagrid tblClick">
+							<thead>
+								<tr>
+									<th colspan="2" class="header_clickable">
+										Recente deelnemers
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tblNoHightlight">
+									<td colspan="2">
+										Geen deelnemers bezocht
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="movedown_10" id="id15f">
+						<table class="tblDatagrid tblClick treeTable">
+							<thead>
+								<tr>
+									<th colspan="2" class="header_clickable">
+										Mededelingen
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tblNoHightlight">
+									<td colspan="2">
+										Geen mededelingen
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="tblData sidebarNav" style="display: none;">
+							<tbody>
+								<tr class="knoppen">
+									<td>
+										<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" class="vorige" style="display: none;"><img src="./Eduarte-uitgebreidzoeken_files/selection_left.png" alt="vorige 5" class="left"></a>
+									</td>
+									<td>
+										<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" class="volgende"><img src="./Eduarte-uitgebreidzoeken_files/selection_right.png" alt="volgende 5" class="right"></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="movedown_10" id="id162">
+						<div id="id194">
+							<h3 class="caption"></h3>
+							<div id="id195">
+								<table class="tblDatagrid tblClick treeTable" id="id159">
+									<thead>
+										<tr>
+											<th class="header_clickable">
+												<span>Favorieten</span>
+											</th>
+											<th class="unit_20 header_clickable"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="tblNoHightlight">
+											<td colspan="2" class="treeColumn">
+												Er zijn geen gegevens gevonden
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div id="id196" style="display:none"></div>
+						</div>
+						<table class="tblData">
+							<tbody>
+								<tr>
+									<td>
+										<a title="Deze pagina als favoriet toevoegen" id="id160" href="javascript:;"><span>Als favoriet toevoegen</span></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<a title="Mappen beheren" id="id161" href="javascript:;"><span>Beheer mappen</span></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div><!-- <div wicket:id="todos" class="movedown_10"></div> -->
+					<div class="movedown_10" id="id163">
+						<div id="id197">
+							<table class="tblDatagrid">
+								<thead>
+									<tr>
+										<th colspan="2" class="header_clickable">
+											Rapportages
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="tblNoHightlight">
+										<td colspan="2">
+											Geen rapportages gevonden
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="movedown_10" id="id164">
+						<table class="tblDatagrid tblClick treeTable">
+							<thead>
+								<tr>
+									<th colspan="2" class="header_clickable">
+										Geschiedenis
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="clickable" onclick="javascript:location.href='./DeelnemerUitgebreidZoeken?3-1.-laySide-navigatie-listview-0-geschiedenisPanel';">
+										<div class="sidepanel_header">
+											Deelnemeroverzicht
+										</div>
+										<div class="sidepanel_subcontent"></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="clickable" onclick="javascript:location.href='./DeelnemerUitgebreidZoeken?3-1.-laySide-navigatie-listview-1-geschiedenisPanel';">
+										<div class="sidepanel_header">
+											Home
+										</div>
+										<div class="sidepanel_subcontent"></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="tblData sidebarNav" style="display: none;">
+							<tbody>
+								<tr class="knoppen">
+									<td>
+										<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" class="vorige" style="display: none;"><img src="./Eduarte-uitgebreidzoeken_files/selection_left.png" alt="vorige 5" class="left"></a>
+									</td>
+									<td>
+										<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" class="volgende"><img src="./Eduarte-uitgebreidzoeken_files/selection_right.png" alt="volgende 5" class="right"></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="movedown_10" id="id165">
+						<table class="tblDatagrid tblClick treeTable">
+							<thead>
+								<tr>
+									<th colspan="2" class="header_clickable">
+										Single sign-on
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="clickable">
+										<a target="_blank" href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3-1.-laySide-sso-onderwijsLink">Eduarte Portalen</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="movedown_10" id="id166">
+						<table class="tblDatagrid tblClick treeTable">
+							<thead>
+								<tr>
+									<th colspan="2" class="header_clickable">
+										Activiteiten
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tblNoHightlight">
+									<td colspan="2">
+										Geen to-do's toegevoegd
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="tblData sidebarNav" style="display: none;">
+							<tbody>
+								<tr class="knoppen">
+									<td>
+										<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" class="vorige" style="display: none;"><img src="./Eduarte-uitgebreidzoeken_files/selection_left.png" alt="vorige 5" class="left"></a>
+									</td>
+									<td>
+										<a href="https://sdp.educus.nl/app/deelnemers/DeelnemerUitgebreidZoeken?3#" class="volgende"><img src="./Eduarte-uitgebreidzoeken_files/selection_right.png" alt="volgende 5" class="right"></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div id="infoButton">
+				&nbsp;
+			</div>
+			<div class="clear"></div>
+			<div id="id198">
+				<div id="id199" style="display:none"></div>
+				<div id="id19a" style="display:none"></div>
+				<div id="id19b" style="display:none"></div>
+				<div id="id19c" style="display:none"></div>
+			</div>
+		</div>
+		<script type="text/javascript"></script> 
+		<script type="text/javascript"></script> 
+		<script type="text/javascript">
+
+		/*<![CDATA[*/
+
+		var clientEndParseTimeVariable = new Date().getTime();
+
+		/*]]>*/
+		</script>
+		<div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front shaded ui-draggable ui-resizable" aria-describedby="id169" style="display: none; position: absolute;" aria-labelledby="ui-id-1">
+			<div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle">
+				<span id="ui-id-1" class="ui-dialog-title">Eduarte</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title=""> </button>
+			</div>
+			<div class="hide ui-dialog-content ui-widget-content" id="id169" style="display: block;">
+				<div>
+					<table id="infotable" class="fontsize_09">
+						<tbody>
+							<tr>
+								<td class="unit_100">
+									<b>Pagina:</b>
+								</td>
+								<td>
+									<span>Deelnemers uitgebreid zoeken</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="unit_100">
+									<b>Classname:</b>
+								</td>
+								<td>
+									<span id="pageclassname">nl.topicus.eduarte.web.pages.deelnemer.DeelnemerUitgebreidZoekenPage</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="unit_100">
+									<b>Paginanummer:</b>
+								</td>
+								<td>
+									<span id="wicketpageid">3</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="unit_100">
+									<b>Versie:</b>
+								</td>
+								<td>
+									<span>2.2022.11.28, sha1=f17d64811d1</span> - build <span>2022-11-28T22:57:00Z</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="unit_100">
+									<b>Models:</b>
+								</td>
+								<td>
+									<ul>
+										<li>defaultModel: n/a (n/a)
+										</li>
+										<li>innermostModel: n/a (n/a)
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="id168">
+					<table class="fontsize_09">
+						<tbody>
+							<tr>
+								<td class="unit_100">
+									<b>Schermbreedte</b>
+								</td>
+								<td>
+									<span class="info-support info-800">800 of minder</span> <span class="info-support info-1024">1024</span> <span class="info-support info-1280">1280</span> <span class="info-support info-1440">1440 of meer</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="unit_100">
+									<b>History API</b>
+								</td>
+								<td class="history-api support-detected">
+									<span class="info-support">ja</span> <span class="info-nosupport">nee</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+			<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+			<div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+			<div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+			<div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div>
+			<div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+			<div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+			<div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div>
+		</div>
+		<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+	</body>
+</html>
